@@ -306,7 +306,10 @@ want to get all the posts for a user, you don't have to think so hard about
 concepts such as joins. The same goes at insertion time: you don't have to think
 too hard about foreign keys. 
 
-Here is an example from another Node ORM, Prisma:
+Here is an example from another Node ORM, Prisma. Knowing Prisma is not
+particularly important for this example; even without knowing how Prisma works,
+try to understand what the code below tries to do.
+
 ```
 const createCategory = await prisma.post.create({
   data: {
