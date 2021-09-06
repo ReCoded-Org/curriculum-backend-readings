@@ -196,9 +196,9 @@ One of the key points to establish a good schema design (especially, if you are 
 
 #### When to `Reference`
 
-- You will have smaller documents or tables as your data will be separated across multiple documents or tables.
+- If you need smaller documents or tables, your data will be separated across multiple documents or tables.
 - No duplicate of data.
-- Infrequently accessed data not accessed on every query.
+- To reduce accessed data not accessed on every query.
 - In many-to-many relationships between tables and documents.
 
 In general, there are few `rules` you can follow to better design your schema:
