@@ -1,18 +1,18 @@
 # Securing a backend app
 
-So far you've learned how to create server applications, and how to use databases to persist and manipulate the data using CRUD operations. All these features sound awesome, but as it stands currently, they come with a high vulnerability and security risk.
+So far you've learned how to create server applications and how to use databases to persist and manipulate the data using CRUD operations. All these features sound awesome, but as it stands currently, they come with a high vulnerability and security risk.
 
-In this module we will go over how we secure our app, and how to make sure that neither intended, or not intended security breach happens.
+In this module, we will go over how we secure our app and how to make sure that neither intended or unintended security breaches happen.
 
 Follow me in the following journey to understand why we need security.
 
 ## Wishlist inventory app
 
-You've created an amazing app to store a shopping wishlist for your users. You have end points that retrieves the list, add an item to the list, update an item in the list, and delete an item in the list.
+You've created an amazing app to store a shopping wishlist for your users. You have endpoints that retrieve the list, add an item to the list, update an item in the list, and delete an item in the list.
 
 I liked the app and started using it to create 2 lists for the things that I love, computers and kitchenware, and started adding items to both.
 
-In your database you have 2 tables that stores these items as follows:
+In your database, you have 2 tables that stores these items as follows:
 
 ### Table 1: lists
 
@@ -30,9 +30,9 @@ In your database you have 2 tables that stores these items as follows:
 | 3   | AMD Ryzen 9          | 1       | https://amzn.com/585  | $599  | true   |
 | 4   | Tefal Iceforce knife | 2       | https://amzn.com/1311 | $20   | false  |
 
-Now, suppose another user comes to your app, how will your app decides what to show them? When they land on the homepage, they would see my items because the code can't decide what to show. This is the first security risk, the app needs somehow to relate the data to a specific user, so it only query data that belongs to the requesting user.
+Now, suppose another user comes to your app: how will your app decides what to show them? When they land on the homepage, they would see my items because the code can't decide what to show. This is the first security risk. The app needs somehow to relate the data to a specific user, so it only queries data that belongs to the requesting user.
 
-That's why almost everywhere online, you need to register or login to an account in order to use an application. So tha data can be related to you and you only.
+That's why almost everywhere online, you need to register or login to an account in order to use an application, so the data can be related to you and you only.
 
 ## Let's add some security
 
@@ -45,27 +45,27 @@ ON `items`.`list_id` = `lists`.`id`
 WHERE `lists`.`user_email` = "test@domain.com"
 ```
 
-Thus, when a user comes to your app, you can ask them first about their email address, and then query the database to get thier lists. But that is also insufficient. A malicious user can peep on other users wishlists if he/she knew thier emails, or he/she check different email combinations to see if it lands a hit, aka, **Brute Force**.
+Thus, when a user comes to your app, you can ask them first about their email address, and then query the database to get their lists. But that is also insufficient. A malicious user can peep on other users wishlists if he/she knew their emails, or he/she check different email combinations to see if it lands a hit, aka, **brute force**.
 
-To make this a bit harder to brute force, you can create a token system. Tokens are random strings of charcters, usually wih arbitrary length, that is intended to be hard to brute force (guess). A token can look something like this: `1FsahNjuio31OHsOallsn1gHH7`
+To make this a bit harder to brute force, you can create a token system. Tokens are random strings of characters, usually with arbitrary length, that is intended to be hard to brute force (guess). A token can look something like this: `1FsahNjuio31OHsOallsn1gHH7`
 
-You can change the column `user_email` to `token` and everytime a user comes in, you can ask them for the token, or give them the opportunity to generate a token. If they are new users, they can generate a new token, and save it, then start creating thier lists. When they visit again, they enter that token to get thier lists back.
+You can change the column `user_email` to `token` and everytime a user comes in, you can ask them for the token, or give them the opportunity to generate a token. If they are new users, they can generate a new token, and save it, then start creating their lists. When they visit again, they enter that token to get their lists back.
 
-Bingo! You've just created your first, very acceptable authentication layer! You've secured your app and **slimmed the chances** of brute forcing user data! Many apps today use this pattern to secure data, however it is not always acceptable. That's because, if a user lost thier token, it is next to impossible (especially if the token was generated by a cryptograpic random generators with reasonable length) to to gain their access back to their lists using today's technologies.
+Bingo! You've just created your first, very acceptable authentication layer! You've secured your app and **slimmed the chances** of brute forcing user data! Many apps today use this pattern to secure data. However, it is not always acceptable. That's because, if a user loses the token, it is almost impossible (especially if the token was generated by a cryptograpic random generators with reasonable length) to to gain their access back to their lists using today's technologies.
 
 ## Why we need passwords
 
-The token system developed above is very robust, but it isn't always acceptable security measure (at least not alone). That's because, if a user lost thier token, it is next to impossible (especially if the token was generated by a cryptograpic random generators with reasonable length) to to gain their access back to their lists using today's technologies.
+The token system developed above is very robust, but it isn't always acceptable security measure (at least not alone). That's because, if a user loses the token, it is next to impossible (especially if the token was generated by a cryptograpic random generators with reasonable length) to to gain their access back to their lists using today's technologies.
 
 So, maybe instead of a long random token, use a password? We can ask the user when they land on our page for a pass code (aka password). And we check the database, if we can find it a list where `password = USER_SUBMITTED_PASS_CODE` then display them. If not, that means they are a new user.
 
 Indeed this works, but we are back to the same problem with using emails. Users tend to use easy to remember words, dates, phone numbers, and the like. It would be relatively harder than bruteforcing emails, but nonetheless, still easy to guess, and very easy for computers to break by checking every possible combination of words, dates, numbers, and even relatively harder passwords using a technology called **rainbow tables**.
 
-**However**, if you do more validation on yourside to limit the possibilities of such a risk, then passwords can work. In the end, almost all web apps use passwords for authentication. Below are the highlights of best practices to securing with passwords:
+**However**, if you do more validation on your side to limit the possibilities of such a risk, then passwords can work. In the end, almost all web apps use passwords for authentication. Below are the highlights of best practices to securing with passwords:
 
 - Use 3rd party identity providers: Sign in with Google
 - Enforce password combination policy: Minimum length, include numbers, upper and lower characters
-- **NEVER** save password as plain text in a database: Use industry standards cryptographic algorithms like bcrypt
+- **NEVER** save password as plain text in a database: use industry standards cryptographic algorithms like bcrypt
 - Secure your databases against breaches: Use firewalls to limit access, protect and encrypt backups, use database PaaS
 - Throttle your API: Like ban an IP if they tried incorrect password for more than 4 times
 - Use SECURE HTTP (aka HTTPS): to encrypt all data transfers between your server and your users
