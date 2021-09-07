@@ -110,7 +110,6 @@ Body -
       "name": "Mozzarella Sticks",
       "price": 7
     },
-    ...
     {
       "id": 1223,
       "name": "Avocado Toast",
@@ -175,12 +174,14 @@ There are few things to focus on when creating a database schema:
 ### Type of database
 
 Most developers don't see the difference between relation database schema and MongoDB schema, but in reality, it is not the same
-![meme](https://i.imgur.com/3yobiPB.jpg)
+
+<img src="https://i.imgur.com/3yobiPB.jpg" alt="meme" width="400"/>
 
 In a nutshell,
-relational databases, models are usually independent of queries, there is no duplication of data as data will _mostly_ be separated into different tables, and it is rigid, you will have to define types and fields for your schema beforehand.
 
-in the other hand, MongoDB, you have more flexibility, there are no rules, documents can have new data or fields at any point of time, no need to define types.
+in `relational databases`, models are usually independent of queries, there is no duplication of data as data will _mostly_ be separated into different tables, and it is rigid, you will have to define types and fields for your schema beforehand.
+
+in the other hand, `MongoDB`, you have more flexibility, there are no rules, documents can have new data or fields at any point of time, no need to define types.
 
 ### Embedding vs. Referencing
 
@@ -195,12 +196,12 @@ One of the key points to establish a good schema design (especially, if you are 
 
 #### When to `Reference`
 
-- You will have smaller documents or tables as your data will be separated across multiple documents or tables.
+- If you need smaller documents or tables, your data will be separated across multiple documents or tables.
 - No duplicate of data.
-- Infrequently accessed data not accessed on every query.
+- To reduce accessed data not accessed on every query.
 - In many-to-many relationships between tables and documents.
 
-In general, there are few `rules` you can follow to better design you schema:
+In general, there are few `rules` you can follow to better design your schema:
 
 1. Favor embedding over referencing unless there is a compelling reason not to.
 2. Needing to access an object on its own is a compelling reason not to embed.
