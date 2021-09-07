@@ -43,12 +43,15 @@ an automated test for this, screenshot testing is a viable option.
 
 ## Smoke tests
 **Smoke tests** are a type of end-to-end test that tests the most basic cases.
-For example, if you have an a todo list app, this app may simple login users and
-try to create a list, even if your app has much more functionality. However, the
-name comes from the idea that, if you have some type of hardware and there is
-smoke, you should probably immediately shut it off without testing anything --
-it hasn't even passed the basics.
-simply 
+For example, if you have a todo list app, this app may simply login users and
+try to create a list, even if your app has much more functionality than this
+straightforward flow.
+
+However, the name "smoke test" comes from the idea that, if you have some type
+of hardware and there is smoke, you should probably immediately shut it off
+without testing anything -- it hasn't even passed the basics. Smoke tests often
+run before releasing a product as a "sanity test."
+
 ## Frequency
 In the ideal testing environment, unit tests . As tests increase in granularity
 -- that is, they include larger pieces of your system -- you want these tests to
