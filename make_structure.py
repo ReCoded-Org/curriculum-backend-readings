@@ -25,8 +25,13 @@ to be correct)
 4	Testing lab
 """
 import subprocess
+import string
 import sys
 import os
+
+# https://stackoverflow.com/questions/265960/best-way-to-strip-punctuation-from-a-string
+def remove_punctuation(s):
+  return s.translate(str.maketrans('', '', string.punctuation))
 
 def main():
   with open('outline.txt', 'r') as f:
@@ -36,7 +41,7 @@ def main():
       chapter_num, chapter_name = line.split('\t')
       
       # Convert casing: "Example code" to "example-code"
-      normalized_chapter_name = chapter_name.replace(' ', '-').lower()
+      normalized_chapter_name = remove_punctuation(chapter_name).replace(' ', '-').lower()
       # Make directories
       dir_name = "r" + chapter_num.strip() + '-' + normalized_chapter_name.strip()
       subprocess.run(["mkdir", "-p", os.path.join(os.getcwd(), dir_name)])
