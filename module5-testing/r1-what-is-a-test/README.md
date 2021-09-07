@@ -16,5 +16,7 @@ run it before sending a PR or while working on the test. In a process called
 pull request is proposed. This means that generally, if your code and pull
 request are not passing the tests, it cannot be merged in.
 
-Suppose you had a function called `square(n)`, that is supposed to square a
-number.
+There are many types of tests: unit tests, integration tests, screenshot tests,
+and so on. In a later section, we will talk about some of these types of tests.
+Most commonly, we will refer to unit tests, which are the most frequent type of
+tests.
