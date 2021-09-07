@@ -38,7 +38,7 @@ def main():
       # Convert casing: "Example code" to "example-code"
       normalized_chapter_name = chapter_name.replace(' ', '-').lower()
       # Make directories
-      dir_name = chapter_num.strip() + '-' + normalized_chapter_name.strip()
+      dir_name = "r" + chapter_num.strip() + '-' + normalized_chapter_name.strip()
       subprocess.run(["mkdir", "-p", os.path.join(os.getcwd(), dir_name)])
       # Make README files
       subprocess.run(["touch", os.path.join(os.getcwd(), dir_name, "README.md")])
