@@ -53,7 +53,8 @@ without testing anything -- it hasn't even passed the basics. Smoke tests often
 run before releasing a product as a "sanity test."
 
 ## Frequency
-In the ideal testing environment, unit tests . As tests increase in granularity
+In the ideal testing environment, unit tests will be the most frequent type of
+testing. As tests increase in granularity
 -- that is, they include larger pieces of your system -- you want these tests to
 be less frequent. The smaller tests should tested individually. In case there is
 a problem, it becomes easier to isolate if the tests are associated with small
