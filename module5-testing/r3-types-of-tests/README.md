@@ -67,4 +67,4 @@ the fastest and smallest test (unit tests) should be by far the most frequent.
 As tests take longer to run and integrate more parts of the system, there should
 be fewer.
 
-![Test pyramid](assets/test-pyramid.png)
+![Test pyramid](../assets/test-pyramid.png)
