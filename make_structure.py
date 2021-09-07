@@ -1,15 +1,18 @@
 """
 This script takes tab delimited input file like so and automatically
-creates the folder structure along with empty README files, per the contributing
-guidelines. If you copy-paste from Google sheets, it will automatically add
-tabs.
+creates the folder structure for readings along with empty README files, per the
+contributing guidelines. If you copy-paste from Google sheets, it will
+automatically add tabs.
+
+Sorry, didn't feel like handling labs, so you just need to delete the lab folder
+when it gets created or rename it manually.
 
 * Copy-paste the file below into `outline.txt` (too lazy to parameterize this
 script) in the directory of the module that you want to use, i.e.,
 `module5-testing/outline.txt`
 * cd to the correct directory (this step is important for the working directory
 to be correct)
-* Run `python ../make_structure.py`
+* Run `python3 ../make_structure.py` (not python2)
 * Enjoy your created structure
 
 1	What is a test?
@@ -35,13 +38,10 @@ def main():
       # Convert casing: "Example code" to "example-code"
       normalized_chapter_name = chapter_name.replace(' ', '-').lower()
       # Make directories
-      subprocess.run(["mkdir", "-p", os.path.join(
-        chapter_num,
-        os.getcwd(),
-        normalized_chapter_name)])
+      dir_name = chapter_num.strip() + '-' + normalized_chapter_name.strip()
+      subprocess.run(["mkdir", "-p", os.path.join(os.getcwd(), dir_name)])
       # Make README files
-      subprocess.run(["touch", os.path.join(os.getcwd(), normalized_chapter_name,
-                                            "README.md")])
+      subprocess.run(["touch", os.path.join(os.getcwd(), dir_name, "README.md")])
 
 if __name__ == '__main__':
   main()
