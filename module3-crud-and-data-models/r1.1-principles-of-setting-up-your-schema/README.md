@@ -26,7 +26,7 @@ One of the key points to establish a good schema design (especially, if you are 
 
 #### When to `Embed`:
 
-- Retrive all data in a single query.
+- To retrive all data in a single query.
 - Avoid expense JOINs or $lookups.
 - Update all data with a single operation.
 - In one-to-one or one-to-many relationships between documents.

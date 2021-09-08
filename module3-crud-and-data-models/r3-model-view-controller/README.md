@@ -11,7 +11,6 @@ app-name-here
  |- db
  |- Models
  |- node_modules
- |- Services
 .gitignore
 index.js
 package.json
