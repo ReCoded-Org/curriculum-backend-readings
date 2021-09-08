@@ -24,3 +24,7 @@ dog.findSimilarTypes((err, dogs) => {
   console.log(dogs); // woof
 });
 ```
+
+## Resources
+
+- [instance methods in mongoose][https://mongoosejs.com/docs/guide.html#methods]

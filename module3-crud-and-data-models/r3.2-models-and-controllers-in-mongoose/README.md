@@ -37,8 +37,6 @@ To get all the foods from our MongoDB using mongoose we can simply use the `find
 
 Note: we can read specific items from MongoDB using queries in the `find()` function.
 
-[Read here](https://mongoosejs.com/docs/models.html#Querying) for more information.
-
 Example:
 
 ```js
@@ -112,3 +110,7 @@ app.delete("/food/:id", async (request, response) => {
 
 // ...
 ```
+
+## Resources
+
+- [CRUD operations in mongoose](https://mongoosejs.com/docs/models.html#Querying)

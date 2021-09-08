@@ -41,8 +41,6 @@ CREATE TABLE customer (
 
 We can see that the schema definition for the `Customer` has a `name` which is a type `string` and a `zipcode` that is of type `number`.
 
-For more details about database schemas [see this](https://www.educative.io/blog/what-are-database-schemas-examples#types)
-
 ### The Difference between data model and schema
 
 The database schema is one that contains list of attributes and instructions to tell the database engine how data is organised whereas Data model is a collection of conceptional tools for describing data, data-relationship and consistency constraints.
@@ -157,4 +155,7 @@ Response: Status Code - 204 (NO CONTENT)
 
 Body - None
 
-[See this](https://www.educative.io/blog/crud-operations#what) for more information on how these operations are performed on `SQL` database.
+## Resources
+
+- [See this](https://www.educative.io/blog/crud-operations#what) for more information on how these operations are performed on `SQL` database.
+- [database schemas](https://www.educative.io/blog/what-are-database-schemas-examples#types)

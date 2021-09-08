@@ -45,4 +45,6 @@ In general, there are few `rules` you can follow to better design your schema:
 3. Avoid JOINs and $lookups if they can be avoided, but don't be afraid if they can provide a better schema design.
 4. How you model your data depends _entirely_ on your particular application's data access patterns.
 
-Watch [this video](https://www.youtube.com/watch?v=leNCfU5SYR8) for a detailed explanation about schema design best practices.
+## Resources
+
+- [schema design best practices](https://www.youtube.com/watch?v=leNCfU5SYR8)

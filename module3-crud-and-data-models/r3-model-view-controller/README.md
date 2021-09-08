@@ -77,3 +77,7 @@ router.get('/posts', (req, res) => {
 ### Views
 
 In a back-end application, views are usually not implemented and rather we create a front-end app using maybe `React` to call our `api` end-points to manipulate the data in the back-end.
+
+## Resources
+
+- [MVC Architecture with NodeJS and mongoose](https://medium.com/geekculture/mvc-architecture-with-express-server-e35aedfe7889)
