@@ -17,7 +17,7 @@ For example, This is a `Customer` schema in mangodb using mongoose.
 ```js
 const mongoose = require("mongoose");
 
-const Customer = new mongoose.Schema({
+const customer = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -27,7 +27,7 @@ const Customer = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Customer", Customer);
+module.exports = mongoose.model("Customer", customer);
 ```
 
 The same `Customer` schema in a MySql database.
@@ -242,7 +242,7 @@ Here’s an example model using JavaScript and mongoose.
 
 const mongoose = require("mongoose");
 
-const Post = new mongoose.Schema({
+const post = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -260,7 +260,7 @@ const Post = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Customer", Customer);
+module.exports = mongoose.model("Post", post);
 ```
 
 ### Controllers
@@ -302,7 +302,7 @@ Let's imagine that we have this food model.
 
 const mongoose = require("mongoose");
 
-const Food = new mongoose.Schema({
+const food = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -316,7 +316,7 @@ const Food = new mongoose.Schema({
   },
 });
 
-const Food = mongoose.model("Food", Food);
+const Food = mongoose.model("Food", food);
 
 module.exports = Food;
 ```
@@ -404,4 +404,31 @@ app.delete("/food/:id", async (request, response) => {
 });
 
 // ...
+```
+
+## Building your own methods on mongoose
+
+In mongoose, instances of Models are documents. Documents have many of their own built-in instance methods. We may also define our own custom document instance methods.
+
+For example:
+
+```js
+// define a schema
+const animalSchema = new Schema({ name: String, type: String });
+
+// assign a function to the "methods" object of our animalSchema
+animalSchema.methods.findSimilarTypes = function (cb) {
+  return mongoose.model("Animal").find({ type: this.type }, cb);
+};
+```
+
+Now all of our `animal` instances have a `findSimilarTypes` method available to them.
+
+```js
+const Animal = mongoose.model("Animal", animalSchema);
+const dog = new Animal({ type: "dog" });
+
+dog.findSimilarTypes((err, dogs) => {
+  console.log(dogs); // woof
+});
 ```
