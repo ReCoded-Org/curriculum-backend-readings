@@ -10,7 +10,7 @@ The most popular example of a database model is the relational model, which uses
 
 A database schema is a `blueprint` or `architecture` of how our data will look. It doesn’t hold data itself, but instead describes the shape of the data and how it might relate to other tables or models.
 
-For example, This is a `Customer` schema in mangodb using mongoose.
+For example, This is a `Customer` schema in mongoDB using mongoose.
 
 ```js
 const mongoose = require("mongoose");
