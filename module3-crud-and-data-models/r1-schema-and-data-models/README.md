@@ -157,5 +157,5 @@ Body - None
 
 ## Resources
 
-- [See this](https://www.educative.io/blog/crud-operations#what) for more information on how these operations are performed on `SQL` database.
+- [See this](https://www.educative.io/blog/crud-operations#what) for more information on how CRUD operations are performed directly on `SQL` database.
 - [database schemas](https://www.educative.io/blog/what-are-database-schemas-examples#types)
