@@ -47,4 +47,4 @@ In general, there are few `rules` you can follow to better design your schema:
 
 ## Resources
 
-- [schema design best practices](https://www.youtube.com/watch?v=leNCfU5SYR8)
+- [schema design best practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
