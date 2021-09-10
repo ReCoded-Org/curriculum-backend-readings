@@ -29,8 +29,8 @@ manually provide an id or a created timestamp, these are automatically generated
 by MySQL.
 
 ```sql
-INSERT INTO customer (first_name, last_name) VALUES ('Halit', 'Batur');
-INSERT INTO customer (first_name, last_name) VALUES ('Ammar', 'Sammour');
+INSERT INTO customer (first_name, last_name) VALUES ('Jane', 'Doe');
+INSERT INTO customer (first_name, last_name) VALUES ('Joe', 'Smith');
 ```
 
 Now let's `SELECT` the data -- that is, let's view the data.
@@ -43,8 +43,8 @@ The `*` symbol tells us to get all columns. You should see something like this:
 ```
  id | first_name | last_name |          created_at
 ----+------------+-----------+-------------------------------
-  1 | Halit      | Batur     | 2021-08-29 03:33:14.559122-07
-  2 | Ammar      | Sammour   | 2021-08-29 03:34:08.522222-07
+  1 | Jane      | Doe     | 2021-08-29 03:33:14.559122-07
+  2 | Joe      | Smith   | 2021-08-29 03:34:08.522222-07
 (1 row)
 ```
 

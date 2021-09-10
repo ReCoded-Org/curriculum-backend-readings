@@ -34,9 +34,9 @@ visualization of the data.
 
 **id**|**first\_name**|**last\_name**|**registered\_at**
 :-----:|:-----:|:-----:|:-----:
-1|Ammar|Sammour|2012-01-02
-2|Halit|Batur|2012-01-03
-3|Shrreya|Bhatachaarya|2012-01-05
+1|Joe|Smith|2012-01-02
+2|Jane|Doe|2012-01-03
+3|Susan|Stone|2012-01-05
 
 The `Order` table may look something like so:
 
@@ -53,7 +53,7 @@ called a **foreign key** (or sometimes join key). This column creates a
 customer the order belongs. This is the core of relational databases: expressing
 relations between entities.
 
-This table says that Ammar has ordered a keyboard, mouse, and cookies. He has
-three orders, because there are three rows with `customer_id = 1`. Halit has ordered one item: rice (`customer_id = 2`).
+This table says that Joe has ordered a keyboard, mouse, and cookies. He has
+three orders, because there are three rows with `customer_id = 1`. Jane has ordered one item: rice (`customer_id = 2`).
 
 
