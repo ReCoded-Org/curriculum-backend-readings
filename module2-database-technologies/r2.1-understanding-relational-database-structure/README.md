@@ -7,7 +7,7 @@ since one customer has many orders. It should be noted that the foreign key goes
 on the side that is "many". In the example above, note that the `customer_id`
 key is located on the `Order` table.
 
-![One to many relationship](../assets/one-to-many.png)
+[![One to many relationship](../assets/one-to-many.png)](https://fmhelp.filemaker.com/help/18/fmp/en/index.html#page/FMP_Help/one-to-many-relationships.html)
 
 For a many-to-many relationship, consider students and courses at a university.
 A student can take many courses; a course also has many students. Many-to-many
@@ -20,7 +20,8 @@ example, the diagram below connects classes and students together through a
 table called `Enrollments`. Each row in `Enrollments` represents one class that
 one student is taking; there can be multiple such entries in the table.
 
-![Many to many relationship](../assets/many-to-many.png)
+[![Many to many
+relationship](../assets/many-to-many.png)](https://fmhelp.filemaker.com/help/18/fmp/en/index.html#page/FMP_Help%2Fmany-to-many-relationships.html%23)
 
 See this [StackOverflow
 question](https://stackoverflow.com/questions/4601703/difference-between-one-to-many-and-many-to-one-relationship)
