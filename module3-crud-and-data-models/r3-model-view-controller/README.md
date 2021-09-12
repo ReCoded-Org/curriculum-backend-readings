@@ -58,6 +58,11 @@ const post = new mongoose.Schema({
 module.exports = mongoose.model("Post", post);
 ```
 
+### Views
+
+In this folder, you can write HTML code for displaying a web page on the web browser. You can send the data from the controller to view for displaying data dynamically.
+In a back-end application, views are usually not implemented and rather we create a front-end app using maybe `React` to call our `api` end-points to manipulate and dispaly the data in the back-end.
+
 ### Controllers
 
 Controllers are the layer between the Model and the View. the views can use the controllers to `add`, `read`, `delete`, ...etc data.
@@ -82,11 +87,6 @@ router.get('/posts', (req, res) => {
 })
 });
 ```
-
-### Views
-
-In this folder, you can write HTML code for displaying a web page on the web browser. You can send the data from the controller to view for displaying data dynamically.
-In a back-end application, views are usually not implemented and rather we create a front-end app using maybe `React` to call our `api` end-points to manipulate and dispaly the data in the back-end.
 
 ## Resources
 
