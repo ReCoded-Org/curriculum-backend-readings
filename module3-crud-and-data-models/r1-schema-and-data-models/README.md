@@ -2,20 +2,7 @@
 
 A database schema is a blueprint or architecture of how our data will look. It doesn’t hold data itself, but instead describes the shape of the data and how it might relate to other tables or models.
 
-<<<<<<< HEAD
 For example, this is a `customer` schema in MongoDB using mongoose.
-=======
-A database model is a type of data model that determines the logical structure of a database. It is the high level design which defines the kind of tables, the `fields` in those tables and the `relations` between different tables.
-
-The most popular example of a database model is the relational model, which uses a table-based format, which is the one we use in most SQL databases.
-
-### What are database schemas?
-
-A database schema is a `blueprint` or `architecture` of how our data will look. It doesn’t hold data itself, but instead describes the shape of the data and how it might relate to other tables or models.
-
-For example, This is a `Customer` schema in mongoDB using mongoose.
-
-> > > > > > > c7eff66f097a2a47f25f1ab1b06941e77c329eb9
 
 ```js
 const mongoose = require("mongoose");
@@ -111,15 +98,3 @@ Request:
 - [What is REST](https://restfulapi.net/)
 - [See this](https://www.educative.io/blog/crud-operations#what) for more information on how CRUD operations are performed directly on `SQL` database.
 - [database schemas](https://www.educative.io/blog/what-are-database-schemas-examples#types)
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```

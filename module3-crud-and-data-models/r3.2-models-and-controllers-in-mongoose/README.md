@@ -31,7 +31,7 @@ module.exports = Food;
 And we are required to do the CRUD operation on this model, how can we acheive that with mongoose?
 we will first create a `food-conroller` for all the food requests and place all requests in there.
 
-#### Read
+- #### Read
 
 To get all the foods from our MongoDB using mongoose we can simply use the `find({})` function.
 
@@ -54,7 +54,7 @@ app.get("/foods", async (request, response) => {
 module.exports = app;
 ```
 
-#### Create
+- #### Create
 
 Create or add a new `food` item to our foods.
 
@@ -72,7 +72,7 @@ app.post("/food", async (request, response) => {
 // ...
 ```
 
-#### Update
+- #### Update
 
 To update an item, we need to first make sure it exist by using the id to find it and then updating it, using the`findByIdAndUpdate()`, and then save the new item in the database.
 
@@ -91,7 +91,7 @@ app.patch("/food/:id", async (request, response) => {
 // ...
 ```
 
-#### Delete
+- #### Delete
 
 To delete, we need to check if the item exist by using the id to find it and then delete it, we us `findByIdAndDelete()`.
 
