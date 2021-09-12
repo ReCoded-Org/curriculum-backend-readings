@@ -1,6 +1,6 @@
 ## Principles of setting up your schema
 
-Poorly designed databases can cause many problems, including a waste of resources, difficult maintenance, and faulty performance. That's why having a great database schema design is a crucial part of effective data management.
+Poorly designed databases can cause many problems, including wasting resources, making maintenance difficult, and hindering performance. That's why having a great database schema design is a crucial part of effective data management.
 
 There are few things to focus on when creating a database schema:
 
@@ -10,19 +10,18 @@ There are few things to focus on when creating a database schema:
 
 ### Type of database
 
-Most developers don't see the difference between relation database schema and MongoDB schema, but in reality, it is not the same
+Most developers don't see the difference between relational database schema and MongoDB schema, but in reality, it is not the same
 
 <img src="https://i.imgur.com/3yobiPB.jpg" alt="meme" width="400"/>
 
 In a nutshell,
-
-in `relational databases`, models are usually independent of queries, there is no duplication of data as data will _mostly_ be separated into different tables, and it is rigid, you will have to define types and fields for your schema beforehand.
+in relational databases, models are usually independent of queries, there is no duplication of data as data will _mostly_ be separated into different tables, and it is rigid, you will have to define types and fields for your schema beforehand.
 
 in the other hand, `MongoDB`, you have more flexibility, there are no rules, documents can have new data or fields at any point of time, no need to define types.
 
 ### Embedding vs. Referencing
 
-One of the key points to establish a good schema design (especially, if you are using MongoDB) is weither to embed or reference your data, as it can make a big difference in the performance and hardware use.
+One of the key points to establish a good schema design (especially, if you are using MongoDB) is whether to embed or reference your data.
 
 #### When to `Embed`:
 
@@ -47,4 +46,4 @@ In general, there are few `rules` you can follow to better design your schema:
 
 ## Resources
 
-- [schema design best practices](https://www.youtube.com/watch?v=leNCfU5SYR8)
+- [schema design best practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
