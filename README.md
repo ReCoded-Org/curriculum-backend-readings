@@ -41,7 +41,7 @@ This serves as a content monorepo for all the readings of the backend bootcamp c
 - Each reading should begin with the title as an h1.
 - Below the title it should have the summary and learning goals.
 - After this goes in the main content of the reading.
-- Finally each reading should conclude with a section called Resources, where we can link the external blogs/tutorials/videos we referred to.
+- Finally each reading should conclude with a section called References, where we can link the external blogs/tutorials/videos we referred to.
 
 ## General Formatting Conventions
 
@@ -56,3 +56,39 @@ This serves as a content monorepo for all the readings of the backend bootcamp c
 - Work on a module or reading on it's own branch and open a PR into main branch.
 - Request at least 2 reviewers on your PRs.
 - Open draft PRs early for large modules to get continuous peer reviews. This helps your peers know that the PR is still WIP and is also helpful to review the content in chunks.
+
+## Example
+
+`Start with a H1 for the title`👇
+# Beginners guide to Node.js and NPM
+`Enter a quick summary and numbered list of learning objectives`👇<br/>
+We will be working in the Node.js and NPM environment throughout this bootcamp. The objectives of this lesson are:
+1. Understanding the Node.js framework
+2. Advantages of Node.js and why this course is focussed on Node.js
+
+`Detail out first sub-topic under a H2`👇
+## Introduction to Node.js
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+`Detail out further sections with H3 inside the sub-topic`👇
+### Features of Node.js
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+1. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+2. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+3. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+`Detail out next sub-topic under a H2`👇
+## Why are we teaching Node.js in this bootcamp?
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+`Use the end space of last section for a quick outro or recap of the reading.`👇<br/>
+Now that you have enough context on Node.js, let's prepare our coding environments on our computers. Coming up next is your first assignment of this course which will walk you through setting up your Node.js environment.
+
+`End with a horizontal rule and list References under an H2`👇
+
+---
+## References
+- https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/
+- https://nodejs.dev/learn/introduction-to-nodejs
+- https://medium.com/jspoint/how-javascript-works-in-browser-and-node-ab7d0d09ac2f
+- https://www.geeksforgeeks.org/top-8-reasons-to-learn-nodejs-in-2020/
