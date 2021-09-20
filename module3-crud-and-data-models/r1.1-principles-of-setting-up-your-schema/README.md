@@ -46,7 +46,7 @@ This is not so much a "storage space" issue as it is a "data consistency" issue.
 
 ##### 3. Avoid JOINs and $lookups if they can be avoided, but don't be afraid if they can provide a better schema design.
 
-Having a JOIN or $lookup means you are doing some kind of search in your database for the corresponding field and that operation takes time. So if you embed your data in a single object, you will spare this operation, and your query can be much faster and cleaner.
+Having a JOIN or `$lookup` means you are doing some kind of search in your database for the corresponding field and that operation takes time. So if you embed your data in a single object, you will spare this operation, and your query can be much faster and cleaner.
 
 ##### 4. How you model your data depends _entirely_ on your particular application's data access patterns.
 

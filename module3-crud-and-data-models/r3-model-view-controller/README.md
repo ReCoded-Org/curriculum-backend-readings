@@ -2,8 +2,8 @@
 
 ## Introduction to MVC projects
 
-When beginning a new project (especially, when using express), there are several different methods that can be used to set up the overall file structure and flow. One of the most commonly used architectural patterns is called MVC. this acronym stands for "Model, View, Controller".
-This pattern is favored because of its alignment with the computer science design principle, [**separation of concerns**](https://en.wikipedia.org/wiki/Separation_of_concerns). By dividing up responsibilities within our file structure, for example, we can have our db connection work in one file and api routes in another file, ...etc.
+When beginning a new project (especially when using express), there are several different methods that can be used to set up the overall file structure and flow. One of the most commonly used architectural patterns is called MVC. this acronym stands for "Model, View, Controller".
+This pattern is commonly found because of its alignment with the computer science design principle, [**separation of concerns**](https://en.wikipedia.org/wiki/Separation_of_concerns). By dividing up responsibilities within our file structure, for example, we can have our db connection work in one file and api routes in another file, and so on. Such organization is beneficial for both our own and other people's understanding of our code.```
 
 ```
 app-name-here

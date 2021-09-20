@@ -70,7 +70,7 @@ We will need to send the `dish` data too.
 
 To read resources in a REST environment, we use the GET method. in practice, reading a resource shouldn't change any information - it should only retrieve it.
 
-Note: technically, you can change data in a `GET` request but since we are creating a RESTful API, you shouldn't do that, and, in-general, changing data in a `GET` request would be confusing to the users of your api.
+To read resources in a REST environment, we use the GET method. Reading a resource should never change any information - it should only retrieve it. REST itself is more like a set of guidelines. Technically, you can change data in a `GET` request, but since we are creating a RESTful API, you shouldn't do that. Having a GET request that updates data in your database would be confusing to the users of your API and violate the expected behavior of REST.
 
 ##### Request:
 
