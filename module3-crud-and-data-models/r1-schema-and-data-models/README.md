@@ -53,44 +53,47 @@ In a REST environment, CRUD often corresponds to the HTTP methods `POST`, `GET`,
 
 For example, imagine we are working with a system that is keeping track of meals and their corresponding prices for a restaurant. Let’s look at how we would implement CRUD operations.
 
-- #### Create
+#### Create
 
 To create resources in a REST environment, we most commonly use the HTTP POST method. POST creates a new resource of the specified resource type.
 Imagine that we are adding a new food item to the stored list of dishes for this restaurant, and the dish objects are stored in a dishes resource.
 
 Note: Use `POST` when you want to add a child resource under resources collection.
 
-Request:
+##### Request:
+
 `POST http://www.myrestaurant.com/api/dishes/`
 
 We will need to send the `dish` data too.
-`
 
-- #### Read
+#### Read
 
 To read resources in a REST environment, we use the GET method. in practice, reading a resource shouldn't change any information - it should only retrieve it.
 
 Note: technically, you can change data in a `GET` request but since we are creating a RESTful API, you shouldn't do that, and, in-general, changing data in a `GET` request would be confusing to the users of your api.
 
-Request:
+##### Request:
+
 `GET http://www.myrestaurant.com/api/dishes/`
 
-- #### Update
+#### Update
 
 PUT is the HTTP method used for the CRUD operation, Update.
 So if the price of Avocado Toast has gone up, we should go into the database and update that information using PUT.
 
 Note: Use `PUT` when you want to modify a singular resource which is already a part of resources collection. `PUT` replaces the resource with the data you send in its entirety.
 
-Request:
+##### Request:
+
 `PUT http://www.myrestaurant.com/dishes/1223`
 
-- #### Delete
+#### Delete
 
 The CRUD operation Delete corresponds to the HTTP method DELETE. It is used to remove a resource from the system.
 Let’s say that the world avocado shortage has reached a critical point, and we can no longer afford to serve this modern delicacy at all. We should go into the database and delete the item that corresponds to `"Avocado Toast"`, which we know has an `id` of 1223.
 
-Request:
+##### Request:
+
 `DELETE http://www.myrestaurant.com/dishes/1223`
 
 ## Resources
