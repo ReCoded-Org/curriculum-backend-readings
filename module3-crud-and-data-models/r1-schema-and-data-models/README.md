@@ -33,10 +33,6 @@ CREATE TABLE customer (
 
 We can see that the schema definition for the `customer` has a `name` which is a type `string` and a `zipcode` that is of type `number`.
 
-### The Difference between data model and schema
-
-The database schema is one that contains list of attributes and instructions to tell the database engine how data is organised whereas data model is a collection of conceptional tools for describing data, data-relationship and consistency constraints.
-
 ## Introduction to CRUD operations
 
 When we are building APIs, we want our models to provide four basic types of functionality. The model must be able to Create, Read, Update, and Delete resources. Computer scientists often refer to these functions by the acronym `CRUD`. A model should have the ability to perform at most these four functions in order to be complete.
@@ -85,16 +81,16 @@ Note: Use `PUT` when you want to modify a singular resource which is already a p
 
 ##### Request:
 
-`PUT http://www.myrestaurant.com/dishes/1223`
+`PUT http://www.myrestaurant.com/dishes/:id`
 
 #### Delete
 
 The CRUD operation Delete corresponds to the HTTP method DELETE. It is used to remove a resource from the system.
-Let’s say that the world avocado shortage has reached a critical point, and we can no longer afford to serve this modern delicacy at all. We should go into the database and delete the item that corresponds to `"Avocado Toast"`, which we know has an `id` of 1223.
+Let’s say that the world avocado shortage has reached a critical point, and we can no longer afford to serve this modern delicacy at all. We should go into the database and delete the item that corresponds to `Avocado Toast`, which we know has an `id` of 1223.
 
 ##### Request:
 
-`DELETE http://www.myrestaurant.com/dishes/1223`
+`DELETE http://www.myrestaurant.com/dishes/:id`
 
 ## Resources
 

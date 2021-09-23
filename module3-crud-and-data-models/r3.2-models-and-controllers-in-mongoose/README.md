@@ -66,7 +66,7 @@ Example:
 app.post("/food", async (request, response) => {
   const food = new foodModel(request.body);
   await food.save();
-  response.send(food);
+  response.status(201).send(food);
 });
 
 // ...
@@ -81,7 +81,7 @@ Example:
 ```js
 // ...
 
-app.patch("/food/:id", async (request, response) => {
+app.put("/food/:id", async (request, response) => {
     await foodModel.findByIdAndUpdate(request.params.id, request.body);
     await foodModel.save();
     response.send(food);
@@ -104,7 +104,7 @@ app.delete("/food/:id", async (request, response) => {
     const food = await foodModel.findByIdAndDelete(request.params.id);
 
     if (!food) response.status(404).send("No item found");
-    response.status(200).send();
+    response.status(204).send();
   }
 });
 

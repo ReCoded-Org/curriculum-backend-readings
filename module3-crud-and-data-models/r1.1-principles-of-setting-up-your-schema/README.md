@@ -10,8 +10,7 @@ Most developers don't see the difference between relational database schema and 
 
 <img src="https://i.imgur.com/3yobiPB.jpg" alt="meme" width="400"/>
 
-In a nutshell,
-in relational databases, models are usually independent of queries, there is no duplication of data as data will _mostly_ be separated into different tables, and it is rigid, you will have to define types and fields for your schema beforehand.
+In a nutshell, in relational databases, models are usually independent of queries, there is no duplication of data as data will _mostly_ be separated into different tables, and it is rigid, you will have to define types and fields for your schema beforehand.
 
 in the other hand, `MongoDB`, you have more flexibility, there are no rules, documents can have new data or fields at any point of time, no need to define types.
 
