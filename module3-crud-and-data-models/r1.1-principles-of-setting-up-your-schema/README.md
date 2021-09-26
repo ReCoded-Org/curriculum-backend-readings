@@ -33,7 +33,7 @@ When a collection has a document, and, this document contains another document, 
 
 When a value of a field in your table or collection referes to a value of another field in another table or collection.
 
-#### When to `Reference`
+#### When to Reference
 
 - If you need smaller documents or tables, your data will be separated across multiple documents or tables.
 - No duplicate of data.
