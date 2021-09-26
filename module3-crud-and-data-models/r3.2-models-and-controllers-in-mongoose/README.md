@@ -56,7 +56,7 @@ module.exports = app;
 
 - #### Create
 
-Create or add a new `food` item to our foods.
+Create or add a new food item to our foods.
 
 Example:
 
@@ -113,4 +113,4 @@ app.delete("/food/:id", async (request, response) => {
 
 ## Resources
 
-- [CRUD operations in mongoose](https://mongoosejs.com/docs/models.html#Querying)
+- [CRUD operations in Mongoose](https://mongoosejs.com/docs/models.html#Querying)

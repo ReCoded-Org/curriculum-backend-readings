@@ -2,7 +2,7 @@
 
 ## Introduction to MVC projects
 
-When beginning a new project (especially, when using express), there are several different methods that can be used to set up the overall file structure and flow. One of the most commonly used architectural patterns is called MVC. This acronym stands for "Model, View, Controller".
+When beginning a new project (especially, when using Express), there are several different methods that can be used to set up the overall file structure and flow. One of the most commonly used architectural patterns is called MVC. This acronym stands for "Model, View, Controller".
 This pattern is favored because of its alignment with the computer science design principle, [**separation of concerns**](https://en.wikipedia.org/wiki/Separation_of_concerns). By dividing up responsibilities within our file structure, for example, we can have our db connection work in one file and api routes in another file, ...etc.
 
 ```
@@ -27,7 +27,7 @@ package-lock.json
 
 ### Models
 
-In this folder, you can write the functionality & logics related to the Database (if you aren't using ORM) like insert, fetch, update, delete queries. It takes the query request from the controller & sends the response back to the controller.
+In this folder, you can write the functionality & logics related to the database (if you aren't using ORM) like insert, fetch, update, delete queries. It takes the query request from the controller & sends the response back to the controller.
 The naming convention for the model files is: `name-here-model.js`.
 
 Here’s an example model using JavaScript and Mongoose.
@@ -91,4 +91,4 @@ router.get('/posts', (req, res) => {
 ## Resources
 
 - [MVC Architecture with NodeJS and Mongoose](https://medium.com/geekculture/mvc-architecture-with-express-server-e35aedfe7889)
-- [express MVC structure](https://codingstatus.com/express-mvc-structure/)
+- [Express MVC structure](https://codingstatus.com/express-mvc-structure/)
