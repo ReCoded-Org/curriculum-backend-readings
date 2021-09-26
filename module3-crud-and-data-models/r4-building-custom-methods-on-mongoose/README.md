@@ -1,6 +1,6 @@
-## Building your own methods on mongoose
+## Building Your Own Methods on Mongoose
 
-In mongoose, instances of Models are documents. Documents have many of their own built-in instance methods. We may also define our own custom document instance methods.
+In Mongoose, instances of Models are documents. Documents have many of their own built-in instance methods. We may also define our own custom document instance methods.
 
 For example:
 
@@ -27,4 +27,4 @@ dog.findSimilarTypes((err, dogs) => {
 
 ## Resources
 
-- [instance methods in mongoose](https://mongoosejs.com/docs/guide.html#methods)
+- [instance methods in Mongoose](https://mongoosejs.com/docs/guide.html#methods)

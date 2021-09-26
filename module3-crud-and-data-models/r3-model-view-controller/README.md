@@ -30,7 +30,7 @@ package-lock.json
 In this folder, you can write the functionality & logics related to the Database (if you aren't using ORM) like insert, fetch, update, delete queries. It takes the query request from the controller & sends the response back to the controller.
 The naming convention for the model files is: `name-here-model.js`.
 
-Here’s an example model using JavaScript and mongoose.
+Here’s an example model using JavaScript and Mongoose.
 
 ```js
 // post-model.js
@@ -90,5 +90,5 @@ router.get('/posts', (req, res) => {
 
 ## Resources
 
-- [MVC Architecture with NodeJS and mongoose](https://medium.com/geekculture/mvc-architecture-with-express-server-e35aedfe7889)
+- [MVC Architecture with NodeJS and Mongoose](https://medium.com/geekculture/mvc-architecture-with-express-server-e35aedfe7889)
 - [express MVC structure](https://codingstatus.com/express-mvc-structure/)

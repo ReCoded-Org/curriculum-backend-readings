@@ -1,8 +1,8 @@
-## Intoduction to database schemas
+## Intoduction To Database Schemas
 
 A database schema is a blueprint or architecture of how our data will look. It doesn’t hold data itself, but instead describes the shape of the data and how it might relate to other tables or models.
 
-For example, this is a `customer` schema in MongoDB using mongoose.
+For example, this is a `customer` schema in MongoDB using Mongoose.
 
 ```js
 const mongoose = require("mongoose");

@@ -1,4 +1,4 @@
-## Principles of setting up your schema
+## Principles Of Setting up Your Schema
 
 Poorly designed databases can cause many problems, including wasting resources, making maintenance difficult, and hindering performance. That's why having a great database schema design is a crucial part of effective data management.
 By defining categories of data and relationships between those categories, database schema design makes data much easier to retrieve, consume, manipulate, and interpret.

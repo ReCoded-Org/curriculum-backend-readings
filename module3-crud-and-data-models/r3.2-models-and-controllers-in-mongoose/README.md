@@ -1,4 +1,4 @@
-## Models and controllers in mongoose
+## Models and Controllers in Mongoose
 
 Mongoose is one of the fundamental tools for manipulating data for a Node.js and MongoDB backend.
 
@@ -28,12 +28,12 @@ const Food = mongoose.model("Food", food);
 module.exports = Food;
 ```
 
-And we are required to do the CRUD operation on this model, how can we acheive that with mongoose?
+And we are required to do the CRUD operation on this model, how can we acheive that with Mongoose?
 we will first create a `food-conroller` for all the food requests and place all requests in there.
 
 - #### Read
 
-To get all the foods from our MongoDB using mongoose we can simply use the `find({})` function.
+To get all the foods from our MongoDB using Mongoose we can simply use the `find({})` function.
 
 Note: we can read specific items from MongoDB using queries in the `find()` function.
 

@@ -1,1 +1,1 @@
-# Module 3: Crud and data models
+# Module 3: CRUD and Data Models
