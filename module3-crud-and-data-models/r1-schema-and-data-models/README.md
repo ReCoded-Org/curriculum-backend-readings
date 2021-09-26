@@ -63,7 +63,17 @@ Note: Use `POST` when you want to add a child resource under resources collectio
 
 `POST http://www.myrestaurant.com/api/dishes/`
 
-We will need to send the dish data too.
+We will need to send the dish data too as an object.
+
+For example
+
+```js
+{
+  title: "Lasagna",
+  image: "www.food.com/lasagna.jpg",
+  tags: ["simple", "classic"]
+}
+```
 
 #### Read
 
@@ -85,6 +95,18 @@ Note: Use `PUT` when you want to modify a singular resource which is already a p
 ##### Request:
 
 `PUT http://www.myrestaurant.com/dishes/:id`
+
+We will need to send the new dish data too as an object.
+
+For example
+
+```js
+{
+  title: "New dish title",
+  image: "www.food.com/dish.jpg",
+  tags: ["simple", "classic"]
+}
+```
 
 #### Delete
 
