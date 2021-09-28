@@ -4,7 +4,9 @@ We will be working in the Node.js and NPM environment throughout this bootcamp. 
 2. Advantages of Node.js and why this course is focussed on Node.js
 
 ## Introduction to Node.js
-Is it a programming language? Is it a library? No, it's Node.js. In simple words, Node.js is nothing but JavaScript running on the server-side and it’s awesome.<br/><br/><img src="https://drive.google.com/uc?export=view&id=1oaHgcGKcrKbW6G-gFsncV95WhVmc40M7"><br/><br/>
+Is it a programming language? Is it a library? No, it's Node.js. In simple words, Node.js is nothing but JavaScript running on the server-side and it’s awesome.
+
+<img src="https://drive.google.com/uc?export=view&id=1oaHgcGKcrKbW6G-gFsncV95WhVmc40M7">
 
 But to be specific, Node.js is an open-source, cross-platform, backend JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
 
@@ -45,7 +47,9 @@ Firstly, though `.js` is the standard filename extension for JavaScript code, th
 4. **Single-threaded**: Node.js makes use of a single-threaded model with event looping. As a result, it can provide service to a much larger number of concurrent connections than traditional servers like Apache HTTP Server.
 5. **Highly scalable**: Node.js server responds in a non-blocking way, making it highly scalable in contrast with traditional servers, which create limited threads to handle requests.
 
-Node.js is written with C, C++ and JavaScript and uses libuv underhood to handle asynchronous events. Libuv is an abstraction layer for network and file system functionality on the OS.<br/><br/><img src="https://drive.google.com/uc?export=view&id=18ys74BkK9tzQ6u8avgVw9seweoXY6GnA"><br/><br/>
+Node.js is written with C, C++ and JavaScript and uses libuv underhood to handle asynchronous events. Libuv is an abstraction layer for network and file system functionality on the OS.
+
+<img src="https://drive.google.com/uc?export=view&id=18ys74BkK9tzQ6u8avgVw9seweoXY6GnA" width="60%">
 
 ### NPM and Packages in Node.js
 One of the major factors of Node's success is npm - its popular package manager, which allows JavaScript developers to share useful packages quickly and easily. NPM – or "Node Package Manager" – is the default package manager for JavaScript's runtime Node.js. NPM consists of two main parts:

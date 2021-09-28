@@ -9,11 +9,14 @@ API design is the collection of planning and architectural decisions you make wh
 
 Frontend developers need good UI design before building the product for their end users. Similarly, backend developers need good API design because the users in this case are the frontend developers who will integrate with your API to build the end-user facing product.
 
+Think about an open source API you might have worked with previously, such as [OpenWeatherMap](https://openweathermap.org/api) or [TMDB](https://www.themoviedb.org/documentation/api). What did you like about using these APIs? How were the APIs designed? Did you have to understand how the APIs were actually implemented under the hood?
+
 ## Characteristics of a well-designed API
 In general, an effective API design will have the following characteristics:
 - **Easy to read and work with**: A well designed API will be easy to work with, and its resources and associated operations can quickly be memorized by developers who work with it constantly.
 - **Hard to misuse**: Implementing and integrating with an API with good design will be a straightforward process, and writing incorrect code will be a less likely outcome. It has informative feedback, and doesn’t enforce strict guidelines on the API’s end consumer.
-- **Complete and concise**: Finally, a complete API will make it possible for developers to make full-fledged applications against the data you expose. Completeness happens over time usually, and most API designers and developers incrementally build on top of existing APIs. It is an ideal which every engineer or company with an API must strive towards.
+- **Complete and concise**: A complete API will make it possible for developers to make full-fledged applications against the data you expose. Completeness happens over time usually, and most API designers and developers incrementally build on top of existing APIs. It is an ideal which every engineer or company with an API must strive towards.
+- **Clean interface**: A well-designed API enables frontend developers to work with the APIs without needing to know details of its implementation, giving a clean interface for frontend integration.
 
 ## Here are some widely accepted best practices
 
@@ -110,7 +113,9 @@ The data you’re trying to expose can be characterized by a lot of properties w
 
 However, instead of defining more resources and endpoints to cover dynamic use cases and relationships, you can sweep properties and limit responses behind the ‘?’ in a query parameter, or isolate specific component of the data the client is working with using a path parameter.
 
-For example, let's consider a photosharing app. It could be of use to developers to get information on all the photos shared in a particular location and a specific hashtag. You also want to limit the number of results to 10 per API call to prevent server load. If the end user wants to find all photos in Boston with a hashtag #winter, the call would be: `GET /photos?location=boston&hashtag=winter&limit=10`
+For example, let's consider a photosharing app. It could be of use to developers to get information on all the photos shared in a particular location and a specific hashtag. You also want to limit the number of results to 10 per API call to prevent server load. If the end user wants to find all photos in Boston with a hashtag #winter, the call would be: `GET /photos?location=boston&hashtag=winter&limit=10`. Here `location`, `hashtag` and `limit` are query parameters. However, if the end user wants to find a specific photo by it's ID, the call would be: `GET /photos/13214` where the ID 13214 is a path parameter.
+
+The general thumb rule is: If you want to identify a resource, you should use a path parameter. But if you want sort or filter items, then you should use one or more query parameters.
 
 5. **Handle errors gracefully and return standard error codes**
 To eliminate confusion for API users when an error occurs, we should handle errors gracefully and return HTTP response codes that indicate what kind of error occurred. This helps the frontend developers using our API handle the error situations gracefully on the UI of the application, which ultimately leads to a good user experience for the end users. In the previous lessons, we have already mentioned the most commonly used HTTP response status codes.
@@ -197,9 +202,9 @@ We can add caching to return data from the local memory cache instead of queryin
 There are many kinds of caching solutions like Redis, in-memory caching, and more. We can change the way data is cached as our needs change.
 
 9. **Versioning our APIs**
-We should have different versions of API if we’re making any changes to them that may break clients. The versioning can be done according to semantic version (for example, 2.0.6 to indicate major version 2 and the sixth patch) like most apps do nowadays.
+We should have different versions of API if we’re making any changes to them that may break clients. The versioning can be done according to [semantic version](https://semver.org/) (for example, 2.0.6 to indicate major version 2 and the sixth patch) like most apps do nowadays.
 
-This way, we can gradually phase out old endpoints instead of forcing everyone to move to the new API at the same time. The v1 endpoint can stay active for people who don’t want to change, while the v2, with its shiny new features, can serve those who are ready to upgrade. This is especially important if our API is public. We should version them so that we won’t break third party apps that use our APIs.
+This way, we can gradually phase out old endpoints instead of forcing everyone to move to the new API at the same time. The v1 endpoint can stay active for people who don’t want to change, while the v2, with its shiny new features, can serve those who are ready to upgrade. This is especially important if our API is public. We should version them so that we won’t break third party apps that use our APIs. This is even relevant for mobile apps. For example, if an Android app integrates with our API, it can sometimes be hard to ensure all users update their app to the latest version. So for gradual phasing out, a previous version of the API can still stay active for the subset of users on the old app.
 
 Versioning is usually done with `/v1/`, `/v2/`, etc. added at the start of the API path.
 

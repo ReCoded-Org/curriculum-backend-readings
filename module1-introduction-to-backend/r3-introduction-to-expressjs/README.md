@@ -39,6 +39,10 @@ The final block starts up the server on a specified port ('3000') and prints a l
 
 Now that we have learned all about HTTP requests and responses and RESTful APIs, let's start building our own REST API server using Node.js and Express.js in the next two assignments.
 
+## Express with Node
+
+Although it is very much possible to write a vanilla Node.js server, as shown in [this MDN article](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework), it is rarely done so. You will always find the use of a framework like Express with Node to build server-side applications. This is because Node.js uses the HTTP module for network I/O, but you would still have to write a lot of boilerplate code to handle things like routes, cookies, sessions, etc. Express abstracts these away by providing simple functions for routing and middleware for cookies and sessions while still allowing the flexibility to customize the application architecture as desired by the developer.
+
 ---
 ## References
 - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction

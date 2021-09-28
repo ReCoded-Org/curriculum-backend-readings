@@ -43,12 +43,48 @@ HTTP/1.1 404 NOT FOUND
 ```
 In this case, the server identifies that it understands the HTTP protocol, but the 404 NOT FOUND status code signifies that the specific piece of content requested was not found. This might happen if the content was moved or if you typed in the URL path incorrectly or if the page was removed.
 
-You can also try to explore this on your browser. If you're using Google Chrome, open a new tab, right click and select "Inspect". This opens up the developer console of the browser. From the top menu on this console, select "Network". Now type https://www.re-coded.com/ in your browser bar and hit Enter. You will see a bunch of requests processed in the Network tab as the website loads. If you navigate to the top most request, you should be able to see the request and response headers we just talked about.<br/><br/><img src="https://drive.google.com/uc?export=view&id=1SJPdV6-75u8iTr5xrlMGGb5IgGeH9nn9"><br/><br/>
+You can also try to explore this on your browser. If you're using Google Chrome, open a new tab, right click and select "Inspect". This opens up the developer console of the browser. From the top menu on this console, select "Network". Now type https://www.re-coded.com/ in your browser bar and hit Enter. You will see a bunch of requests processed in the Network tab as the website loads. If you navigate to the top most request, you should be able to see the request and response headers we just talked about.
+
+<img src="https://drive.google.com/uc?export=view&id=1SJPdV6-75u8iTr5xrlMGGb5IgGeH9nn9">
 
 ### What is HTTPS?
-Since your HTTP request can be read by anyone at certain network junctures, it might not be a good idea to deliver information such as your credit card or password using this protocol. Fortunately, many servers support HTTPS, short for HTTP Secure, which allows you to encrypt data that you send and receive.
+Hypertext Transfer Protocol Secure (HTTPS) is the secure version of HTTP. HTTPS uses encryption in order to increase security of data transfer. This is particularly important when users transmit sensitive data, such as by logging into a bank account, email service, or health insurance provider.
 
-HTTPS is important to use when passing sensitive or personal information to and from websites. However, it is up to the businesses maintaining the servers to set it up. In order to support HTTPS, the business must apply for a certificate from a Certificate Authority. The certificate has a validity period and must be renewed from time-to-time to keep the secure services running.
+In modern web browsers such as Chrome, websites that do not use HTTPS are marked differently than those that are. Look for a padlock or similar indicator in the URL bar to signify the webpage is secure.
+
+<img src="https://drive.google.com/uc?export=view&id=1NkvHiapLP2dMtFXWe-Q6SAVyJ-1UFdPf">
+
+<img src="https://drive.google.com/uc?export=view&id=1EV6uPQJz3SPo2wy5NqUj0gy3Fm_75RX9" width="50%">
+
+HTTPS uses an encryption protocol called [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security), formerly known as Secure Sockets Layer (SSL). This protocol secures communications by using what’s known as an asymmetric public key infrastructure. This type of security system uses two different keys to encrypt communications between two parties:
+1. **Private key**: This key is controlled by the owner of a website and it’s kept, as the reader may have speculated, private. This key lives on a web server and is used to decrypt information encrypted by the public key.
+2. **Public key**: This key is available to everyone who wants to interact with the server in a way that’s secure. Information that’s encrypted by the public key can only be decrypted by the private key.
+
+HTTPS prevents websites from having their information broadcast in a way that’s easily viewed by anyone snooping on the network. When information is sent over regular HTTP, the information is broken into packets of data that can be easily “sniffed” using some software tools. This makes communication over an unsecure medium, such as public WiFi in a cafe, highly vulnerable to interception. In fact, all communications that occur over HTTP occur in plain text, making them highly accessible to anyone with the correct tools, and vulnerable to on-path attacks.
+
+With HTTPS, traffic is encrypted such that even if the packets are sniffed or otherwise intercepted, they will come across as nonsensical characters.
+
+**Before encryption**
+```
+This is a string of text that is completely readable
+```
+
+**After encryption**
+```
+ITM0IRyiEhVpa6VnKyExMiEgNveroyWBPlgGyfkflYjDaaFf/Kn3bo3OfghBPDWo6AfSHlNtL8N7ITEwIXc1gU5X73xMsJormzzXlwOyrCs+9XCPk63Y+z0=
+```
+
+In websites without HTTPS, it is possible for Internet service providers (ISPs) or other intermediaries to inject content into webpages without the approval of the website owner. This commonly takes the form of advertising, where an ISP looking to increase revenue injects paid advertising into the webpages of their customers. Unsurprisingly, when this occurs, the profits for the advertisements and the quality control of those advertisements are in no way shared with the website owner. HTTPS eliminates the ability of unmoderated third parties to inject advertising into web content.
+
+### How is HTTPS different from HTTP?
+Technically speaking, HTTPS is not a separate protocol from HTTP. It is simply using TLS/SSL encryption over the HTTP protocol. HTTPS occurs based upon the transmission of TLS/SSL certificates, which verify that a particular provider is who they say they are.
+
+When a user connects to a webpage, the webpage will send over its SSL certificate which contains the public key necessary to start the secure session. The two computers, the client and the server, then go through a process called an SSL/TLS handshake, which is a series of back-and-forth communications used to establish a secure connection. To take a deeper dive into encryption and the SSL/TLS handshake, you can read about what happens in a [TLS handshake](https://www.cloudflare.com/en-in/learning/ssl/what-happens-in-a-tls-handshake/).
+
+### How does a website start using HTTPS?
+For an SSL certificate to be valid, domains need to obtain it from a certificate authority (CA). A CA is an outside organization, a trusted third party, that generates and gives out SSL certificates. Many website hosting providers and other services offer free or paid TLS/SSL certificates. You can read more about SSL certificates [here](https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/).
+
+Once you have obtained the SSL certificate for your website, you can configure it on your server and enable it to communicate over port 443, which is the port for HTTPS communication over TCP.
 
 ### What is an API?
 API stands for application programming interface, which is a set of definitions and protocols for building and integrating application software. APIs let your product or service communicate with other products and services without having to know how they’re implemented. APIs are sometimes thought of as contracts, with documentation that represents an agreement between parties: If party 1 sends a remote request structured a particular way, this is how party 2’s software will respond.
@@ -97,3 +133,4 @@ In simplest words, in the REST architectural style, data and functionality are c
 - https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces
 - https://www.codecademy.com/articles/what-is-rest
 - https://restfulapi.net/
+- https://www.cloudflare.com/en-in/learning/ssl/what-is-https/
