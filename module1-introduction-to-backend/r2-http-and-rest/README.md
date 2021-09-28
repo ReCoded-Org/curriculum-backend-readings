@@ -1,6 +1,6 @@
 # HTTP and REST
 
-So what exactly happens when you enter a URL starting with http:// or https:// on your browser? How do the client and server communicate? The objectives of this lesson are:
+So what exactly happens when you enter a URL starting with `http://` or `https://` on your browser? How do the client and server communicate? The objectives of this lesson are:
 1. Understanding HTTP communication
 2. Understanding the request-response lifecycle
 3. Understanding REST APIs
@@ -12,21 +12,21 @@ Imagine two people on two sides of a river trying to send goods across to each o
 
 ### HTTP & TCP: How it Works
 When you type a web address such as www.re-coded.com in your browser, here is what happens:
-1. You enter the URL(Uniform Resource Locator) in the browser.
+1. You enter the URL (Uniform Resource Locator) in the browser.
 2. The browser looks for the IP address of the domain name in the DNS(Domain Name Server).
 3. The browser initiates a TCP connection with the server.
 4. The browser sends an HTTP request to the server.
 5. The server handles the incoming request and sends an HTTP response.
 6. The browser displays the HTML content.
 
-All these steps happen each time we enter any URL and they happen in the background within milliseconds.
+All these steps happen each time we enter any URL, and they happen in the background within milliseconds.
 
-Suppose you want to check out the upcoming coding bootcamps at http://www.re-coded.com. After you type the URL into your browser, your browser will extract the http part and recognize that it is the name of the network protocol to use. Then, it takes the domain name from the URL, in this case “re-coded.com”, and asks the Domain Name Server (DNS) to return an Internet Protocol (IP) address. Once the client knows the destination’s IP address, it then opens a connection to the server at that address, using the http protocol as specified. It will initiate a GET request to the server which contains the IP address of the host and optionally a data payload. The GET request contains the following text:
+Suppose you want to check out the upcoming coding bootcamps at http://www.re-coded.com. After you type the URL into your browser, your browser will extract the http part and recognize that it is the name of the network protocol to use. Then, it takes the domain name from the URL, in this case "re-coded.com", and asks the Domain Name Server (DNS) to return an Internet Protocol (IP) address. Once the client knows the destination’s IP address, it then opens a connection to the server at that address, using the http protocol as specified. It will initiate a GET request to the server which contains the IP address of the host and optionally a data payload. The GET request contains the following text:
 ```
 GET / HTTP/1.1
 Host: www.re-coded.com
 ```
-This identifies the type of request "GET", the path on www.re-coded.com (in this case, “/“) and the protocol “HTTP/1.1.” It could also be "HTTP/2.0". These are latest revisions of the original HTTP.
+This identifies the type of request "GET", the path on www.re-coded.com (in this case, "/") and the protocol "HTTP/1.1." It could also be "HTTP/2.0". These are latest revisions of the original HTTP.
 
 If the server is able to locate the path requested, the server might respond with the header:
 ```
@@ -56,15 +56,15 @@ API stands for application programming interface, which is a set of definitions 
 When you are developing a server, you will be developing an API that enables the frontend to communicate with your server without necessarily knowing the implementation details on your server. The most popular API architecture is the REST API.
 
 ## What is REST?
-REST, or REpresentational State Transfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource.
+REST, or **RE**presentational **S**tate **T**ransfer, is an architectural style for providing standards between computer systems on the web, making it easier for systems to communicate with each other. REST-compliant systems, often called RESTful systems, are characterized by how they are stateless and separate the concerns of client and server. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource.
 
 ### Guiding Principles of REST
-1. **Client–server** – By separating the user interface concerns from the data storage concerns, we improve the portability of the user interface across multiple platforms and improve scalability by simplifying the server components.
-2. **Stateless** – Each request from client to server must contain all of the information necessary to understand the request, and cannot take advantage of any stored context on the server. Session state is therefore kept entirely on the client.
-3. **Cacheable** – Cache constraints require that the data within a response to a request be implicitly or explicitly labeled as cacheable or non-cacheable. If a response is cacheable, then a client cache is given the right to reuse that response data for later, equivalent requests.
-4. **Uniform interface** – By applying the software engineering principle of generality to the component interface, the overall system architecture is simplified and the visibility of interactions is improved. In order to obtain a uniform interface, multiple architectural constraints are needed to guide the behavior of components. REST is defined by four interface constraints: identification of resources; manipulation of resources through representations; self-descriptive messages; and, hypermedia as the engine of application state.
-5. **Layered system** – The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior such that each component cannot “see” beyond the immediate layer with which they are interacting.
-6. **Code on demand (optional)** – REST allows client functionality to be extended by downloading and executing code in the form of applets or scripts. This simplifies clients by reducing the number of features required to be pre-implemented.
+1. **Client–server**: By separating the user interface concerns from the data storage concerns, we improve the portability of the user interface across multiple platforms and improve scalability by simplifying the server components.
+2. **Stateless**: Each request from client to server must contain all of the information necessary to understand the request, and cannot take advantage of any stored context on the server. Session state is therefore kept entirely on the client.
+3. **Cacheable**: Cache constraints require that the data within a response to a request be implicitly or explicitly labeled as cacheable or non-cacheable. If a response is cacheable, then a client cache is given the right to reuse that response data for later, equivalent requests.
+4. **Uniform interface**: By applying the software engineering principle of generality to the component interface, the overall system architecture is simplified and the visibility of interactions is improved. In order to obtain a uniform interface, multiple architectural constraints are needed to guide the behavior of components. REST is defined by four interface constraints: identification of resources; manipulation of resources through representations; self-descriptive messages; and, hypermedia as the engine of application state.
+5. **Layered system**: The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior such that each component cannot "see" beyond the immediate layer with which they are interacting.
+6. **Code on demand (optional)**: REST allows client functionality to be extended by downloading and executing code in the form of applets or scripts. This simplifies clients by reducing the number of features required to be pre-implemented.
 
 ### Resource
 The key abstraction of information in REST is a resource. Any information that can be named can be a resource: a document or image, a temporal service, a collection of other resources, a non-virtual object (e.g. a person), and so on. REST uses a resource identifier to identify the particular resource involved in an interaction between components.
@@ -84,7 +84,7 @@ There are 4 basic HTTP verbs we use in requests to interact with resources in a 
 - **DELETE** — remove a specific resource
 
 ### REST and HTTP are not same!
-A lot of people tend to compare HTTP with REST but REST and HTTP are not same. Roy Fielding who presented REST for the first time in 2000 in his famous dissertation did not mention any implementation directive – including any protocol preference and HTTP. REST intends to make the web (internet) more streamline and standard, but as long as you are honoring the 6 guiding principles of REST, you can call any interface RESTful.
+A lot of people tend to compare HTTP with REST but REST and HTTP are not same. Roy Fielding, who presented REST for the first time in 2000 in his famous dissertation, did not mention any implementation directive – including any protocol preference and HTTP. REST intends to make the web (internet) more streamline and standard, but as long as you are honoring the 6 guiding principles of REST, you can call any interface RESTful.
 
 In simplest words, in the REST architectural style, data and functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs). The resources are acted upon by using a set of simple, well-defined operations. The clients and servers exchange representations of resources by using a standardized interface and protocol – typically HTTP.
 

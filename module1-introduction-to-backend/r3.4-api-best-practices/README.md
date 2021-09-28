@@ -7,7 +7,7 @@ Although some of these suggestions may require going through more modules of the
 ## What is API design?
 API design is the collection of planning and architectural decisions you make when building an API. Your basic API design influences how well developers are able to consume it and even how they use it. Just like website design or product design, API design informs the user experience. Good API design principles meet initial expectations and continue to behave consistently and predictably.
 
-Frontend developers need good UI design before building the product for their end users. Similarly backend developers need good API design because the users in this case are the frontend developers who will integrate with your API to build the end-user facing product.
+Frontend developers need good UI design before building the product for their end users. Similarly, backend developers need good API design because the users in this case are the frontend developers who will integrate with your API to build the end-user facing product.
 
 ## Characteristics of a well-designed API
 In general, an effective API design will have the following characteristics:
@@ -187,7 +187,7 @@ app.listen(3000, () => console.log('server started'));
 7. **Maintain good security practices**
 Most communication between client and server should be private since we often send and receive private information. Therefore, using SSL/TLS for security is a must. A SSL certificate isn’t too difficult to load onto a server and the cost is free or very low. There’s no reason not to make our REST APIs communicate over secure channels instead of in the open.
 
-People shouldn’t be able to access more information that they requested. For example, a normal user shouldn’t be able to access information of another user. They also shouldn’t be able to access data of admins. To enforce the principle of least privilege, we need to add role checks either for a single role, or have more granular roles for each user.
+People shouldn’t be able to access more information that they requested. For example, a normal user shouldn’t be able to access information of another user. They also shouldn’t be able to access data of admins. To enforce the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), we need to add role checks either for a single role, or have more granular roles for each user.
 
 If we choose to group users into a few roles, then the roles should have the permissions that cover all they need and no more. If we have more granular permissions for each feature that users have access to, then we have to make sure that admins can add and remove those features from each user accordingly. Also, we need to add some preset roles that can be applied to a group users so that we don’t have to do that for every user manually.
 
