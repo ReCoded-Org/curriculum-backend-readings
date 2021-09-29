@@ -17,18 +17,24 @@ const customer = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Customer", customer);
+module.exports = mongoose.model("customer", customer);
 ```
 
-The same `customer` schema in a MySQL database.
+The same `customer` schema in PostgreSQL database using sequelize.
 
-```sql
-CREATE TABLE customer (
- id INT AUTO_INCREMENT PRIMARY KEY,
- name VARCHAR(50) NOT NULL,
- zipcode INT(15) default NULL,
-)
-
+```js
+module.exports = (sequelize, DataTypes) => {
+  const Customer = sequelize.define("customer", {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    zipcode: {
+      type: DataTypes.INTEGER,
+    },
+  });
+  return Customer;
+};
 ```
 
 We can see that the schema definition for the `customer` has a `name` that is type `string` and a `zipcode` that is of type `number`.
