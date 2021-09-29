@@ -12,7 +12,7 @@ But to be specific, Node.js is an open-source, cross-platform, backend JavaScrip
 
 And here is what a common Hello World code in Node.js would look like:
 
-```
+```js
 const http = require('http')
 
 const hostname = '127.0.0.1'

@@ -24,7 +24,7 @@ But where does all the data to be displayed on the frontend come from? How is a 
 
 A backend developer builds and maintains the code that powers those components which together enable the user-facing side of the website to even exist in the first place. Backend developers must be competent with one or more server-side languages such as JavaScript (Node.js), Ruby, Python, PHP or Java, frameworks like ExpressJS, Ruby on Rails, Python Django and databases like MySQL, PostgreSQL or MongoDB. They are also familiar with Linux as a deployment environment and DevOps tools like AWS, GCP, Apache, Nginx, Docker and Kubernetes.
 
-Backend developers need to be able to navigate across larger codebases and not get lost in the complexities of what may seem like programming labyrinths. They also need to be very meticulous when making changes to not "break" anything as there are usually delicate dependencies. Even frontend codebases are large and complex with delicate dependencies, but unlike frontend development where the written code translates directly to visual output one can see and interact with, backend development of business logic is often hard to visualise. Therefore to be a good backend developer, you need to be comfortable with dealing with abstracts.
+Backend developers need to be able to navigate across larger codebases and not get lost in the complexities. They also need to be very meticulous when making changes to not "break" anything as there are usually delicate dependencies. Even frontend codebases are large and complex with delicate dependencies, but unlike frontend development where the written code translates directly to visual output one can see and interact with, backend development of business logic is often hard to visualise. Therefore to be a good backend developer, you need to be comfortable with dealing with abstracts.
 
 <img src="https://drive.google.com/uc?export=view&id=1PkIrF_pNnGbX1NiW-q1JIKokql1v4FI7" width="50%">
 
@@ -37,7 +37,7 @@ To be a good fullstack developer, you need to be comfortable with dealing with a
 
 <img src="https://drive.google.com/uc?export=view&id=13hdTlUW0tk0J91wV-r7ruPX7uATpt9pe" width="50%">
 
-## Backend web architecture
+## Backend Web Architecture
 Let's start diving deeper into what do we mean when we say frontend and backend. The frontend is the code that is executed on the client side. This code runs in the user’s browser and creates the user interface. The backend is the code that runs on the server, receives requests from the clients, and contains the logic to send the appropriate data back to the client. The backend also includes the database, which will persistently store all of the data for the application.
 
 ### What are clients?

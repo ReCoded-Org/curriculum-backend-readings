@@ -24,7 +24,7 @@ You might be thinking do I have to write a bunch of if statements within my API 
 We will be learning to use [express-validator](https://express-validator.github.io/docs/) in the next assignment.
 
 Consider this piece of code:
-```
+```js
 // ...initial code omitted for simplicity
 const { body, validationResult } = require('express-validator');
 
@@ -47,7 +47,7 @@ app.post(
 ```
 
 Now, whenever a request that includes invalid username or password fields is submitted, your server will respond with a 400 error response like this:
-```
+```json
 {
   "errors": [
     {

@@ -17,7 +17,7 @@ While Express itself is fairly minimalist, developers have created compatible mi
 
 This probably looks quite similar to the Hello World example of plain Node.js.
 
-```
+```js
 const express = require('express');
 const app = express();
 const port = 3000;

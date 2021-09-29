@@ -26,7 +26,7 @@ Please note: This list is not necessarily exhaustive and there is always room fo
 REST APIs should accept JSON for request payload and also send responses to JSON. JSON is the standard for transferring data. Almost every networked technology can use it: JavaScript has built-in methods to encode and decode JSON either through the Fetch API or another HTTP client. Server-side technologies have libraries that can decode JSON without doing much work.
 
 In Express, we can use the body-parser middleware to parse the JSON request body.
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -49,7 +49,7 @@ For example, we should create routes like GET `/articles` for getting news artic
 The combination of the HTTP verb and resource noun convey the purpose of an API endpoint. API endpoints like GET `/fetchArticles` or POST `/update-articles` use redundant verbs like "fetch" and "update" which is not required.
 
 In Express, we can write these endpoints as:
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -89,7 +89,7 @@ When designing endpoints, it makes sense to group those that contain associated 
 For example, if we want an endpoint to get the comments for a news article, we should append the `/comments` path to the end of the `/articles` path.
 
 In Express, we can write this as:
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -123,7 +123,7 @@ To eliminate confusion for API users when an error occurs, we should handle erro
 Along with error codes, try to provide good feedback through your response messages. Good feedback involves positive validation on correct implementation, and an informative error on incorrect implementation that can help users debug and correct the way they use the product. Describe your error responses well, but keep them concise and neat.
 
 For example, if we want to reject the data from the request payload, then we should return a 400 response as follows in an Express API:
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -153,7 +153,7 @@ app.listen(3000, () => console.log('server started'));
 The databases behind a REST API can get very large. Sometimes, there’s so much data that it shouldn’t be returned all at once because it’s way too slow or will bring down our systems. Therefore, we need ways to filter items. We also need ways to paginate data so that we only return a few results at a time. We don’t want to tie up resources for too long by trying to get all the requested data at once. Filtering and pagination both increase performance by reducing the usage of server resources.
 
 Here’s a small example where an API can accept a query string with various query parameters to let us filter out items by their fields:
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -209,7 +209,7 @@ This way, we can gradually phase out old endpoints instead of forcing everyone t
 Versioning is usually done with `/v1/`, `/v2/`, etc. added at the start of the API path.
 
 For example, we can do that with Express as follows:
-```
+```js
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();

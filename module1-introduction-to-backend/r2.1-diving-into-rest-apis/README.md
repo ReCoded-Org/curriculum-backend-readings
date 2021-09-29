@@ -20,7 +20,7 @@ HTTP defines a set of request methods to indicate the desired action to be perfo
 
 While developing APIs, GET and POST are the most commonly and frequently used methods.
 
-## Structure of a HTTP Request
+## Structure of an HTTP Request
 
 HTTP requests, and responses, share similar structure and are composed of:
 1. A start-line describing the requests to be implemented, or its status of whether successful or a failure. This start-line is always a single line.
@@ -67,7 +67,7 @@ Bodies can be broadly divided into two categories:
 - Single-resource bodies, consisting of one single file, defined by the two headers: Content-Type and Content-Length.
 - Multiple-resource bodies, consisting of a multipart body, each containing a different bit of information. This is typically associated with HTML Forms.
 
-## Structure of a HTTP Response
+## Structure of an HTTP Response
 
 The structure is similar to HTTP Requests.
 
