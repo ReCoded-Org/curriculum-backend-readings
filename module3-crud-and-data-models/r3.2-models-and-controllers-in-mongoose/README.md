@@ -48,7 +48,7 @@ const app = express();
 
 app.get("/foods", async (request, response) => {
   const foods = await foodModel.find({});
-  response.send(foods);
+  response.json(foods);
 });
 
 module.exports = app;
@@ -66,7 +66,7 @@ Example:
 app.post("/food", async (request, response) => {
   const food = new foodModel(request.body);
   await food.save();
-  response.status(201).send(food);
+  response.status(201).json(food);
 });
 
 // ...
@@ -83,8 +83,7 @@ Example:
 
 app.put("/food/:id", async (request, response) => {
     await foodModel.findByIdAndUpdate(request.params.id, request.body);
-    await foodModel.save();
-    response.send(food);
+    response.json(food);
   }
 });
 
@@ -104,7 +103,7 @@ app.delete("/food/:id", async (request, response) => {
     const food = await foodModel.findByIdAndDelete(request.params.id);
 
     if (!food) response.status(404).send("No item found");
-    response.status(204).send();
+    response.status(204).json();
   }
 });
 
