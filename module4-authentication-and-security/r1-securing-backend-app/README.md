@@ -49,12 +49,11 @@ Thus, when a user comes to your app, you can ask them first about their email ad
 
 To make this a bit harder to brute force, you can create a token system. Tokens are random strings of characters, usually with arbitrary length, that are intended to be hard to brute force (guess). A token can look something like this: `4f57ec27561d4524e6b5bb1f08fb7cccfb36a5e5` and is generated using special functions called _Cryptographically Secure Pseudo-Random Number Generator_ (CSPRNG). For example, you can run this code inside NodeJS to get a secure token using the `crypto` NodeJS library:
 
-
 ```js
-const crypto = require('crypto');
+const crypto = require("crypto");
 const size = 20; // bytes (or 40 hex digits)
 
-const token = crypto.randomBytes(size).toString('hex')
+const token = crypto.randomBytes(size).toString("hex");
 console.log(token); // example output: 5d4225087676cf60670144e37b1694355a2e24d2
 ```
 
@@ -75,19 +74,23 @@ Indeed this works, passwords are okay and a perfectly viable and widespread appr
 Hence, there are two things to remember about passwords:
 They require validation to prevent brute force attacks (thus preventing easy to guess passwords)
 Use salt and hash to prevent rainbow attacks -- point to a code example here or include your own, and then this needs an in-depth explanation because this is probably the most important section that new people will forget about writing passwords
- 
+
 ## Security Checklist
 
 ### Storing Passwords
+
 **Never** save the password as plain text in a database. Always use industry-standard cryptographic algorithms like bcrypt to hash and salt passwords. More on that later.
 
 ### Password Policy
+
 You need to implement and **enforce** a password validation policy. It can contain:
+
 - The minimum acceptable combination of characters (lowercase, uppercase, special characters) in a password
 - Minimum length
 - Expiry dates (if necessary)
 
 ### Use Federated Identity Management
+
 Federated identity management is a configuration that can be made between two or more trusted domains to allow consumers of those domains to access applications and services using the same digital identity. Such identity is known as federated identity, and the use of such a solution pattern is known as identity federation.
 An example of this is to offer people to sign in with Google, or Github. Here, Google is an identity provider (IdP).
 
@@ -103,19 +106,23 @@ OAuth
 We will cover OID and OAuth later in this module.
 
 ### Database security
-You need to ensure basic isolation of your database servers, use firewalls to limit access, protect and encrypt backups, and opt-in for database as service (DBaaS) providers when possible. 
+
+You need to ensure basic isolation of your database servers, use firewalls to limit access, protect and encrypt backups, and opt-in for database as service (DBaaS) providers when possible.
 
 ### API Throttling (Rate Limiting)
+
 This is a wide subject too and it can be applied to different elements of security. It can protect your server from some types of DDoS and DoS attacks, as well as thwarts brute-forcing attempts to break through your security. You can also limit how many login attempts are allowed, and then block attempts for a pre-defined cool-off period.
 
 ### Secure HTTP (HTTPS)
+
 As you've known know, HTTP is a protocol to exchange messages between a client and server. And since all your messages will go through the network connection (a wire), an attacker anywhere on the network can sniff (listen to) all your messages, including passwords, tokens, etc. en route.
 To make these messages obscure (or gibberish), you need to encrypt them using encryption technology. That's when the protocol is upgraded to SECURE status.
 
 The process is usually done by obtaining a certificate from a Certificate Authority (CA) that issues the digital identity for the browsers to trust. The certificate contains a private key that is used by the server to encrypt and decrypt the messages.
 
 ### Test your code
-Testing the code correctly to ensure it achieves its intended purpose around normal and abnormal scenarios. 
+
+Testing the code correctly to ensure it achieves its intended purpose around normal and abnormal scenarios.
 
 For instance, if you define an endpoint is only intended for admins, you need to test that it:
 Rejects gracefully any request from non-admin users
@@ -124,6 +131,7 @@ When if a token has expired, it redirects the request correctly
 These are some examples of test cases. You need to account for edge cases in your logic as well.
 
 ### Update your code and libraries
+
 Cyberattacks evolve, as well as the tools to carry them out. A library used today can be broken tomorrow. You need to ensure that you always update your libraries and apply the necessary patches to your code so it follows up-to-date security practices and guides.
 
 Cybersecurity is an unattainable quest, so we will never be 100% secure. We just aspire to be as close as possible to that.
