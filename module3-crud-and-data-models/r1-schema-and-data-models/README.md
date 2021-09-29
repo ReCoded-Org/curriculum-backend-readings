@@ -20,7 +20,7 @@ const customer = new mongoose.Schema({
 module.exports = mongoose.model("Customer", customer);
 ```
 
-The same `customer` schema in a MySql database.
+The same `customer` schema in a MySQL database.
 
 ```sql
 CREATE TABLE customer (
