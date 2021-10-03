@@ -390,7 +390,7 @@ router.get("/dashboard", async (req, res) => {
     res.render("dashboard", { user, todos });
   } else {
     // user have not logged in, redirect to login page
-    res.status(403).redirect("/login");
+    res.status(401).redirect("/login");
   }
 });
 
