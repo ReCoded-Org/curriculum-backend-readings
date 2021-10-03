@@ -166,7 +166,7 @@ const { User } = require("../db"); // as exported in the db file
 router.post("/elevate", async (req, res) => {
   const user = req.session.user;
 
-  // Check if the use has signed in, and is admin
+  // Check if the user has signed in, and is admin
   if (user && user.isAdmin) {
     const { subject_id, role_id } = req.body;
 
@@ -211,7 +211,7 @@ if (user && (user.isAdmin || user.isModerator)) {
 
 There is still a problem with our code though. It is very messy with lots of if-else and we can introduce a bug very easily by not returning or badly structures if-else clauses.
 
-In the next lesson, we will introduce an easier way to enforce our guards using a feature called **middleware**. We can define an `onlyAdmins`, `onlyModerators`, and `onlyAuthenticated` middlewares that would stop unauthorized requests, and only let authorized access through.
+In the next lesson, we will introduce an easier way to enforce our guards using a feature called **middleware**. We can define an `onlyAdmins`, `onlyModerators`, and `onlyAuthenticated` middleware that would stop unauthorized requests, and only let authorized access through.
 
 ## **Conclusion**
 
