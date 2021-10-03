@@ -77,16 +77,20 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 This is a string that has 3 parts separated by a dot (.) and `base64` encoded. It can be decoded easily using any `base64` decoder.
 
 ```js
-const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTYzMjk0MTc4NCwiZXhwIjoxNjMyOTQ1Mzg0fQ.MVnMhRVLYhaGqtZEX4AiEMrQwFWRvRLp6MATodg6E6A';
+const token =
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTYzMjk0MTc4NCwiZXhwIjoxNjMyOTQ1Mzg0fQ.MVnMhRVLYhaGqtZEX4AiEMrQwFWRvRLp6MATodg6E6A";
 
-token.split('.').forEach(part => console.log(atob(part)))
+token.split(".").forEach((part) => console.log(atob(part)));
 
 /* Output:
+
 {"typ":"JWT","alg":"HS256"}
 
 {"sub":"1234567890","name":"John Doe","admin":true,"iat":1632941784,"exp":1632945384}
 
 1YÌ�KbªÖD_"ÊÐÀU½éèÀ¡Ø:
+
+*/
 ```
 
 The first part defines the _algorithm_ and the type. The second part is called the payload or _claims_, which identifies the user, issue time, expiry time, and other data. The third part is called the _signature_.
