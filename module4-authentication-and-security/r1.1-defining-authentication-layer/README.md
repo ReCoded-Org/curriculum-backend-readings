@@ -60,7 +60,16 @@ class User extends Model {
         hashed_password: DataTypes.BLOB, // you can store it as char too
       },
       // options
-      { sequelize } // Pass the database connection instance
+      {
+        sequelize, // Pass the database connection instance
+        defaultScope: {
+          attributes: {
+            exclude: ["hashed_password"], // don't query password by default
+          }
+        },
+        scopes: {
+          withPassword: { attributes: {} }
+        } }
     );
   }
 
@@ -320,7 +329,8 @@ class User extends Model {
   static async login(username, password) {
 
     // attempt to find a user in the database with given username
-    const user = await User.findOne({
+    // Rememeber to use the withPassword scope so we query the password
+    const user = await User.scope('withPassword').findOne({
       where: {
         username,
       },
