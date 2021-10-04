@@ -1,10 +1,10 @@
-## Principles Of Setting up Your Schema
+# Principles Of Setting up Your Schema
 
 Poorly designed databases can cause many problems, including wasting resources, making maintenance difficult, and hindering performance. That's why having a great database schema design is a crucial part of effective data management.
 By defining categories of data and relationships between those categories, database schema design makes data much easier to retrieve, consume, manipulate, and interpret.
 Without a clean, efficient, consistent database schema, you’ll struggle to make the best use of your enterprise data. For example, the same data might be duplicated in multiple locations—or even worse, might be inconsistent between these locations.
 
-### Type of database
+## Type of database
 
 Most developers don't see the difference between relational database schema and MongoDB schema, but in reality, it is not the same
 
@@ -59,7 +59,9 @@ Having a JOIN or `$lookup` means you are doing some kind of search in your datab
 
 This means that no matter what you read or watch, you may still need to make few changes to your schema based on your own use case and application.
 
-## Resources
+---
 
-- [Schema design best practices](https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/)
-- [Guide to database schema design](https://www.xplenty.com/blog/complete-guide-to-database-schema-design-guide/)
+## References
+
+- https://www.mongodb.com/developer/article/mongodb-schema-design-best-practices/
+- https://www.xplenty.com/blog/complete-guide-to-database-schema-design-guide/

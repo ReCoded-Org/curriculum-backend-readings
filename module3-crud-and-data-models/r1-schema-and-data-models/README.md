@@ -1,6 +1,6 @@
-## Introduction To Database Schemas
+# Introduction To Database Schemas
 
-A database schema is a blueprint or architecture of how our data will look. It doesn’t hold data itself, but instead describes the shape of the data and how it might relate to other tables or models.
+A database schema is a blueprint or architecture of how our data will look. It doesn’t hold data itself, but instead describes the shape and structure of the data and how it might be related to other data.
 
 For example, this is a `customer` schema in MongoDB using Mongoose.
 
@@ -20,7 +20,7 @@ const customer = new mongoose.Schema({
 module.exports = mongoose.model("customer", customer);
 ```
 
-The same `customer` schema in PostgreSQL database using sequelize.
+The same `customer` schema in PostgreSQL using [Sequelize](https://sequelize.org/).
 
 ```js
 const Sequelize = require("sequelize");
@@ -39,7 +39,10 @@ module.exports = (sequelize, DataTypes) => {
 };
 ```
 
-We can see that the schema definition for the `customer` has a `name` that is type `string` and a `zipcode` that is of type `number`.
+We can see that the schema definition for the `customer` has a `name` that is type `string` and a `zipcode` that is of type `number`. The `name` field is mandatory and cannot be empty.
+
+Another concept that can be confused with the database schema is the "Model".
+Models are fancy constructors compiled from schema definitions. An instance of a model is called a document. Models are responsible for creating and reading documents from the underlying MongoDB database.
 
 ## Introduction to CRUD operations
 
@@ -212,8 +215,10 @@ router.delete("/dishes/:id", async (req, res) => {
 });
 ```
 
-## Resources
+---
 
-- [What is REST](https://restfulapi.net/)
-- [See this](https://www.educative.io/blog/crud-operations#what) for more information on how CRUD operations are performed directly on `SQL` database.
-- [database schemas](https://www.educative.io/blog/what-are-database-schemas-examples#types)
+## References
+
+- https://restfulapi.net/
+- https://www.educative.io/blog/crud-operations#what
+- https://www.educative.io/blog/what-are-database-schemas-examples#types

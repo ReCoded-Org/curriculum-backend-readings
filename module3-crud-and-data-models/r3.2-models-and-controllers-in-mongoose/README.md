@@ -1,4 +1,4 @@
-## Models and Controllers in Mongoose
+# Models and Controllers in Mongoose
 
 Mongoose is one of the fundamental tools for manipulating data for a Node.js and MongoDB backend.
 
@@ -110,6 +110,8 @@ app.delete("/food/:id", async (request, response) => {
 // ...
 ```
 
-## Resources
+---
 
-- [CRUD operations in Mongoose](https://mongoosejs.com/docs/models.html#Querying)
+## References
+
+- https://mongoosejs.com/docs/models.html#Querying

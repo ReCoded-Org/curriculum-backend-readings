@@ -1,4 +1,4 @@
-## Building Your Own Methods on Mongoose
+# Building Your Own Methods on Mongoose
 
 In Mongoose, instances of models are documents. Documents have many of their own built-in instance methods (called static methods). We may also define our own custom document instance methods.
 We use instance methods to add new custom methods to our model that didn't exist before, that will help us reduce our code duplications if that method is used in multiple places, and, imporove the overall code structure.
@@ -26,6 +26,8 @@ dog.findSimilarTypes((err, dogs) => {
 });
 ```
 
-## Resources
+---
 
-- [Instance methods in Mongoose](https://mongoosejs.com/docs/guide.html#methods)
+## References
+
+- https://mongoosejs.com/docs/guide.html#methods

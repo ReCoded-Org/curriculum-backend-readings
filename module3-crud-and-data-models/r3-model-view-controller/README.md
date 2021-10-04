@@ -88,7 +88,9 @@ router.get('/posts', (req, res) => {
 });
 ```
 
-## Resources
+---
 
-- [MVC Architecture with NodeJS and Mongoose](https://medium.com/geekculture/mvc-architecture-with-express-server-e35aedfe7889)
-- [Express MVC structure](https://codingstatus.com/express-mvc-structure/)
+## References
+
+- https://medium.com/geekculture/mvc-architecture-with-express-server-e35aedfe7889
+- https://codingstatus.com/express-mvc-structure/
