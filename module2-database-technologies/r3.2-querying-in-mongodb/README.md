@@ -24,7 +24,7 @@ Refer to the [official documentation for
 querying](https://docs.mongodb.com/manual/tutorial/query-documents/). Select
 JavaScript in the top-right.
 
-Additionally, [MongoDB Compass] is a graphical interface that can be used to visually run
+Additionally, [MongoDB Compass](https://www.mongodb.com/products/compass) is a graphical interface that can be used to visually run
 Mongo queries. There is no difference other than convenience. It is useful to
 know how to query both in command-line and graphically. 
 
