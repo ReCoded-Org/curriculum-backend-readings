@@ -7,9 +7,9 @@ This pattern is favored because of its alignment with the computer science desig
 
 ```
 app-name-here
- |- Controllers
+ |- controllers
  |- db
- |- Models
+ |- models
  |- node_modules
 .gitignore
 index.js
