@@ -1,3 +1,3 @@
-# Express.js Additional Practice
+# Express.js Meme API
 
 Assignment repo link to be inserted

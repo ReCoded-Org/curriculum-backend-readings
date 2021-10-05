@@ -1,7 +1,9 @@
 # Module 1: Introduction to Backend
 
+Last Revised: 05/10/2021
+
 ## Summary
-Writing backend code requires an intimate understanding of REST and the requestresponse lifecycle. Students learn how to build and run a local server with API endpoints
+Writing backend code requires an intimate understanding of REST and the request-response lifecycle. Students learn how to build and run a local server with API endpoints
 using Node.js and Express.js, handle GET, POST, and other HTTP requests, perform
 validations and return a response.
 
@@ -21,19 +23,15 @@ validations and return a response.
     
 3 [Introduction to Express.js [R]](../module1-introduction-to-backend/r3-introduction-to-expressjs/README.md)
     
-3.1 [Express.js hello world application [L]](../module1-introduction-to-backend/r3.1-expressjs-hello-world/README.md)
+3.1 [Express.js Meme Website [L]](../module1-introduction-to-backend/r3.1-expressjs-meme-website/README.md)
 
-3.2 [Express.js real world application [L]](../module1-introduction-to-backend/r3.2-express.js-real-world/README.md)
+3.2 [Express.js Meme API [L]](../module1-introduction-to-backend/r3.2-express.js-meme-api/README.md)
 
-3.3 [Additional practice with routes/functions on Express application [L]](../module1-introduction-to-backend/r3.3-expressjs-additional-practice/README.md)
-
-3.4 [API best practices [R]](../module1-introduction-to-backend/r3.4-api-best-practices/README.md)
+4 [API best practices [R]](../module1-introduction-to-backend/r4-api-best-practices/README.md)
     
-4 [Server-side Validation [R]](../module1-introduction-to-backend/r4-server-side-validation/README.md)
+4.1 [Server-side Validation [R]](../module1-introduction-to-backend/r4.1-server-side-validation/README.md)
     
-4.1 [Server-side validation setup [L]](../module1-introduction-to-backend/r4.1-server-side-validation-setup/README.md)
-
-4.2 [Server-side validation additional practice [L]](../module1-introduction-to-backend/r4.2-validation-additional-practice/README.md)
+4.2 [Server-side Validation Practice [L]](../module1-introduction-to-backend/r4.2-server-side-validation-practice/README.md)
 
 5 [API Documentation [R]](../module1-introduction-to-backend/r5-api-documentation/README.md)
     

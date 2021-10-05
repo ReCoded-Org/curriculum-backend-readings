@@ -31,17 +31,17 @@ app.listen(port, () => {
 });
 ```
 
-The first two lines `require()` (import) the express module and create an Express application. This object, which is traditionally named app, has methods for routing HTTP requests, configuring middleware, rendering HTML views, registering a template engine, and modifying application settings that control how the application behaves (e.g. the environment mode, whether route definitions are case sensitive, etc.)
+The first two lines require or import the express module and create an Express application. This object, which is traditionally named app, has methods for routing HTTP requests, configuring middleware, rendering HTML views, registering a template engine, and modifying application settings that control how the application behaves (e.g. the environment mode, whether route definitions are case sensitive, etc.)
 
-The middle part of the code (the three lines starting with `app.get`) shows a route definition. The `app.get()` method specifies a callback function that will be invoked whenever there is an HTTP GET request with a path ('/') relative to the site root. The callback function takes a request and a response object as arguments, and calls `send()` on the response to return the string "Hello World!"
+The middle part of the code (the three lines starting with `app.get('/')` shows a route definition. The `app.get()` method specifies a callback function that will be invoked whenever there is an HTTP GET request with a path ('/') relative to the site root. The callback function takes a request and a response object as arguments, and calls `send()` on the response to return the string "Hello World!"
 
-The final block starts up the server on a specified port ('3000') and prints a log comment to the console. With the server running, you could go to localhost:3000 in your browser to see the example response returned.
-
-Now that we have learned all about HTTP requests and responses and RESTful APIs, let's start building our own REST API server using Node.js and Express.js in the next two assignments.
+The final block starts up the server on a specified port ('3000') and prints a log comment to the console. With the server running, you could go to `localhost:3000` in your browser to see the example response returned. If you're curious to know why we use port 3000, you can take a look at [this Stackoverflow post](https://stackoverflow.com/questions/37929173/significance-of-port-3000-in-express-apps).
 
 ## Express with Node
 
 Although it is very much possible to write a vanilla Node.js server, as shown in [this MDN article](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework), it is rarely done so. You will always find the use of a framework like Express with Node to build server-side applications. This is because Node.js uses the HTTP module for network I/O, but you would still have to write a lot of boilerplate code to handle things like routes, cookies, sessions, etc. Express abstracts these away by providing simple functions for routing and middleware for cookies and sessions while still allowing the flexibility to customize the application architecture as desired by the developer.
+
+Now that we have learned all about HTTP requests and responses and RESTful APIs, let's start building our own REST API server using Node.js and Express.js in the next two assignments.
 
 ---
 ## References

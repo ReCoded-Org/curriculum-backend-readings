@@ -6,14 +6,14 @@ So what exactly happens when you enter a URL starting with `http://` or `https:/
 3. Understanding REST APIs
 
 ## What is HTTP?
-HTTP stands for Hypertext Transfer Protocol and is used to structure requests and responses over the internet. The transfer of resources happens using TCP(Transmission Control Protocol). TCP is used to manage many types of internet connections in which one computer or device wants to send something to another. HTTP is the command language that the devices on both sides of the connection must follow in order to communicate.
+HTTP stands for Hypertext Transfer Protocol and is used to structure requests and responses over the internet. The transfer of resources happens using TCP (Transmission Control Protocol). TCP is used to manage many types of internet connections in which one computer or device wants to send something to another. HTTP is the command language that the devices on both sides of the connection must follow in order to communicate.
 
 Imagine two people on two sides of a river trying to send goods across to each other. TCP is the bridge they build while HTTP is the language they use to communicate.
 
 ### HTTP & TCP: How it Works
 When you type a web address such as www.re-coded.com in your browser, here is what happens:
 1. You enter the URL (Uniform Resource Locator) in the browser.
-2. The browser looks for the IP address of the domain name in the DNS(Domain Name Server).
+2. The browser looks for the IP address of the domain name in the DNS (Domain Name Server).
 3. The browser initiates a TCP connection with the server.
 4. The browser sends an HTTP request to the server.
 5. The server handles the incoming request and sends an HTTP response.
@@ -21,7 +21,7 @@ When you type a web address such as www.re-coded.com in your browser, here is wh
 
 All these steps happen each time we enter any URL, and they happen in the background within milliseconds.
 
-Suppose you want to check out the upcoming coding bootcamps at http://www.re-coded.com. After you type the URL into your browser, your browser will extract the http part and recognize that it is the name of the network protocol to use. Then, it takes the domain name from the URL, in this case "re-coded.com", and asks the Domain Name Server (DNS) to return an Internet Protocol (IP) address. Once the client knows the destination’s IP address, it then opens a connection to the server at that address, using the http protocol as specified. It will initiate a GET request to the server which contains the IP address of the host and optionally a data payload. The GET request contains the following text:
+Suppose you want to check out the upcoming coding bootcamps at http://www.re-coded.com. After you type the URL into your browser, your browser will extract the http part and recognize that it is the name of the network protocol to use. Then, it takes the domain name from the URL, in this case "re-coded.com", and asks the Domain Name Server (DNS) to return an Internet Protocol (IP) address. Once the client knows the destination's IP address, it then opens a connection to the server at that address, using the http protocol as specified. It will initiate a GET request to the server which contains the IP address of the host and optionally a data payload. The GET request contains the following text:
 ```
 GET / HTTP/1.1
 Host: www.re-coded.com
@@ -47,6 +47,13 @@ You can also try to explore this on your browser. If you're using Google Chrome,
 
 <img src="https://drive.google.com/uc?export=view&id=1SJPdV6-75u8iTr5xrlMGGb5IgGeH9nn9">
 
+### Parts of a server URL
+In the previous assignment, you were running the server on a URL like this: `http://localhost:3000`.
+
+By now you know that `http://` means that the communication will be happening over the HTTP protocol. Now `localhost` here is the **hostname** of the computer. The hostname is what a device is called on a network and to be specific `localhost` means "this computer" and is the standard hostname given to the address of the loopback network interface. Localhost always translates to the loopback IP address 127.0.0.1 in IPv4. So `http://localhost:3000` is actually the same as `http://127.0.0.1:3000`. The final part `:3000` refers to the **port**. In computer networking, a port is a communication endpoint. Usually during development with Node.js, we use port 3000, 8000 or 8080.
+
+Once your backend application is ready to move to production, it will have an assigned hostname such as "myhostname.com" or "mycompanyname.com" and communicate through reserved ports like port 80 for HTTP or port 443 for HTTPS.
+
 ### What is HTTPS?
 Hypertext Transfer Protocol Secure (HTTPS) is the secure version of HTTP. HTTPS uses encryption in order to increase security of data transfer. This is particularly important when users transmit sensitive data, such as by logging into a bank account, email service, or health insurance provider.
 
@@ -56,11 +63,11 @@ In modern web browsers such as Chrome, websites that do not use HTTPS are marked
 
 <img src="https://drive.google.com/uc?export=view&id=1EV6uPQJz3SPo2wy5NqUj0gy3Fm_75RX9" width="50%">
 
-HTTPS uses an encryption protocol called [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security), formerly known as Secure Sockets Layer (SSL). This protocol secures communications by using what’s known as an asymmetric public key infrastructure. This type of security system uses two different keys to encrypt communications between two parties:
-1. **Private key**: This key is controlled by the owner of a website and it’s kept, as the reader may have speculated, private. This key lives on a web server and is used to decrypt information encrypted by the public key.
-2. **Public key**: This key is available to everyone who wants to interact with the server in a way that’s secure. Information that’s encrypted by the public key can only be decrypted by the private key.
+HTTPS uses an encryption protocol called [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security), formerly known as Secure Sockets Layer (SSL). This protocol secures communications by using what's known as an asymmetric public key infrastructure. This type of security system uses two different keys to encrypt communications between two parties:
+1. **Private key**: This key is controlled by the owner of a website and it's kept, as you might have guessed, private. This key lives on a web server and is used to decrypt information encrypted by the public key.
+2. **Public key**: This key is available to everyone who wants to interact with the server in a way that's secure. Information that's encrypted by the public key can only be decrypted by the private key.
 
-HTTPS prevents websites from having their information broadcast in a way that’s easily viewed by anyone snooping on the network. When information is sent over regular HTTP, the information is broken into packets of data that can be easily “sniffed” using some software tools. This makes communication over an unsecure medium, such as public WiFi in a cafe, highly vulnerable to interception. In fact, all communications that occur over HTTP occur in plain text, making them highly accessible to anyone with the correct tools, and vulnerable to on-path attacks.
+HTTPS prevents websites from having their information broadcast in a way that's easily viewed by anyone snooping on the network. When information is sent over regular HTTP, the information is broken into packets of data that can be easily “sniffed” using some software tools. This makes communication over an unsecure medium, such as public WiFi in a cafe, highly vulnerable to interception. In fact, all communications that occur over HTTP occur in plain text, making them highly accessible to anyone with the correct tools, and vulnerable to on-path attacks.
 
 With HTTPS, traffic is encrypted such that even if the packets are sniffed or otherwise intercepted, they will come across as nonsensical characters.
 
@@ -74,10 +81,10 @@ This is a string of text that is completely readable
 ITM0IRyiEhVpa6VnKyExMiEgNveroyWBPlgGyfkflYjDaaFf/Kn3bo3OfghBPDWo6AfSHlNtL8N7ITEwIXc1gU5X73xMsJormzzXlwOyrCs+9XCPk63Y+z0=
 ```
 
-In websites without HTTPS, it is possible for Internet service providers (ISPs) or other intermediaries to inject content into webpages without the approval of the website owner. This commonly takes the form of advertising, where an ISP looking to increase revenue injects paid advertising into the webpages of their customers. Unsurprisingly, when this occurs, the profits for the advertisements and the quality control of those advertisements are in no way shared with the website owner. HTTPS eliminates the ability of unmoderated third parties to inject advertising into web content.
+In websites without HTTPS, it is possible for Internet Service Providers (ISPs) or other intermediaries to inject content into webpages without the approval of the website owner. This commonly takes the form of advertising, where an ISP looking to increase revenue injects paid advertising into the webpages of their customers. Unsurprisingly, when this occurs, the profits for the advertisements and the quality control of those advertisements are in no way shared with the website owner. HTTPS eliminates the ability of unmoderated third parties to inject advertising into web content.
 
 ### How is HTTPS different from HTTP?
-Technically speaking, HTTPS is not a separate protocol from HTTP. It is simply using TLS/SSL encryption over the HTTP protocol. HTTPS occurs based upon the transmission of TLS/SSL certificates, which verify that a particular provider is who they say they are.
+Technically speaking, HTTPS is not a separate protocol from HTTP. It is simply using TLS/SSL encryption over the HTTP protocol. HTTPS communication occurs based upon the transmission of TLS/SSL certificates, which verify that a particular provider is who they say they are.
 
 When a user connects to a webpage, the webpage will send over its SSL certificate which contains the public key necessary to start the secure session. The two computers, the client and the server, then go through a process called an SSL/TLS handshake, which is a series of back-and-forth communications used to establish a secure connection. To take a deeper dive into encryption and the SSL/TLS handshake, you can read about what happens in a [TLS handshake](https://www.cloudflare.com/en-in/learning/ssl/what-happens-in-a-tls-handshake/).
 
@@ -87,7 +94,7 @@ For an SSL certificate to be valid, domains need to obtain it from a certificate
 Once you have obtained the SSL certificate for your website, you can configure it on your server and enable it to communicate over port 443, which is the port for HTTPS communication over TCP.
 
 ### What is an API?
-API stands for application programming interface, which is a set of definitions and protocols for building and integrating application software. APIs let your product or service communicate with other products and services without having to know how they’re implemented. APIs are sometimes thought of as contracts, with documentation that represents an agreement between parties: If party 1 sends a remote request structured a particular way, this is how party 2’s software will respond.
+API stands for Application Programming Interface, which is a set of definitions and protocols for building and integrating application software. APIs let your product or service communicate with other products and services without having to know how they're implemented. APIs are sometimes thought of as contracts, with documentation that represents an agreement between parties: If party 1 sends a remote request structured a particular way, this is how party 2's software will respond.
 
 When you are developing a server, you will be developing an API that enables the frontend to communicate with your server without necessarily knowing the implementation details on your server. The most popular API architecture is the REST API.
 
@@ -124,6 +131,8 @@ A lot of people tend to compare HTTP with REST but REST and HTTP are not same. R
 
 In simplest words, in the REST architectural style, data and functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs). The resources are acted upon by using a set of simple, well-defined operations. The clients and servers exchange representations of resources by using a standardized interface and protocol – typically HTTP.
 
+In the next lesson, we'll dive deep into the details of a REST API.
+
 ----
 ## References
 - https://www.codecademy.com/articles/http-requests
@@ -134,3 +143,4 @@ In simplest words, in the REST architectural style, data and functionality are c
 - https://www.codecademy.com/articles/what-is-rest
 - https://restfulapi.net/
 - https://www.cloudflare.com/en-in/learning/ssl/what-is-https/
+- https://en.wikipedia.org/w/index.php?title=Localhost&oldid=331995451

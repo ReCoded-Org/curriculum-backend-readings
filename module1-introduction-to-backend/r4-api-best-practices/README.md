@@ -14,13 +14,13 @@ Think about an open source API you might have worked with previously, such as [O
 ## Characteristics of a well-designed API
 In general, an effective API design will have the following characteristics:
 - **Easy to read and work with**: A well designed API will be easy to work with, and its resources and associated operations can quickly be memorized by developers who work with it constantly.
-- **Hard to misuse**: Implementing and integrating with an API with good design will be a straightforward process, and writing incorrect code will be a less likely outcome. It has informative feedback, and doesn’t enforce strict guidelines on the API’s end consumer.
+- **Hard to misuse**: Implementing and integrating with an API with good design will be a straightforward process, and writing incorrect code will be a less likely outcome. It has informative feedback, and doesn't enforce strict guidelines on the API's end consumer.
 - **Complete and concise**: A complete API will make it possible for developers to make full-fledged applications against the data you expose. Completeness happens over time usually, and most API designers and developers incrementally build on top of existing APIs. It is an ideal which every engineer or company with an API must strive towards.
 - **Clean interface**: A well-designed API enables frontend developers to work with the APIs without needing to know details of its implementation, giving a clean interface for frontend integration.
 
 ## Here are some widely accepted best practices
 
-Please note: This list is not necessarily exhaustive and there is always room for flexibility around these principles depending on your approach towards API design.
+**Please note**: This list is not necessarily exhaustive and there is always room for flexibility around these principles depending on your approach towards API design. What matters is understanding the rationale behind certain API design decisions so that you can follow a similar thought process and approach while building your own APIs.
 
 ### 1. Accept and respond with JSON
 REST APIs should accept JSON for request payload and also send responses to JSON. JSON is the standard for transferring data. Almost every networked technology can use it: JavaScript has built-in methods to encode and decode JSON either through the Fetch API or another HTTP client. Server-side technologies have libraries that can decode JSON without doing much work.
@@ -42,11 +42,11 @@ app.listen(3000, () => console.log('server started'));
 ```
 
 ### 2. Use nouns instead of verbs in endpoint paths
-We shouldn’t use verbs in our endpoint paths. Instead, we should use the nouns which represent the entity that the endpoint that we’re retrieving or manipulating as the pathname. This is because our HTTP request method already has the verb. Having verbs in our API endpoint paths isn’t useful and it makes it unnecessarily long since it doesn’t convey any new information.
+We shouldn't use verbs in our endpoint paths. Instead, we should use the nouns which represent the entity that the endpoint is retrieving or manipulating as the pathname. This is because our HTTP request method already has the verb. Having verbs in our API endpoint paths isn't useful and it makes it unnecessarily long since it doesn't convey any new information.
 
 For example, we should create routes like GET `/articles` for getting news articles. Likewise, POST `/articles` is for adding a new article , PUT `/articles/:id` is for updating the article with the given id. DELETE `/articles/:id` is for deleting an existing article with the given ID. Here `articles` represents a REST API resource.
 
-The combination of the HTTP verb and resource noun convey the purpose of an API endpoint. API endpoints like GET `/fetchArticles` or POST `/update-articles` use redundant verbs like "fetch" and "update" which is not required.
+The combination of the HTTP verb and resource noun convey the purpose of an API endpoint. API endpoints like GET `/fetchArticles` or POST `/update-articles` use redundant verbs like "fetch" and "update", which are not required when used with HTTP verbs.
 
 In Express, we can write these endpoints as:
 ```js
@@ -109,9 +109,7 @@ app.listen(3000, () => console.log('server started'));
 ```
 
 ### 4. Handle complexity elegantly
-The data you’re trying to expose can be characterized by a lot of properties which could be beneficial for the end consumer working with your API. These properties describe the base resource and isolate specific assets of information that can be manipulated with the appropriate method. An API should strive towards completion, and provide all the required information, data and resources to help developers integrate with them in a seamless manner.
-
-However, instead of defining more resources and endpoints to cover dynamic use cases and relationships, you can sweep properties and limit responses behind the ‘?’ in a query parameter, or isolate specific component of the data the client is working with using a path parameter.
+Instead of defining more and more resources and endpoints to cover dynamic use cases and relationships, you can sweep properties and limit responses behind the ‘?' in a query parameter, or isolate specific component of the data the client is working with using a path parameter.
 
 For example, let's consider a photosharing app. It could be of use to developers to get information on all the photos shared in a particular location and a specific hashtag. You also want to limit the number of results to 10 per API call to prevent server load. If the end user wants to find all photos in Boston with a hashtag #winter, the call would be: `GET /photos?location=boston&hashtag=winter&limit=10`. Here `location`, `hashtag` and `limit` are query parameters. However, if the end user wants to find a specific photo by its ID, the call would be: `GET /photos/13214` where the ID 13214 is a path parameter.
 
@@ -149,10 +147,10 @@ app.post('/users', (req, res) => {
 app.listen(3000, () => console.log('server started'));
 ```
 
-### 6. Allow filtering, sorting, and pagination
-The databases behind a REST API can get very large. Sometimes, there’s so much data that it shouldn’t be returned all at once because it’s way too slow or will bring down our systems. Therefore, we need ways to filter items. We also need ways to paginate data so that we only return a few results at a time. We don’t want to tie up resources for too long by trying to get all the requested data at once. Filtering and pagination both increase performance by reducing the usage of server resources.
+### 6. Allow filtering, sorting and pagination
+The databases behind a REST API can get very large. Sometimes, there's so much data that it shouldn't be returned all at once because it's way too slow or will bring down our systems. Therefore, we need ways to filter items. We also need ways to paginate data so that we only return a few results at a time. We don't want to tie up resources for too long by trying to get all the requested data at once. Filtering and pagination both increase performance by reducing the usage of server resources.
 
-Here’s a small example where an API can accept a query string with various query parameters to let us filter out items by their fields:
+Here's a small example where an API can accept a query string with various query parameters to let us filter out items by their fields:
 ```js
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -181,7 +179,7 @@ app.get('/employees', (req, res) => {
   }
 
   if (age) {
-    results = results.filter(r => r.age > age);
+    results = results.filter(r => r.age === age);
   }
   res.json(results);
 });
@@ -190,11 +188,11 @@ app.listen(3000, () => console.log('server started'));
 ```
 
 ### 7. Maintain good security practices
-Most communication between client and server should be private since we often send and receive private information. Therefore, using SSL/TLS for security is a must. A SSL certificate isn’t too difficult to load onto a server and the cost is free or very low. There’s no reason not to make our REST APIs communicate over secure channels instead of in the open.
+Most communication between client and server should be private since we often send and receive private information. Therefore, using SSL/TLS for security is a must. As you've read in previous lessons, an SSL certificate isn't too difficult to load onto a server and the cost is free or very low. There's no reason not to make our REST APIs communicate over secure channels instead of in the open.
 
-People shouldn’t be able to access more information that they requested. For example, a normal user shouldn’t be able to access information of another user. They also shouldn’t be able to access data of admins. To enforce the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), we need to add role checks either for a single role, or have more granular roles for each user.
+People shouldn't be able to access more information that they requested. For example, a normal user shouldn't be able to access information of another user. They also shouldn't be able to access data of admins. To enforce the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege), we need to add role checks either for a single role, or have more granular roles for each user.
 
-If we choose to group users into a few roles, then the roles should have the permissions that cover all they need and no more. If we have more granular permissions for each feature that users have access to, then we have to make sure that admins can add and remove those features from each user accordingly. Also, we need to add some preset roles that can be applied to a group users so that we don’t have to do that for every user manually.
+If we choose to group users into a few roles, then the roles should have the permissions that cover all they need and no more. If we have more granular permissions for each feature that users have access to, then we have to make sure that admins can add and remove those features from each user accordingly. Also, we need to add some preset roles that can be applied to a group of users so that we don't have to do that for every user manually.
 
 ### 8. Cache data to improve performance
 We can add caching to return data from the local memory cache instead of querying the database to get the data every time we want to retrieve some data that users request. The good thing about caching is that users can get data faster. However, the data that users get may be outdated. This may also lead to issues when debugging in production environments when something goes wrong as we keep seeing old data.
@@ -202,9 +200,9 @@ We can add caching to return data from the local memory cache instead of queryin
 There are many kinds of caching solutions like Redis, in-memory caching, and more. We can change the way data is cached as our needs change.
 
 ### 9. Versioning our APIs
-We should have different versions of API if we’re making any changes to them that may break clients. The versioning can be done according to [semantic version](https://semver.org/) (for example, 2.0.6 to indicate major version 2 and the sixth patch) like most apps do nowadays.
+We should have different versions of API if we're making any changes to them that may break clients. The versioning can be done according to [semantic version](https://semver.org/) (for example, 2.0.6 to indicate major version 2 and the sixth patch) like most apps do nowadays.
 
-This way, we can gradually phase out old endpoints instead of forcing everyone to move to the new API at the same time. The v1 endpoint can stay active for people who don’t want to change, while the v2, with its shiny new features, can serve those who are ready to upgrade. This is especially important if our API is public. We should version them so that we won’t break third party apps that use our APIs. This is even relevant for mobile apps. For example, if an Android app integrates with our API, it can sometimes be hard to ensure all users update their app to the latest version. So for gradual phasing out, a previous version of the API can still stay active for the subset of users on the old app.
+This way, we can gradually phase out old endpoints instead of forcing everyone to move to the new API at the same time. The v1 endpoints can stay active for people who don't want to change, while the v2 API, with its shiny new features, can serve those who are ready to upgrade. This is especially important if our API is public. We should version them so that we won't break third party apps that use our APIs. This is even relevant for mobile apps. For example, if an Android app integrates with our API, it can sometimes be hard to ensure all users update their app to the latest version. So for gradual phasing out, a previous version of the API can still stay active for the subset of users on the old app.
 
 Versioning is usually done with `/v1/`, `/v2/`, etc. added at the start of the API path.
 
@@ -229,6 +227,8 @@ app.get('/v2/employees', (req, res) => {
 
 app.listen(3000, () => console.log('server started'));
 ```
+
+So far you've learned all about the fundamentals of backend web development. In the next couple of lessons, you will be learning about server-side validation and API documentation.
 
 ---
 ## References

@@ -4,7 +4,7 @@ We will be working in the Node.js and NPM environment throughout this bootcamp. 
 2. Advantages of Node.js and why this course is focussed on Node.js
 
 ## Introduction to Node.js
-Is it a programming language? Is it a library? No, it's Node.js. In simple words, Node.js is nothing but JavaScript running on the server-side and it’s awesome.
+Is it a programming language? Is it a library? No, it's Node.js. In simple words, Node.js is nothing but JavaScript running on the server-side, and it's awesome.
 
 <img src="https://drive.google.com/uc?export=view&id=1oaHgcGKcrKbW6G-gFsncV95WhVmc40M7">
 
@@ -29,7 +29,9 @@ server.listen(port, hostname, () => {
 })
 ```
 
-Using the http module, one of many useful Node.js libraries, an HTTP server is created. The server is set to listen on the specified host name and port. When the server is ready, the callback function is called, in this case informing us that the server is running. Whenever a new request is received from a client, the request event is called, providing two objects: a request and a response. The first provides details of the request, although not used in this example, and the second is used to return data to the client.
+Using the http module, one of many useful Node.js libraries, an HTTP server is created. The server is set to listen on a specified hostname and port. When the server is ready, the callback function is called, in this case informing us that the server is running. Whenever a new request is received from a client, the request event is called, providing two objects: a request and a response. The first provides details of the request, although not used in this example, and the second is used to return data to the client.
+
+You will learn more about the keywords mentioned in this code block throughout this module.
 
 ### Some brief history first
 Node.js is only 12 years old, not a long time in tech. In comparison, JavaScript itself is more than 20 years old, and we know that it is what runs in our browsers. JavaScript was created at Netscape, which also tried to create LiveWire, an attempt at server-side JavaScript. Unfortunately, it wasn't very successful and server-side JavaScript did not grow in popularity until the introduction of Node.js in 2009.
@@ -39,7 +41,7 @@ One key factor that led to the rise of Node.js was the timing. Just a few years 
 When Ryan Dahl wrote Node.js, one of his motivations was the limited possibilities of the most popular web server in 2009, Apache HTTP Server, to handle a lot of concurrent connections and the most common way of creating code which either blocked the entire process or implied multiple execution stacks in the case of simultaneous connections. A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
 
 ### Features of Node.js
-Firstly, though `.js` is the standard filename extension for JavaScript code, the name "Node.js" doesn't refer to a particular file in this context and is merely the name of the product.
+Firstly, though `.js` is the standard filename extension for JavaScript code, the name "Node.js" doesn't refer to a particular file in this context and is merely the name of the product. It can also be written as "NodeJS" or simply "Node".
 
 1. **Speed**: Having been built on Google Chrome's V8 JavaScript engine, Node.js is extremely fast for code execution.
 2. **Rich libraries**: Node Package Manager (NPM) has more than 50,000 bundles or libraries, so whatever functionality is required for an application can be easily imported from NPM.
@@ -56,11 +58,11 @@ One of the major factors of Node's success is npm - its popular package manager,
 - a CLI (command-line interface) tool for publishing and downloading packages, and
 - an online repository that hosts JavaScript packages</br>
 
-A package is nothing but a directory that contains a bunch of modules. Some popular npm packages are [lodash](https://lodash.com/) and [moment](https://momentjs.com/). Node.js has a wide community that develop good packages for everybody to use.
+A package is nothing but a directory that contains a bunch of code modules. Some popular npm packages are [lodash](https://lodash.com/) and [moment](https://momentjs.com/). Node.js has a wide community that develop good packages for everybody to use.
 
 When we have a remote package in our project, it is called as a dependency since our project depends on it. We need to keep track of our dependencies or at least list them down somewhere. We list all our dependencies inside a `package.json` file which is a JSON file that contains some information about our project and dependencies it needs. This file is essential for NPM.
 
-Node.js also ships with a collection of [built-in packages](https://nodejs.org/api/index.html) called as a Node Standard Library. These packages are essential to perform low-level operations like File System I/O and Networking. We do not have to install them using NPM.
+Node.js also ships with a collection of [built-in packages](https://nodejs.org/api/index.html) called as Node Standard Library. These packages are essential to perform low-level operations like File System I/O and Networking. We do not have to install them using NPM.
 
 ### How much JavaScript should I know to use Node.js?
 As a beginner, it can be difficult to understand where does JavaScript end, and where Node.js begins, and vice versa. However, when you're writing code for a Node.js application you are writing JavaScript. So, it is important to grasp the fundamentals of JavaScript syntax such as:
@@ -70,7 +72,7 @@ As a beginner, it can be difficult to understand where does JavaScript end, and 
 - Classes
 - Variables
 - Functions
-- this
+- `this`
 - Arrow Functions
 - Loops
 - Scopes
