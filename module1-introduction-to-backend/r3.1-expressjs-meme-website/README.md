@@ -1,3 +1,3 @@
 # Express.js Meme Website
 
-Assignment repo link to be inserted
+[Assignment repo link](https://github.com/ReCoded-Org/curriculum-backend-expressjs-meme-website)

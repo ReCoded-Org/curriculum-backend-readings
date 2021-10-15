@@ -1,6 +1,6 @@
 # Module 1: Introduction to Backend
 
-Last Revised: 05/10/2021
+Last Revised: 14/10/2021
 
 ## Summary
 Writing backend code requires an intimate understanding of REST and the request-response lifecycle. Students learn how to build and run a local server with API endpoints
@@ -13,7 +13,7 @@ validations and return a response.
     
 1.1 [Beginners guide to Node.js and NPM [R]](../module1-introduction-to-backend/r1.1-beginners-guide-nodejs-npm/README.md)
     
-1.2 [Getting ready with Node.js [L]](../module1-introduction-to-backend/r1.2-getting-ready-with-nodejs/README.md)
+1.2 [Getting started with Node.js [L]](../module1-introduction-to-backend/r1.2-getting-started-with-nodejs/README.md)
     
 2 [HTTP and REST [R]](../module1-introduction-to-backend/r2-http-and-rest/README.md)
     
@@ -37,4 +37,4 @@ validations and return a response.
     
 5.1 [API Documentation using Swagger [L]](../module1-introduction-to-backend/r5.1-api-documentation-swagger/README.md)
     
-6 [Outro](../module1-introduction-to-backend/r6-outro/README.md)
+6 [Summary [R]](../module1-introduction-to-backend/r6-summary/README.md)

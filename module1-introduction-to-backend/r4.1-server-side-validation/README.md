@@ -109,7 +109,7 @@ tsa_b
 
 Looking at this data, we can generally figure out what our issue is. First, we're told that we've submitted a 400 Bad Request. This tells us that the problem is somewhere in our request. Our content length is acceptable, and our response time is well within normal limits. We can see, however, that we're receiving a unique error code that Twitter itself has denoted — “215”, with an attached message that states “Bad Authentication data”. This tells us that the fix is to supply authentication data, but also gives us a number to reference on the internal documentation of the Twitter API for further details.
 
-### Facebook
+### Facebook API
 Let's pass a GET request to ascertain some details about a user. All personal information will be blanked out for security purposes.
 ```
 https://graph.facebook.com/v2.9/me?fields=id%2Cname%2Cpicture%2C%20picture&access_token=xxxxxxxxxxx
