@@ -30,7 +30,7 @@ package-lock.json
 In this folder, you can write the functionality & logics related to the database (if you aren't using ORM) like insert, fetch, update, delete queries. It takes the query request from the controller & sends the response back to the controller.
 The naming convention for the model files is: `name-here-model.js`.
 
-Here’s an example model using JavaScript and Mongoose.
+Here's an example model using JavaScript and Mongoose.
 
 ```js
 // post-model.js

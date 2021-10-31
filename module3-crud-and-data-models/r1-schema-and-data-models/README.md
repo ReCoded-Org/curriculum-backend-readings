@@ -1,6 +1,6 @@
 # Introduction To Database Schemas
 
-A database schema is a blueprint or architecture of how our data will look. It doesn’t hold data itself, but instead describes the shape and structure of the data and how it might be related to other data.
+A database schema is a blueprint or architecture of how our data will look. It doesn't hold data itself, but instead describes the shape and structure of the data and how it might be related to other data.
 
 For example, this is a `customer` schema in MongoDB using Mongoose.
 
@@ -52,7 +52,7 @@ When we are building APIs, we want our models to provide four basic types of fun
 
 In a REST environment, CRUD often corresponds to the [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) `POST`, `GET`, `PUT`, and `DELETE`, respectively. These are the fundamental elements of a persistent storage system.
 
-For example, imagine we are working with a system that is keeping track of meals and their corresponding prices for a restaurant. Let’s look at how we would implement CRUD operations.
+For example, imagine we are working with a system that is keeping track of meals and their corresponding prices for a restaurant. Let's look at how we would implement CRUD operations.
 
 First of all, we need to define our food item schema (we will use mongoose for that), and let's call it "dish".
 
@@ -194,7 +194,7 @@ router.put("/dishes/:id", async (req, res) => {
 #### Delete
 
 The CRUD operation Delete corresponds to the HTTP method DELETE. It is used to remove a resource from the system.
-Let’s say that the world avocado shortage has reached a critical point, and we can no longer afford to serve this modern delicacy at all. We should go into the database and delete the item that corresponds to **Avocado Toast**, which we know has an `id` of 1223.
+Let's say that the world avocado shortage has reached a critical point, and we can no longer afford to serve this modern delicacy at all. We should go into the database and delete the item that corresponds to **Avocado Toast**, which we know has an `id` of 1223.
 
 Request:
 

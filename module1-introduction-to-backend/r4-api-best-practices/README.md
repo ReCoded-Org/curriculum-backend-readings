@@ -109,7 +109,7 @@ app.listen(3000, () => console.log('server started'));
 ```
 
 ### 4. Handle complexity elegantly
-Instead of defining more and more resources and endpoints to cover dynamic use cases and relationships, you can sweep properties and limit responses behind the ‘?' in a query parameter, or isolate specific component of the data the client is working with using a path parameter.
+Instead of defining more and more resources and endpoints to cover dynamic use cases and relationships, you can sweep properties and limit responses behind the '?' in a query parameter, or isolate specific component of the data the client is working with using a path parameter.
 
 For example, let's consider a photosharing app. It could be of use to developers to get information on all the photos shared in a particular location and a specific hashtag. You also want to limit the number of results to 10 per API call to prevent server load. If the end user wants to find all photos in Boston with a hashtag #winter, the call would be: `GET /photos?location=boston&hashtag=winter&limit=10`. Here `location`, `hashtag` and `limit` are query parameters. However, if the end user wants to find a specific photo by its ID, the call would be: `GET /photos/13214` where the ID 13214 is a path parameter.
 
