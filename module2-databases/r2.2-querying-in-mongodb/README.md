@@ -59,3 +59,8 @@ Similarly we can also query arrays and specific items within arrays. You can rea
 Sometimes it can get confusing between concepts of SQL and those of MongoDB. Take a look at this [SQL to MongoDB Mapping Chart](https://docs.mongodb.com/manual/reference/sql-comparison/) as a quick reference. It also shows query commands for the same operation in each database.
 
 Once again, it's time to move into some hands-on learning. We will now work on an assignment where we will try out different MongoDB queries.
+
+---
+## References
+- https://docs.mongodb.com/v4.2/
+- https://docs.mongodb.com/manual/reference/method/

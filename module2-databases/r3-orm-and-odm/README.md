@@ -1,4 +1,4 @@
-# ORMs
+# ORM and ODM
 So far we have looked at standalone databases and performed queries directly on them. But what happens when we want our backend code to interact with the database? The objectives of this lesson are:
 1. Understand ORMs and how they are useful
 2. Understand ODMs and how they are useful
