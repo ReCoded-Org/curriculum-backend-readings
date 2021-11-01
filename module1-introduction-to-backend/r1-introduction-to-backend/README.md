@@ -1,7 +1,7 @@
 # Introduction to Backend
 Welcome to your first lesson of the Backend Web Development Bootcamp! The objectives of this lesson are:
 1. To understand the roles of frontend developer vs backend developer vs fullstack developer
-2. To get familar with the basics of backend web architecture
+2. To get familiar with the basics of backend web architecture
 
 Here we go!
 

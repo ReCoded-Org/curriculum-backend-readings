@@ -107,9 +107,9 @@ tsa_b
 {"errors":[{"code":215,"message":"Bad Authentication data."}]}
 ```
 
-Looking at this data, we can generally figure out what our issue is. First, we're told that we've submitted a 400 Bad Request. This tells us that the problem is somewhere in our request. Our content length is acceptable, and our response time is well within normal limits. We can see, however, that we're receiving a unique error code that Twitter itself has denoted — “215”, with an attached message that states “Bad Authentication data”. This tells us that the fix is to supply authentication data, but also gives us a number to reference on the internal documentation of the Twitter API for further details.
+Looking at this data, we can generally figure out what our issue is. First, we're told that we've submitted a 400 Bad Request. This tells us that the problem is somewhere in our request. Our content length is acceptable, and our response time is well within normal limits. We can see, however, that we're receiving a unique error code that Twitter itself has denoted — "215", with an attached message that states "Bad Authentication data". This tells us that the fix is to supply authentication data, but also gives us a number to reference on the internal documentation of the Twitter API for further details.
 
-### Facebook
+### Facebook API
 Let's pass a GET request to ascertain some details about a user. All personal information will be blanked out for security purposes.
 ```
 https://graph.facebook.com/v2.9/me?fields=id%2Cname%2Cpicture%2C%20picture&access_token=xxxxxxxxxxx
@@ -127,7 +127,7 @@ This request should give us a few basic fields from this user's Facebook profile
 }
 ```
 
-While Facebook doesn't directly pass the HTTP error code in the body, it does pass a lot of useful information. The “message” area notes that we've run into a syntax error, specifically that we've defined the “picture” field more than once. Additionally, this field lets us know that this behavior was possible in previous versions, which is a very useful tool to communicate to users a change in behavior from previous versions to the current. Additionally, we are provided both a code and an `fbtrace_id` that can be used with support to identify specific issues in more complex cases. We've also received a specific error type, in this case `OAuthException`, which can be used to narrow down the specifics of the case even further.
+While Facebook doesn't directly pass the HTTP error code in the body, it does pass a lot of useful information. The "message" area notes that we've run into a syntax error, specifically that we've defined the "picture" field more than once. Additionally, this field lets us know that this behavior was possible in previous versions, which is a very useful tool to communicate to users a change in behavior from previous versions to the current. Additionally, we are provided both a code and an `fbtrace_id` that can be used with support to identify specific issues in more complex cases. We've also received a specific error type, in this case `OAuthException`, which can be used to narrow down the specifics of the case even further.
 
 Let's put these learnings about validation into practice in the next assignment.
 

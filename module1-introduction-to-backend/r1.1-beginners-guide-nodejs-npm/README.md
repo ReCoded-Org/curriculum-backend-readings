@@ -53,6 +53,7 @@ Node.js is written with C, C++ and JavaScript and uses libuv underhood to handle
 
 <img src="https://drive.google.com/uc?export=view&id=18ys74BkK9tzQ6u8avgVw9seweoXY6GnA" width="60%">
 
+
 ### NPM and Packages in Node.js
 One of the major factors of Node's success is npm - its popular package manager, which allows JavaScript developers to share useful packages quickly and easily. NPM – or "Node Package Manager" – is the default package manager for JavaScript's runtime Node.js. NPM consists of two main parts:
 - a CLI (command-line interface) tool for publishing and downloading packages, and
@@ -95,7 +96,7 @@ Also, as asynchronous programming is the core of Node.js it is important to unde
 If you're interested to dive deeper into understanding Node.js, [here](https://nodejs.dev/learn/introduction-to-nodejs) is a learning path that you can follow.
 
 ## Why are we teaching Node.js in this bootcamp?
-From the previous lesson or previous experience, you might already be familar with other server-side languages like Python, PHP, Ruby or Java. So why did we choose to teach Node.js?
+From the previous lesson or previous experience, you might already be familiar with other server-side languages like Python, PHP, Ruby or Java. So why did we choose to teach Node.js?
 
 1. **Popularity**: Node.js has been consistently growing in popularity since it's introduction. As per the [Stackoverflow developer survey of 2021](https://insights.stackoverflow.com/survey/2021), JavaScript is the most popular language for 9 years in a row and Node.js has moved up to be the 6th most popular technology. Many companies that we have got in touch with have expressed interest in hiring more Node.js developers.
 2. **Modern tech stack choice**: With the web being focussed more towards real-time user interaction, and serving web apps over websites, Node.js with its features is becoming the go-to choice for many tech companies.
@@ -110,6 +111,7 @@ Now that you have enough context on Node.js, let's prepare our coding environmen
 - https://medium.com/jspoint/introduction-to-node-js-a-beginners-guide-to-node-js-and-npm-eca9c408f9fe
 - https://en.wikipedia.org/wiki/Node.js
 - https://www.simplilearn.com/tutorials/nodejs-tutorial/what-is-nodejs
+- https://www.simform.com/blog/what-is-node-js/#section2
 - https://www.freecodecamp.org/news/what-is-npm-a-node-package-manager-tutorial-for-beginners/
 - https://nodejs.dev/learn/introduction-to-nodejs
 - https://medium.com/jspoint/how-javascript-works-in-browser-and-node-ab7d0d09ac2f

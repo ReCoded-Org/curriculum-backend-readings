@@ -2,7 +2,7 @@
 
 Poorly designed databases can cause many problems, including wasting resources, making maintenance difficult, and hindering performance. That's why having a great database schema design is a crucial part of effective data management.
 By defining categories of data and relationships between those categories, database schema design makes data much easier to retrieve, consume, manipulate, and interpret.
-Without a clean, efficient, consistent database schema, you’ll struggle to make the best use of your enterprise data. For example, the same data might be duplicated in multiple locations—or even worse, might be inconsistent between these locations.
+Without a clean, efficient, consistent database schema, you'll struggle to make the best use of your enterprise data. For example, the same data might be duplicated in multiple locations—or even worse, might be inconsistent between these locations.
 
 ## Type of database
 

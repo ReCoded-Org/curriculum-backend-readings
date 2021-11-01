@@ -18,7 +18,7 @@ This serves as a content monorepo for all the readings of the backend bootcamp c
 |       | README.md
 |   └───...                         // and so on
 |
-└───module2-database-technologies
+└───module2-databases
 |   └───assets                      // common assets folder for module
 │   └───r1-introduction-to-databases
 |       | README.md                 // reading content goes here
