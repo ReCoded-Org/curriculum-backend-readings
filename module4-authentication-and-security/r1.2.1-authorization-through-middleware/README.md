@@ -53,7 +53,7 @@ We've seen middleware in previous lessons when we used the `express-session` and
 - Append the created or read `session` to `req`.
 - Call `next()` to let the app continue its req-res cycle.
 
-### **Middleware precedence**
+### Middleware precedence
 
 In Express.js middleware are applied in their order of use. Remember that every function that has `req` and `res` is a middleware function. And the middleware stack is established when you use `app.use` or `router.use`.
 
@@ -68,7 +68,7 @@ So it is important whenever you define your middleware that you make sure the re
 
 For example, in your `onlyAuthenticated` middleware, you will need to check `req.session.user` (or `req.user` if you use `express-jwt`). Hence, it is important that the session middleware is applied before your middleware. Otherwise, you won't have `session` inside `req`.
 
-### **Middleware mount-path**
+### Middleware mount-path
 
 Middleware can be scoped as well. It can be for every request, or for specific endpoints, or even specific HTTP methods:
 
@@ -102,7 +102,7 @@ router.use(function (req, res, next) {
 });
 ```
 
-### **Error-handling middlware**
+### Error-handling middlware
 
 All the middleware we've seen so far take only **three** arguments, `req`, `res`, and `next`. You can define an error-handling middleware by providing **four** arguments: `err`, `req`, `res`, and `next`. These middleware are important to handle errors that are thrown in your app and provide a safe fallback response to clients without exposing your app's security.
 
@@ -117,7 +117,7 @@ Usually, an error logging service like [sentry](https://sentry.io/) is also cont
 
 > ⚠️ **Warning**: Error-handling middleware always takes **four** arguments. You must provide four arguments to identify it as an error-handling middleware function. Even if you don’t need to use the next object, you must specify it to maintain the signature. Otherwise, the next object will be interpreted as regular middleware and will fail to handle errors.
 
-## **Auth guard middleware**
+## Auth guard middleware
 
 To implement `onlyAdmins`, `onlyModerators`, and `onlyAuthenticated` middleware, we create a new middleware containing source file:
 

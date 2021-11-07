@@ -22,7 +22,7 @@ With authorization, we introduce another level of app security. In this lesson, 
 - Authentication by a client usually involves the server giving a certificate to the client in which a trusted third party such as Verisign or Thawte states that the server belongs to the entity (such as a bank) that the client expects it to. This is required to initiate secure communication (HTTPs) between client and server.
 - Authentication does not determine what tasks the individual can do or what files the individual can see (aka scopes). Authentication merely identifies and verifies who the person or system is.
 
-## **Role-based authorization**
+## Role-based authorization
 
 By role-based authorization, we assign a role or roles to the user either when we register them, or by some other mechanism that happens later to elevate a user access level.
 

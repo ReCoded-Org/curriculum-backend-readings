@@ -6,7 +6,7 @@ In this lesson, we will tackle how to persist user login, or registration betwee
 - Implementing stateful persistence using express-sessions
 - Implementing stateless identifiers using JSON Web Tokens (JWT)
 
-## **Stateful Session Storage**
+## Stateful Session Storage
 
 In web servers, sessions are server-side temporary storage tools. They are used for a variety of use cases to store temporary data between requests. They use different storage adapters, like RAM, disk, databases, in-memory cache, etc. to save the temporary data.
 
@@ -62,7 +62,7 @@ And when requesting protected resources, we can check if the request session tha
 
 > 💡 **Tip**: `express-session` comes with lots of adapters to store sessions as plug-in libraries. Check out [this list](https://github.com/expressjs/session#compatible-session-stores).
 
-## **Stateless Session Storage**
+## Stateless Session Storage
 
 In stateless session storage, we don't store any temporary data on the server. Thus, the server is state-less. Instead, we issue a session payload in a token that encapsulates the data and sends it to the client for future use in subsequent requests. JWT is often, the way to carry out this process.
 
@@ -101,7 +101,7 @@ To make an authenticated request by the client, it needs to pass this token to t
 
 ![JWT Diagram](../assets/use-of-jwt.webp)
 
-### **JWT Validation**
+### JWT Validation
 
 A middleware library like [express-jwt](https://www.npmjs.com/package/express-jwt) can be used on the server to validate JWTs.
 
@@ -137,7 +137,7 @@ Then e can simply access the user object in the request as follows:
 const user = req.user;
 ```
 
-### **Issuing JWT**
+### Issuing JWT
 
 To issue JWT, your authentication server can use a library [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) to issue the token as follows:
 
@@ -155,7 +155,7 @@ router.post('/login', async (req, res) => {
 
   const user = await User.login(username, password);
 
-  if(user) {
+  if (user) {
     // User is valid, issue JWT
     const claims = {
       sub: user.id,
@@ -178,7 +178,7 @@ router.post('/login', async (req, res) => {
 
 > 💡 **TIP**: Always keep your tokens short-lived as they are, by design, harder to revoke. The token by default will stay functional until it expires.
 
-### **JWT Signature**
+### JWT Signature
 
 You're probably wondering: if JWTs can be easily decoded and their payload can be seen, how do we make sure that someone doesn't pass any payload to authenticate a request? The signature is the answer.
 
@@ -186,7 +186,7 @@ When issuing JWTs, we take the claims and encrypt them using the `app-secret` ke
 
 When the JWT is passed back to the server in the header, we check the claims, and sign them again using our `app-secret`, then compare this signature with the signature provided by the token. If they match, that means the JWT is indeed issued by this app. Otherwise, it is fake.
 
-## **Pros and Cons of JSON Web Tokens**
+## Pros and Cons of JSON Web Tokens
 
 JWTs are becoming more and more ubiquitous. Customer identity and access management (CIAM) providers everywhere are pushing JWTs as the silver bullet for everything. JWTs are pretty cool, but let’s talk about some of the downsides of JWTs and some of their strong benefits.
 
