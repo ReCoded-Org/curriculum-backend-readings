@@ -233,7 +233,7 @@ Let's take the example above and add salting to it. When Alice is registering, s
 
 The hashes for these two salted passwords will be entirely different, and when stored in the database, **we will need to store the salt too**. So that when they login we can retrieve it and prepend it to their supplied password. This way, the attacker will never know that they are using the same password when studying the hashes even if they know the salt. And their attack will take greater time adjusting for the introduction of salts. The same can be said for Jane, even though she is using a dictionary word, the hash will be for a different sequence of letters, and the hash table won't match it.
 
-### **BCrypt**
+### BCrypt
 
 [BCrypt](https://en.wikipedia.org/wiki/Bcrypt) is a password hashing algorithm that is very hard to crack due to being super slow. It is adaptive and can be set up to be harder over time to provide more security by increasing the iteration count. It has an in-built feature to generate a salt when hashing so it won't need a salt column in the database.
 

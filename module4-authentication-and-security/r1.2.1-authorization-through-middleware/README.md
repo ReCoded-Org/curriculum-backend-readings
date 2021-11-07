@@ -9,7 +9,7 @@ This lesson objectives are:
 - Implement authorization guard
 - Guard certain endpoints with these middlewares
 
-## **Middleware**
+## Middleware
 
 Middleware are functions that have access to the [request object](https://expressjs.com/en/4x/api.html#req) (`req`), the [response object](https://expressjs.com/en/4x/api.html#res) (`res`), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named `next`.
 
@@ -195,6 +195,6 @@ Because we are using the `onlyAdmins` middleware, there is no need to check if t
 
 > ⚠️ **Warning**: When you apply a middleware, you simply pass it as a **function**. Above we passed `onlyAdmins` without `()` parentheses. Middleware can be implemented using a configuration function as well, which is a function that takes configuration arguments and returns a middleware function. Read more about it in Express [documentation](https://expressjs.com/en/guide/writing-middleware.html#:~:text=Using%20Express%20middleware.-,Configurable%20middleware,-If%20you%20need).
 
-## **Conclusion**
+## Conclusion
 
 In this lesson, we learned that everything in Express.js is basically a middleware that gets invoked somewhere. And by using middleware, we can structure our business logic in a clean approach. Middleware can be used for basically everything, and one of their use cases is to enforce authorization.

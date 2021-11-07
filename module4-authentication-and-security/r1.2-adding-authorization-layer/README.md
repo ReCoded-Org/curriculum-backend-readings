@@ -6,14 +6,14 @@ With authorization, we introduce another level of app security. In this lesson, 
 - Introduce role-based authorization
 - How to restrict access to routes using authorization
 
-## **Authorization**
+## Authorization
 
 - Authorization is a process by which a server determines if the client has permission to use a resource or access a file.
 - Authorization is usually coupled with authentication so that the server has some concept of who the client is that is requesting access.
 - The type of authentication required for authorization may vary; passwords may be required in some cases but not in others.
 - In some cases, there is no authorization; any user may use a resource or access a file simply by asking for it. Most of the web pages on the Internet require no authentication or authorization.
 
-## **Authentication**
+## Authentication
 
 - Authentication is used by a server when the server needs to know exactly who is accessing their information or site.
 - Authentication is used by a client when the client needs to know that the server is the system it claims to be.
@@ -42,7 +42,7 @@ From these requirements, we can distinguish our app structure as follows:
 - Endpoints like `/delete` would need an authorization guard. Which is a guard that contains the authentication guard, plus it also checks if the user is a `moderator`, before letting them complete the action. Otherwise, it shouldn't let them through.
 - To elevate a user, an endpoint like `/elevate` would have the same authorization guard, but instead it will check if the user is an `admin`.
 
-### **Implementation**
+### Implementation
 
 To implement this as simply as possible, we need to first define our roles as numbers. That is mainly to:
 
@@ -213,7 +213,7 @@ There is still a problem with our code though. It is very messy with lots of if-
 
 In the next lesson, we will introduce an easier way to enforce our guards using a feature called **middleware**. We can define an `onlyAdmins`, `onlyModerators`, and `onlyAuthenticated` middleware that would stop unauthorized requests, and only let authorized access through.
 
-## **Conclusion**
+## Conclusion
 
 In this lesson, we introduced authorization as a new security feature to our app. It would prevent users without the required access level from entering protected endpoints.
 
