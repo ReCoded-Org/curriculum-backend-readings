@@ -1,3 +1,3 @@
 # SQL Queries Practice
 
-Assignment Repo Link to be inserted
+[Assignment repo link](https://github.com/ReCoded-Org/curriculum-backend-sql-queries-practice)

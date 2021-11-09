@@ -1,3 +1,3 @@
 # MongoDB Queries Practice
 
-Assignment repo link to be inserted
+[Assignment repo link](https://github.com/ReCoded-Org/curriculum-backend-mongodb-queries-practice)
