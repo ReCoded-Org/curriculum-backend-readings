@@ -1,4 +1,4 @@
-# Module 4: Authenitcation and Security
+# Module 4: Authentication and Security
 
 Last Revised: 07/11/2021
 
@@ -10,7 +10,7 @@ A learning journey through implementation of authentication and authorization in
 
 1 [Securing a backend app [R]](./r1-securing-backend-app/README.md)
 
-1.1 [Defining Authentication Layer [R]](./r1.1-defining-authentication-layer/README.md/README.md)
+1.1 [Defining Authentication Layer [R]](./r1.1-defining-authentication-layer/README.md)
 
 1.2 [Markdown Blog Authentication [L]](./r1.2-md-blog-auth/README.md)
 
@@ -27,3 +27,5 @@ A learning journey through implementation of authentication and authorization in
 3 [Attack Trajectories and mitigation [R]](./r3-attack-trajectories-and-mitigation/README.md)
 
 4 [Awesome Todos [L]](./r4-awesome-todos-lab/README.md)
+
+5 [Summary](./r5-summary/README.md)

@@ -112,7 +112,7 @@ Before securing our backend app, it is of utmost security to secure the database
 
 Similar protection should be implemented to protect any web-based management tools used with the database, such as phpMyAdmin.
 
-#### Stroing Database Credentials
+#### Storing Database Credentials
 
 Database credentials should never be stored in the application source code, especially if they are unencrypted. Instead, they should be stored in a configuration file that:
 
