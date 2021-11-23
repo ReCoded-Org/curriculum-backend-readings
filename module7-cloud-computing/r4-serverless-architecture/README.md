@@ -64,9 +64,10 @@ A web application like the to-do list may use AWS Lambda and Amazon API Gateway 
 ![Architectural Diagram](../assets/to-do-list-app-architecture.png)
 
 This architecural diagram has the following tiers:
-Presentation: The static website content hosted in Amazon S3.
-Logic: The backend application is where the actual business logic is implemented. The code is implemented using Lambda functions fronted by an API Gateway REST API.
-Data: Amazon DynamoDB is used for storing the todo list items data.
+
+- Presentation: The static website content hosted in Amazon S3.
+- Logic: The backend application is where the actual business logic is implemented. The code is implemented using Lambda functions fronted by an API Gateway REST API.
+- Data: Amazon DynamoDB is used for storing the todo list items data.
 
 For more info about this use case, visit the use cases on AWS [here](https://aws.amazon.com/serverless/), or see the github repository for the whole project [here](https://github.com/aws-samples/lambda-refarch-webapp).
 
