@@ -9,7 +9,7 @@ The objectives of this lesson are:
 
 ## Introduction to Cloud Functions
 
-Cloud Functions are an easy way to run your code in the cloud. With Cloud Functions, there are no servers to provision, manage, patch, or update. Functions automatically scale and are highly available and fault-tolerant.Cloud Functions are great for building serverless backends, doing real-time data processing, and creating intelligent apps.
+Cloud Functions are an easy way to run your code in the cloud. With Cloud Functions, there are no servers to provision, manage, patch, or update. Functions automatically scale and are highly available and fault-tolerant. Cloud Functions are great for building serverless backends, doing real-time data processing, and creating intelligent apps.
 
 With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your Cloud Function is triggered when an event being watched is fired. Your code executes in a fully managed environment. There is no need to provision any infrastructure or worry about managing any servers.
 
@@ -21,7 +21,7 @@ Cloud Functions provides a connective layer of logic that lets you write code to
 
 ## Events and Triggers
 
-Cloud events are things that happen in your cloud environment.These might be things like changes to data in a database, files added to a storage system, or a new virtual machine instance being created.
+Cloud events are things that happen in your cloud environment. These might be things like changes to data in a database, files added to a storage system, or a new virtual machine instance being created.
 
 Events occur whether or not you choose to respond to them. You create a response to an event with a trigger. A trigger is a declaration that you are interested in a certain event or set of events. Binding a function to a trigger allows you to capture and act on events.
 
