@@ -72,7 +72,9 @@ For this use case, we may use few AWS serverless services:
 
 - [Amazon Cognito](https://aws.amazon.com/cognito/): Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.
 
-## Web Application components.
+## Web Application components
+
+This application consists of 3 main components outlined below.
 
 ### Front End Application
 
