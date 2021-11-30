@@ -25,21 +25,23 @@ There are three primary services offered via software developed with serverless 
 ### Function as a service
 
 In the realm of pre-packaged services, function as a service, sometimes known as FaaS or framework as, falls in between software as a service and platform as a service.
+A function is a piece of software running business logic on an operating system. Applications can be composed of many functions.
 
-Think of FaaS as a ready-to-implement framework that can be easily tailored to the needs of an enterprise company. To be clear:
+FaaS gives developers an abstraction for running web applications in response to events, without managing servers.
 
-- SaaS is ready to use out of the box while FaaS is not.
-- However, FaaS does not require the resources to implement that you would need if you were using PaaS.
+With Amazon Lambda (a FaaS service from Amazon Web Services, we will talk more about it later in this lesson), you can directly run your code without even managing the servers.
+For example, you upload an image in the server, now the Lambda function will work for you and will automatically resize the image according to the device a user is using, be it mobile, laptop, desktop or a tablet.
+
+Think of FaaS as a ready-to-implement framework that can be easily tailored to the needs of an enterprise company.
 
 ### Backend as a service
 
-Similar to FaaS, backend as a service (BaaS) is another serverless technology. Some will contend that BaaS takes it a step further as a NoOps offering. NoOps essentially refers to infrastructure that has been automated to the point that in-house developers have no hand in its operation.
+Backend-as-a-Service (BaaS) is a cloud service model in which developers outsource all the behind-the-scenes aspects of a web or mobile application so that they only have to write and maintain the frontend. BaaS vendors provide pre-written software for activities that take place on servers, such as user authentication, database management, remote updating, and push notifications (for mobile apps), as well as cloud storage and hosting.
 
-Here’s an easy way to look at BaaS: Imagine your enterprise organization is developing a mobile app to connect employees to important information on the go. You might develop the basic application framework in-house and then outsource the functionality. This includes backend processes like:
+Let's take [Firebase](https://firebase.google.com/) as an example of BaaS.
+Firebase is owned by Google. It has extensive features for building, hosting and managing apps. The platform consists of several tools that developers need for building and managing apps. In essence, it provides all the tools developers need to build an app, launch it, and engage with the app users.
 
-- Accessing cloud storage
-- Syncing
-- Social collaboration
+Since the backend platform gives the developer access to several ready-made services like file storage, database, authentication, they can put more efforts into building excellent apps. Another superb feature of Firebase it the seamless scaling of apps. All these features work together to make Firebase one of the leading BaaS platforms today.
 
 ### Database
 
@@ -70,7 +72,7 @@ For this use case, we may use few AWS servless services:
 
 - [Amazon Cognito](https://aws.amazon.com/cognito/): Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.
 
-## This Web Application is built from 3 different components.
+## Web Application components.
 
 ### Front End Application
 
