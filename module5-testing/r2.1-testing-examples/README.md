@@ -62,7 +62,7 @@ What is the difference between testing the controller and testing the route? Whe
 
 As the name suggests, middleware is a piece of code that executes between the input and output of a request-response lifecycle. These can be helper functions or external libraries that perform an operation on your API request before the actual controller starts operating on it.
 
-In practice, an Express application is essentially a series of middleware function calls. In Express, middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
+In practice, an Express application is essentially a series of middleware function calls. In Express, middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle.
 
 Middleware functions can perform the following tasks:
 - Execute any code.

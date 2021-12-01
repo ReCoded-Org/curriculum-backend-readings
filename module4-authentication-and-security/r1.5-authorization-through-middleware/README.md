@@ -11,7 +11,7 @@ This lesson objectives are:
 
 ## Middleware
 
-Middleware are functions that have access to the [request object](https://expressjs.com/en/4x/api.html#req) (`req`), the [response object](https://expressjs.com/en/4x/api.html#res) (`res`), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named `next`.
+Middleware are functions that have access to the [request object](https://expressjs.com/en/4x/api.html#req) (`req`), the [response object](https://expressjs.com/en/4x/api.html#res) (`res`), and the next middleware function in the application's request-response cycle. The next middleware function is commonly denoted by a variable named `next`.
 
 ```js
 const loggerMiddleware = (req, res, next) => {
@@ -115,7 +115,7 @@ app.use(function (err, req, res, next) {
 
 Usually, an error logging service like [sentry](https://sentry.io/) is also contacted in this middleware to log and track the error so you get notified when your app has run into an unhandled exception, with the required request-response details that can help the developers reproduce the error to fix it.
 
-> ⚠️ **Warning**: Error-handling middleware always takes **four** arguments. You must provide four arguments to identify it as an error-handling middleware function. Even if you don’t need to use the next object, you must specify it to maintain the signature. Otherwise, the next object will be interpreted as regular middleware and will fail to handle errors.
+> ⚠️ **Warning**: Error-handling middleware always takes **four** arguments. You must provide four arguments to identify it as an error-handling middleware function. Even if you don't need to use the next object, you must specify it to maintain the signature. Otherwise, the next object will be interpreted as regular middleware and will fail to handle errors.
 
 ## Auth guard middleware
 

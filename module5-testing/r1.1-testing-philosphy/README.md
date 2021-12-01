@@ -61,7 +61,7 @@ issues; test-driven development aids greatly with this mindset, since it
 encourages you to write the test and think about these scenarios before writing
 the code.
 
-[Behaviour-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) or BDD is a concept that emerged from TDD. In BDD, tests are more user-focused and based on the system’s behavior. [Mocha](https://mochajs.org/) is a popular JavaScript framework for writing behaviour-driven tests. You've seen it in practice in the tests for your assignments. BDD usually follows the "Given-When-Then" formula.
+[Behaviour-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) or BDD is a concept that emerged from TDD. In BDD, tests are more user-focused and based on the system's behavior. [Mocha](https://mochajs.org/) is a popular JavaScript framework for writing behaviour-driven tests. You've seen it in practice in the tests for your assignments. BDD usually follows the "Given-When-Then" formula.
 
 _Given_ a certain scenario
 
