@@ -33,20 +33,37 @@ There are two distinct types of Cloud Functions: HTTP functions and event-driven
 
 You invoke HTTP functions from standard HTTP requests. These HTTP requests wait for the response and support handling of common HTTP request methods like GET, PUT, POST, DELETE and OPTIONS. When you use Cloud Functions, a TLS certificate is automatically provisioned for you, so all HTTP functions can be invoked via a secure connection.
 
-```js
-const escapeHtml = require("escape-html");
+This is an example using the Firebase SDK for Cloud Functions with an HTTPS trigger through building an endpoint returning the current time.
+The function date returns the current server date. You can pass it a format URL Query parameter to format the date.
 
-/**
- * HTTP Cloud Function.
- *
- * @param {Object} req Cloud Function request context.
- *                     More info: https://expressjs.com/en/api.html#req
- * @param {Object} res Cloud Function response context.
- *                     More info: https://expressjs.com/en/api.html#res
- */
-exports.helloHttp = (req, res) => {
-  res.send(`Hello ${escapeHtml(req.query.name || req.body.name || "World")}!`);
-};
+```js
+exports.date = functions.https.onRequest((req, res) => {
+  // Forbidding PUT requests.
+  if (req.method === "PUT") {
+    res.status(403).send("Forbidden!");
+    return;
+  }
+  // [START usingMiddleware]
+  // Enable CORS using the `cors` express middleware.
+  cors(req, res, () => {
+    // [END usingMiddleware]
+    // Reading date format from URL query parameter.
+    // [START readQueryParam]
+    let format = req.query.format;
+    // [END readQueryParam]
+    // Reading date format from request body query parameter
+    if (!format) {
+      // [START readBodyParam]
+      format = req.body.format;
+      // [END readBodyParam]
+    }
+    // [START sendResponse]
+    const formattedDate = moment().format(`${format}`);
+    functions.logger.log("Sending Formatted date:", formattedDate);
+    res.status(200).send(formattedDate);
+    // [END sendResponse]
+  });
+});
 ```
 
 ## Background Functions
@@ -91,3 +108,4 @@ exports.helloPubSub = (message, context) => {
 - https://developers.google.com/learn/topics/functions
 - https://cloud.google.com/functions
 - https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/
+- https://github.com/firebase/functions-samples
