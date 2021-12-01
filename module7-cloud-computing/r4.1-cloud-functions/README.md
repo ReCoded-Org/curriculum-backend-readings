@@ -25,9 +25,69 @@ Cloud events are things that happen in your cloud environment. These might be th
 
 Events occur whether or not you choose to respond to them. You create a response to an event with a trigger. A trigger is a declaration that you are interested in a certain event or set of events. Binding a function to a trigger allows you to capture and act on events.
 
+## Types of Cloud Functions
+
+There are two distinct types of Cloud Functions: HTTP functions and event-driven functions. Event-driven functions can be either background functions or CloudEvent functions, depending on which Cloud Functions runtime they are written for.
+
+## HTTP Functions
+
+You invoke HTTP functions from standard HTTP requests. These HTTP requests wait for the response and support handling of common HTTP request methods like GET, PUT, POST, DELETE and OPTIONS. When you use Cloud Functions, a TLS certificate is automatically provisioned for you, so all HTTP functions can be invoked via a secure connection.
+
+```js
+const escapeHtml = require("escape-html");
+
+/**
+ * HTTP Cloud Function.
+ *
+ * @param {Object} req Cloud Function request context.
+ *                     More info: https://expressjs.com/en/api.html#req
+ * @param {Object} res Cloud Function response context.
+ *                     More info: https://expressjs.com/en/api.html#res
+ */
+exports.helloHttp = (req, res) => {
+  res.send(`Hello ${escapeHtml(req.query.name || req.body.name || "World")}!`);
+};
+```
+
+## Background Functions
+
+Before moving into background functions, we need to understand this term, Pub/Sub.
+
+Pub/Sub, which stands for Publisher/Subscriber, allows services to communicate asynchronously, with latencies on the order of 100 milliseconds.
+
+Pub/Sub is used for streaming analytics and data integration pipelines to ingest and distribute data. It is equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks.
+
+<b>What is background functions?</b>
+
+A background function is one type of event-driven function.
+You use background functions when you want to have your Cloud Function invoked indirectly in response to an event, such as a message on a Pub/Sub topic, a change in a Cloud Storage bucket, or a Firebase event.
+
+Pub/Sub example
+
+This example shows a Cloud Function triggered by Pub/Sub events. Every time a message is published to a Pub/Sub topic, the function is invoked, and a greeting using data derived from the message is written to the log
+
+```js
+/**
+ * Background Cloud Function to be triggered by Pub/Sub.
+ * This function is exported by index.js, and executed when
+ * the trigger topic receives a message.
+ *
+ * @param {object} message The Pub/Sub message.
+ * @param {object} context The event metadata.
+ */
+exports.helloPubSub = (message, context) => {
+  const name = message.data
+    ? Buffer.from(message.data, "base64").toString()
+    : "World";
+
+  console.log(`Hello, ${name}!`);
+};
+```
+
 ---
 
 ## References
 
 - https://developers.google.com/learn/topics/functions
 - https://cloud.google.com/functions
+- https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/
