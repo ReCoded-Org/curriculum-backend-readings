@@ -66,22 +66,38 @@ exports.date = functions.https.onRequest((req, res) => {
 });
 ```
 
-## Background Functions
+## Event-driven functions
 
-Before moving into background functions, we need to understand this term, Pub/Sub.
+An event-driven architecture uses events to trigger and communicate between decoupled services and is common in modern applications built with microservices. An event is a change in state, or an update, like an item being placed in a shopping cart on an e-commerce website. Events can either carry the state (the item purchased, its price, and a delivery address) or events can be identifiers (a notification that an order was shipped).
+
+Before moving deepter into Event-driven functions, we need to understand Pub/Sub.
 
 Pub/Sub, which stands for Publisher/Subscriber, allows services to communicate asynchronously, with latencies on the order of 100 milliseconds.
 
 Pub/Sub is used for streaming analytics and data integration pipelines to ingest and distribute data. It is equally effective as messaging-oriented middleware for service integration or as a queue to parallelize tasks.
 
-<b>What is background functions?</b>
+Core concepts of Pub/Sub
+
+- **Subscription:** A named resource representing the stream of messages from a single, specific topic, to be delivered to the subscribing application.
+- **Publisher:** An application that creates and sends messages to a topic(s).
+- **Subscriber:** An application with a subscription to a topic(s) to receive messages from it.
+
+### Common Pub/Sub Use-Cases
+
+1. Implementing Asynchronous Workflows: You can create an application that is used to place and process orders. This application will use a Pub/Sub topic, where the order would be placed and can be picked up by multiple workers for its processing. 2. Distributing Event Notifications
+
+2. Distributing Event Notifications: You can create an application that has a module that handles new user registrations. This module will fetch the data from user-signups and send notifications whenever a new registration occurs. The other module of the application will subscribe to receive the notifications sent by the first module. 3. Refreshing a Distributed Cache
+
+3. Refreshing a Distributed Cache: You can create an application that will be responsible for publishing invalidation events to update the primary keys of objects that have been altered. 4. Reliability Improvement
+
+4. Reliability Improvement: You can create a service in one region/zone and operate it from multiple regions by subscribing to a topic common to all regions. This can be used for failure recoveries in specific regions.
+
+## Background Functions
 
 A background function is one type of event-driven function.
 You use background functions when you want to have your Cloud Function invoked indirectly in response to an event, such as a message on a Pub/Sub topic, a change in a Cloud Storage bucket, or a Firebase event.
 
-Pub/Sub example
-
-This example shows a Cloud Function triggered by Pub/Sub events. Every time a message is published to a Pub/Sub topic, the function is invoked, and a greeting using data derived from the message is written to the log
+This example shows a google Cloud Function triggered by Pub/Sub events. Every time a message is published to a Pub/Sub topic (eg. new user signs-in), the function is invoked, and a greeting using data derived from the message is written to the log
 
 ```js
 /**
@@ -109,3 +125,5 @@ exports.helloPubSub = (message, context) => {
 - https://cloud.google.com/functions
 - https://aws.amazon.com/blogs/aws/introducing-cloudfront-functions-run-your-code-at-the-edge-with-low-latency-at-any-scale/
 - https://github.com/firebase/functions-samples
+- https://blog.clairvoyantsoft.com/pub-sub-notifications-with-google-cloud-storage-events-6992ca829dd5
+- https://aws.amazon.com/event-driven-architecture/
