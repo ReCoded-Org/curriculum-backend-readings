@@ -5,7 +5,7 @@ We now understand what is the serverless architecture, in this lesson, we will f
 The objectives of this lesson are:
 
 - Getting familiar with google cloud functions.
-- Understanding how to write a cloud function.
+- Understanding the different types of cloud functions.
 
 ## Introduction to Cloud Functions
 
