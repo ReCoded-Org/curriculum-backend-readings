@@ -46,6 +46,7 @@ http://imgur.com:80/
 You will notice the 80 gets dropped in the URL bar. That’s because port 80 is the default port for HTTP traffic.
 
 HTTPS traffic uses port 443. Try Hacker News.
+
 https://news.ycombinator.com:443/
 
 Because these ports are often public, you need special privileges to run processes using them. Also, it is not great to run Node.js on port 80 or 443 directly because you may want to open up a few different applications on these ports. With a router you will be able to send traffic from port 80 or 443 to any program you wish, depending on the headers of the incoming HTTP request.
@@ -60,7 +61,7 @@ Almost there. By default, connecting to your instance without a username will tr
 To connect, the SSH command should look something like
 `ssh USERNAME@[IP FROM PROVIDER]`
 
-## Installing node and system dependencies
+## Installing node
 
 Once in an SSH session the first thing to do is get Node.js. NVM (Node Version Manager) is a pretty great way to install Node.js and allows you to easily switch versions if required.
 
@@ -94,9 +95,13 @@ Select the key’s contents and copy it into Github. Deploy keys are added in a 
 Whenever you are logged in over SSH, you want the keys to be added so that they are used to authenticate with Github. To do this, add these lines to the top of your ~/.bashrc file.
 
 <code>
-# Start the SSH agent <br>
-eval `ssh-agent -s` <br>
-# Add the SSH key <br>
+
+Start the SSH agent
+
+eval `ssh-agent -s`
+
+Add the SSH key
+
 ssh-add
 </code>
 
@@ -107,7 +112,8 @@ This will make sure you use the keys whenever you log on to the server. To run t
 Now we can clone the repo!
 
 <code>
-You should use your own git URL. <br>
+You should use your own git URL.
+
 git clone git@github.com:roberttod/tutorial-pt-2.git
 </code>
 
