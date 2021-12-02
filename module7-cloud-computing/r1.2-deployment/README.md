@@ -95,7 +95,6 @@ Select the key’s contents and copy it into Github. Deploy keys are added in a 
 Whenever you are logged in over SSH, you want the keys to be added so that they are used to authenticate with Github. To do this, add these lines to the top of your ~/.bashrc file.
 
 <code>
-
 Start the SSH agent
 
 eval `ssh-agent -s`
