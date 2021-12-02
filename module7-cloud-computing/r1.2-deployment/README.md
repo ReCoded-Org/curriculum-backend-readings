@@ -97,7 +97,7 @@ Whenever you are logged in over SSH, you want the keys to be added so that they 
 <code>
 Start the SSH agent
 
-eval `ssh-agent -s`
+eval ssh-agent -s
 
 Add the SSH key
 
