@@ -94,15 +94,12 @@ Select the key’s contents and copy it into Github. Deploy keys are added in a 
 
 Whenever you are logged in over SSH, you want the keys to be added so that they are used to authenticate with Github. To do this, add these lines to the top of your ~/.bashrc file.
 
-<code>
+```
 Start the SSH agent
-
 eval ssh-agent -s
-
 Add the SSH key
-
 ssh-add
-</code>
+```
 
 This will make sure you use the keys whenever you log on to the server. To run the code without logging out, execute the .bashrc file
 
@@ -110,11 +107,10 @@ This will make sure you use the keys whenever you log on to the server. To run t
 
 Now we can clone the repo!
 
-<code>
+```
 You should use your own git URL.
-
 git clone git@github.com:roberttod/tutorial-pt-2.git
-</code>
+```
 
 ## Keeping the Node.js process running
 
