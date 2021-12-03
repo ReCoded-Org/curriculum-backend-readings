@@ -4,7 +4,7 @@ Once your site is finished (or finished "enough" to start public testing) you're
 
 Up to now, you've been working in a development environment, using Express/Node as a web server to share your site to the local browser/network, and running your website with (insecure) development settings that expose debugging and other private information.
 
-## Production Enviroment
+## Production Environment
 
 The production environment is the environment provided by the server computer where you will run your website for external consumption. The environment includes:
 
@@ -26,7 +26,7 @@ Some developers will choose the increased flexibility provided by IaaS over PaaS
 
 There are numerous hosting providers that are known to either actively support or work well with Node (and Express). These vendors provide different types of environments (IaaS, PaaS), and different levels of computing and network resources at different prices.
 
-Few popular options are:
+A few popular options are:
 
 - Amazon Web Services (EC2)
 - DigitalOcean
@@ -35,7 +35,7 @@ Few popular options are:
 
 ## Creating and starting the server
 
-After picking a provider, we need to pick an operating system for our cloud computer and other specifications like Ram. Most servers run Linux and it is a great choice for developing Node.js, Windows servers are only really useful for specialized applications such as .NET. For the basic things there isn’t much difference between the Linux images. You can go with Ubuntu Server because it is widely used and has tonnes of guides and plenty of questions and answers on the internet.
+After picking a provider, we need to pick an operating system for our cloud computer and other specifications like Ram. Most servers run Linux and it is a great choice for developing Node.js, Windows servers are only really useful for specialized applications such as .NET. For the basic things, there isn’t much difference between the Linux images. You can go with Ubuntu Server because it is widely used and has tonnes of guides and plenty of questions and answers on the internet.
 
 An image is an exact copy of a hard drive that can be easily loaded onto an empty hard drive, in this case they are being used as presets to get your machine setup easily. Without at least an operating system and SSH, it wouldn’t be possible to even configure the server so some preset software is necessary.
 
@@ -53,9 +53,9 @@ Because these ports are often public, you need special privileges to run process
 
 ## SSH into your server
 
-There are many ways to establish a connection with a remote machine depending on the operating system you are running, the most common is Secure Shell (SSH) fro linux-based machines by using a text-based interface or CLI.
+There are many ways to establish a connection with a remote machine depending on the operating system you are running, the most common is Secure Shell (SSH) for linux-based machines by using a text-based interface or CLI.
 
-To SSH we need to have a username, an address and a key. The address is available usually in your server provider dashboard, it look something like this `52.214.64.31`. The key is usually provided to as `.pem` file or a string key when you run your server for the first time.
+To SSH we need to have a username, an address and a key. The address is available usually in your server provider dashboard, it looks something like this `52.214.64.31`. The key is usually provided to you as `.pem` file or a string key when you run your server for the first time.
 Almost there. By default, connecting to your instance without a username will try to login as root which is generally not allowed. So from your server provider, you can get the username to use when you SSH to your server. for ubuntu the username is by default ubuntu.
 
 To connect, the SSH command should look something like
@@ -79,7 +79,7 @@ To check node is ready to go just echo the version.
 
 ## Deploying code into the server
 
-Now after having node installed, our server is ready to run our node app. To get your code, it does't make since to write code on SSH session, for that you can clone your code from github to your server and run it (don't forget, your remote server is just like your local computer but somewhere else).
+Now after having node installed, our server is ready to run our node app. To get your code, it doesn't make sense to write code on SSH session, for that, you can clone your code from github to your server and run it (don't forget, your remote server is just like your local computer but somewhere else).
 
 We need to SSH into the server, generate a SSH private/public key pair and then add it as a deployment key in source control (i.e. Github). Only when the server is allowed access to the remote repo will it be able to clone the code and pull down changes.
 SSH into your server and generate the key pair.
@@ -129,7 +129,7 @@ To make sure that your PM2 restarts when your server restarts
 `pm2 startup`
 
 This will print out a line of code you need to run depending on the server you are using. Run the code it outputs.
-Finally, save the current running processes so they are run when PM2 restarts.
+Finally, save the currently running processes so they are run when PM2 restarts.
 
 `pm2 save`
 
@@ -137,8 +137,8 @@ Great! Check out the [PM2 docs](https://pm2.keymetrics.io/) to see what else you
 
 ## Deploying on PaaS
 
-As we mentioned earlier, There are many platforms out there that enables you to deploy your node app with only few clicks without the need to setup everything manually by yourself.
-These are more popular now days for small projects and way quicker than the cloud server approach. you can simply upload your code and the platform (eg. [aws elastic beanstalk](https://aws.amazon.com/getting-started/hands-on/deploy-nodejs-web-app/)) automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring.
+As we mentioned earlier, There are many platforms out there that enable you to deploy your node app with only a few clicks without the need to setup everything manually by yourself.
+These are more popular nowadays for small projects and way quicker than the cloud server approach. you can simply upload your code and the platform (eg. [aws elastic beanstalk](https://aws.amazon.com/getting-started/hands-on/deploy-nodejs-web-app/)) automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring.
 
 ---
 

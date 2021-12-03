@@ -70,7 +70,7 @@ exports.date = functions.https.onRequest((req, res) => {
 
 An event-driven architecture uses events to trigger and communicate between decoupled services and is common in modern applications built with microservices. An event is a change in state, or an update, like an item being placed in a shopping cart on an e-commerce website. Events can either carry the state (the item purchased, its price, and a delivery address) or events can be identifiers (a notification that an order was shipped).
 
-Before moving deepter into Event-driven functions, we need to understand Pub/Sub.
+Before moving deeper into Event-driven functions, we need to understand Pub/Sub.
 
 Pub/Sub, which stands for Publisher/Subscriber, allows services to communicate asynchronously, with latencies on the order of 100 milliseconds.
 
@@ -86,7 +86,7 @@ Core concepts of Pub/Sub
 
 1. Implementing Asynchronous Workflows: You can create an application that is used to place and process orders. This application will use a Pub/Sub topic, where the order would be placed and can be picked up by multiple workers for its processing. 2. Distributing Event Notifications
 
-2. Distributing Event Notifications: You can create an application that has a module that handles new user registrations. This module will fetch the data from user-signups and send notifications whenever a new registration occurs. The other module of the application will subscribe to receive the notifications sent by the first module. 3. Refreshing a Distributed Cache
+2. Distributing Event Notifications: You can create an application that has a module that handles new user registrations. This module will fetch the data from user signups and send notifications whenever a new registration occurs. The other module of the application will subscribe to receive the notifications sent by the first module. 3. Refreshing a Distributed Cache
 
 3. Refreshing a Distributed Cache: You can create an application that will be responsible for publishing invalidation events to update the primary keys of objects that have been altered. 4. Reliability Improvement
 

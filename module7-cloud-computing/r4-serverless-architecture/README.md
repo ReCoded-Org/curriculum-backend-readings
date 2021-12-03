@@ -1,6 +1,6 @@
 # Serverless Architecture
 
-A serverless architecture is a way to build and run applications and services without having to manage infrastructure. Your application still runs on servers, but all the server management is done by the platform you are using (For example, AWS). You no longer have to provision, scale, and maintain servers to run your applications, databases, and storage systems.
+Serverless architecture is a way to build and run applications and services without having to manage infrastructure. Your application still runs on servers, but all the server management is done by the platform you are using (For example, AWS). You no longer have to provision, scale, and maintain servers to run your applications, databases, and storage systems.
 
 ## Why use serverless architectures?
 
@@ -16,7 +16,7 @@ serverless architecture offers the following value propositions:
 - Fault tolerant. Since serverless application coding is logically decoupled from the underlying infrastructure, hardware failures have minimal impact on the software development process. Users are not required to manage applications on their own.
 - Low operational overhead. The infrastructure and operations management tasks are managed by cloud vendors, allowing organizations to focus their efforts on building software features. Applications are released faster, resulting in faster end-user feedback and therefore, continued improvements over the next software release cycles.
 - Optimized usage-based billing. The pay-as-you-go billing model serves particularly well for small and midsize (SMB) organizations that lack the capital to establish and manage on-site data centers.
-- Built-in integrations. Most cloud vendors offer integrations with a variety of services that allow users to focus on building high quality applications instead of configuring them.
+- Built-in integrations. Most cloud vendors offer integrations with a variety of services that allow users to focus on building high-quality applications instead of configuring them.
 
 ## Types of serverless architecture software
 
@@ -30,7 +30,7 @@ A function is a piece of software running business logic on an operating system.
 FaaS gives developers an abstraction for running web applications in response to events, without managing servers.
 
 With Amazon Lambda (a FaaS service from Amazon Web Services, we will talk more about it later in this lesson), you can directly run your code without even managing the servers.
-For example, you upload an image in the server, now the Lambda function will work for you and will automatically resize the image according to the device a user is using, be it mobile, laptop, desktop or a tablet.
+For example, you upload an image in the server, now the Lambda function will work for you and will automatically resize the image according to the device a user is using, be it mobile, laptop, desktop or tablet.
 
 Think of FaaS as a ready-to-implement framework that can be easily tailored to the needs of an enterprise company.
 
@@ -39,9 +39,9 @@ Think of FaaS as a ready-to-implement framework that can be easily tailored to t
 Backend-as-a-Service (BaaS) is a cloud service model in which developers outsource all the behind-the-scenes aspects of a web or mobile application so that they only have to write and maintain the frontend. BaaS vendors provide pre-written software for activities that take place on servers, such as user authentication, database management, remote updating, and push notifications (for mobile apps), as well as cloud storage and hosting.
 
 Let's take [Firebase](https://firebase.google.com/) as an example of BaaS.
-Firebase is owned by Google. It has extensive features for building, hosting and managing apps. The platform consists of several tools that developers need for building and managing apps. In essence, it provides all the tools developers need to build an app, launch it, and engage with the app users.
+Firebase is owned by Google. It has extensive features for building, hosting, and managing apps. The platform consists of several tools that developers need for building and managing apps. In essence, it provides all the tools developers need to build an app, launch it, and engage with the app users.
 
-Since the backend platform gives the developer access to several ready-made services like file storage, database, authentication, they can put more efforts into building excellent apps. Another superb feature of Firebase it the seamless scaling of apps. All these features work together to make Firebase one of the leading BaaS platforms today.
+Since the backend platform gives the developer access to several ready-made services like file storage, database, authentication, they can put more effort into building excellent apps. Another superb feature of Firebase is the seamless scaling of apps. All these features work together to make Firebase one of the leading BaaS platforms today.
 
 ### Database
 
@@ -53,7 +53,7 @@ Amazon Web Services. is a subsidiary of Amazon providing on-demand cloud computi
 
 In this use case, we are going to look at a simple to-do list web application that enables a registered user to create, update, view, and delete items.
 
-For this use case, we may use few AWS serverless services:
+For this use case, we may use a few AWS serverless services:
 
 - [AWS Lambda](https://aws.amazon.com/lambda/?c=ser&sec=uc1): is a serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers.
 
@@ -78,7 +78,7 @@ This application consists of 3 main components outlined below.
 
 ### Front End Application
 
-The front-end application is all the static content (HTML files, CSS files, JavaScript files and images) that are generated by `create-react-app`. All these objects are hosted on AWS Amplify Console.
+The front-end application is all the static content (HTML files, CSS files, JavaScript files, and images) that are generated by `create-react-app`. All these objects are hosted on AWS Amplify Console.
 
 When a user connects to the web site, the needed resources are downloaded to their browser and start to run there. When the application needs to communicate with the backend it does so by issuing REST API calls to the backend.
 
