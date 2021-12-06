@@ -188,17 +188,17 @@ When the JWT is passed back to the server in the header, we check the claims, an
 
 ## Pros and Cons of JSON Web Tokens
 
-JWTs are becoming more and more ubiquitous. Customer identity and access management (CIAM) providers everywhere are pushing JWTs as the silver bullet for everything. JWTs are pretty cool, but let’s talk about some of the downsides of JWTs and some of their strong benefits.
+JWTs are becoming more and more ubiquitous. Customer identity and access management (CIAM) providers everywhere are pushing JWTs as the silver bullet for everything. JWTs are pretty cool, but let's talk about some of the downsides of JWTs and some of their strong benefits.
 
 ### PRO: JWTs are portable units of identity
 
-That means they contain identity information as JSON and can be passed around to services and applications. Any service or application can verify a JWT itself. The service/application receiving a JWT doesn’t need to ask the identity provider that generated the JWT if it is valid or check any database for it. Once a JWT is verified, the service or application can use the data inside it to take action on behalf of the user. Plus, it works across different clients and domains.
+That means they contain identity information as JSON and can be passed around to services and applications. Any service or application can verify a JWT itself. The service/application receiving a JWT doesn't need to ask the identity provider that generated the JWT if it is valid or check any database for it. Once a JWT is verified, the service or application can use the data inside it to take action on behalf of the user. Plus, it works across different clients and domains.
 
 ### PRO: Token-based Authentication is more Scalable and Efficient
 
 Imagine your app has billions of users, and each of them creates a session. Eventually, the session storage will become pretty big and harder to maintain.
 
-Tokens on the other hand are required to be stored on the user’s end, they offer a scalable solution.
+Tokens on the other hand are required to be stored on the user's end, they offer a scalable solution.
 
 Moreover, the server just needs to create and verify the tokens along with the information, which means that maintaining more users on a website or application at once is possible without any hassle.
 
@@ -212,9 +212,9 @@ This helps in encouraging more collaboration opportunities between enterprises a
 
 Since tokens like JWT are stateless, only a secret key can validate it when received at a server-side application, which was used to create it.
 
-Hence they’re considered the best and the most secure way of offering authentication.
+Hence they're considered the best and the most secure way of offering authentication.
 
-Tokens act as a storage for the user’s credentials and when the token travels between the server or the web browser, the stored credentials are never compromised.
+Tokens act as a storage for the user's credentials and when the token travels between the server or the web browser, the stored credentials are never compromised.
 
 ### CON: Compromised Secret Key
 
@@ -238,13 +238,13 @@ To solve this problem, most applications use refresh tokens. Refresh tokens are 
 
 The overall size of a JWT is quite more than that of a normal session token, which makes it longer whenever more data is added to it.
 
-So, if you’re adding more claims in the token, it will impact the overall loading speed and thus hamper the user experience.
+So, if you're adding more claims in the token, it will impact the overall loading speed and thus hamper the user experience.
 
 This situation can be fixed if the right development practices are followed and minimum but essential data is added to the JWT.
 
-### CON: JWTs aren’t easily revocable
+### CON: JWTs aren't easily revocable
 
-This means that a JWT could be valid even though the user’s account has been suspended or deleted. Some solutions around this are available but they mostly require trips to the identity provider or the database, which JWT is essentially developed to minimize.
+This means that a JWT could be valid even though the user's account has been suspended or deleted. Some solutions around this are available but they mostly require trips to the identity provider or the database, which JWT is essentially developed to minimize.
 
 So if your app has the potential to deactivate or revoke user access frequently, think twice before using JWTs.
 

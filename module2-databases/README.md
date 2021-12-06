@@ -4,7 +4,7 @@ Last revised: 31/10/2021
 
 ## Summary
 Web applications that persist data between visits inevitably use a database. Students
-familiarize themselves with the relational and non-relational databases used in today’s
+familiarize themselves with the relational and non-relational databases used in today's
 ecosystem and their query languages: MySQL, PostgreSQL, MongoDB. Students
 explore the advantages and disadvantages of each technology, understanding the
 appropriate use cases for each one.
