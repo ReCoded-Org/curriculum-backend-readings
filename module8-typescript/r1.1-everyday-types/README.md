@@ -1,12 +1,14 @@
 # Everyday Types
 
 Without any further ado, let us now dive into the different Types that we can use in our codebases. The objectives of this lesson are:
+
 1. Viewing practical usage examples of Types
 2. Understanding when to use Types
 
 We'll start by reviewing the most basic and common types you might encounter when writing JavaScript or TypeScript code. These will later form the core building blocks of more complex types.
 
 ## Type Annotations on Variables
+
 When you declare a variable using `const`, `var`, or `let`, you can optionally add a type annotation to explicitly specify the type of the variable:
 
 ```typescript
@@ -23,8 +25,8 @@ let myName = "Alice";
 ```
 
 ## Primitives
-JavaScript has three primitive types -- `string`, `number`, `boolean` -- and they are present in TypeScript as well. You can declare them just as you would in JavaScript. However, in TypeScript, you may *optionally* add a type. As mentioned previously, in most cases TypeScript can infer the type correctly.
 
+JavaScript has three primitive types -- `string`, `number`, `boolean` -- and they are present in TypeScript as well. You can declare them just as you would in JavaScript. However, in TypeScript, you may _optionally_ add a type. As mentioned previously, in most cases TypeScript can infer the type correctly.
 
 ```typescript
 // TypeScript infers the type.
@@ -51,12 +53,14 @@ console.log(1 + "foo");
 ```
 
 ## Arrays
-The syntax for arrays in TypeScript is again no different than JavaScript. However, typing becomes more important here. To declare an array of some type, we use the notation `string[]`, `number[]`, and so on. You can also use the syntax `Array<string>`, `Array<number>`, and so on. There is no difference. Note that this is the syntax for referring to the **type** of the variable, 
+
+The syntax for arrays in TypeScript is again no different than JavaScript. However, typing becomes more important here. To declare an array of some type, we use the notation `string[]`, `number[]`, and so on. You can also use the syntax `Array<string>`, `Array<number>`, and so on. There is no difference. Note that this is the syntax for referring to the **type** of the variable,
 
 We'll go through a few examples.
 
 ### Inferred array types
-TypeScript will infer the type of an array if it is declared with some value initially. For example, we have an array of numbers below; TypeScript is smart enough to figure out that `ids` has type `number[]`. 
+
+TypeScript will infer the type of an array if it is declared with some value initially. For example, we have an array of numbers below; TypeScript is smart enough to figure out that `ids` has type `number[]`.
 
 ```typescript
 const ids = [1, 2, 3];
@@ -70,6 +74,7 @@ Argument of type 'string' is not assignable to parameter of type 'number'.
 ```
 
 ### Limits of inference
+
 If there is no initial value, TypeScript is, unfortunately, not smart enough to figure out the type of an array. For example:
 
 ```typescript
@@ -79,7 +84,7 @@ If there is no initial value, TypeScript is, unfortunately, not smart enough to 
 const ids = [];
 ids.push("somestring");
 ids.push(5);
-ids.push({})
+ids.push({});
 ```
 
 TypeScript believes that the members of the array can be any type (formally: type `any`, which will be discussed later).
@@ -95,11 +100,12 @@ ids.push(5);
 The `number[]` indicates that this will be an array of numbers. Similarly you could have `string[]` or `boolean[]`.
 
 ## Any
+
 TypeScript also has a special type, `any`, that you can use whenever you don't want a particular value to cause typechecking errors. It is useful when you don't want to write out a long type just to convince TypeScript that a particular line of code is okay.
 
 ```typescript
-let x: any = 'Hello';
-let arr: any[] = [1, true, 'Hello']
+let x: any = "Hello";
+let arr: any[] = [1, true, "Hello"];
 ```
 
 When a value is of type `any`, you can access any properties of it (which will in turn be of type `any`), call it like a function, assign it to (or from) a value of any type, or pretty much anything else that’s syntactically legal.
@@ -107,7 +113,7 @@ When a value is of type `any`, you can access any properties of it (which will i
 ```typescript
 let obj: any = { x: 0 };
 // None of the following lines of code will throw compiler errors.
-// Using `any` disables all further type checking, and it is assumed 
+// Using `any` disables all further type checking, and it is assumed
 // you know the environment better than TypeScript.
 obj.foo();
 obj();
@@ -124,25 +130,26 @@ Here is an example of typing something as `any`, demonstrating how we can start 
 
 ```typescript
 const a: any = [1, 2, 3, 4, 5];
-const invalidAddition = a + 5;  // Adding a list to a number?
+const invalidAddition = a + 5; // Adding a list to a number?
 const functionDoesntExist = a.someInvalidFunction(); // This also compiles!
 ```
 
 Some valid usages of `any` might be: facilitating migration of code from JavaScript to TypeScript, leveraging third-party code without types, working with input of completely unknown structure.
 
 ## Tuples
+
 Sometimes you may have an array whose elements are of different types. This is usually not encouraged, but it is possible. TypeScript allows type definitions for mixed arrays or tuples. You could even have an array of tuples.
 
 ```typescript
 // Tuple
-let person: [number, string, boolean] = [1, 'Alice', true]
+let person: [number, string, boolean] = [1, "Alice", true];
 // Tuple Array
-let employees: [number, string][]
+let employees: [number, string][];
 employees = [
-  [1, 'Alice'],
-  [2, 'Johnny'],
-  [3, 'Davis'],
-]
+  [1, "Alice"],
+  [2, "Johnny"],
+  [3, "Davis"],
+];
 ```
 
 If you're wondering how is a tuple different from an `any[]`, tuples have a fixed type for each element even if not the same type for all elements. But when you state an array of `any` there could be as many different elements of different types.
@@ -150,17 +157,18 @@ If you're wondering how is a tuple different from an `any[]`, tuples have a fixe
 ```typescript
 // This tuple would give an error because the third element
 //is expected to be a boolean but is assigned a string
-let employee: [number, string, boolean] = [1, 'Alice', 'Developer']
+let employee: [number, string, boolean] = [1, "Alice", "Developer"];
 // These cases are all acceptable because
 // the elements be of any type
-let manager: any[]
-manager = [3, 'Hello', true, 'Angela']
-manager = [1, 2, 3]
-manager = [false, 'Hello']
+let manager: any[];
+manager = [3, "Hello", true, "Angela"];
+manager = [1, 2, 3];
+manager = [false, "Hello"];
 ```
 
 ## Functions
-Functions are the primary means of passing data around in JavaScript. TypeScript allows you to specify the types of both the input and output values of functions. In TypeScript, you can also use both the `function` keyword or arrow functions, but you must add types to the parameters. And where required you can add return type annotations too. 
+
+Functions are the primary means of passing data around in JavaScript. TypeScript allows you to specify the types of both the input and output values of functions. In TypeScript, you can also use both the `function` keyword or arrow functions, but you must add types to the parameters. And where required you can add return type annotations too.
 
 ```typescript
 // Function keyword
@@ -172,7 +180,6 @@ function add(x: number, y: number): number {
 const add = (x: number, y: number): number => {
   return x + y;
 };
-
 ```
 
 Note the addition of three number types: the two parameters `x`, `y`, and the return type `number`. You may omit the return type sometimes if TypeScript is able to infer it, but it's also good practice to keep it in so that readers of your functions, such as your team mates, can immediately know at a glance what type should be returned from the function.
@@ -185,7 +192,7 @@ It should be noted that in TypeScript every parameter is required unless specifi
 function makeName(firstName: string, lastName?: string) {
   if (lastName) {
     return firstName + " " + lastName;
-  } else { 
+  } else {
     return firstName;
   }
 }
@@ -194,24 +201,25 @@ function makeName(firstName: string, lastName?: string) {
 In the example above, the second parameter, `lastName`, is optional. This is because it is written as `lastName?: string`. Note that this is equivalent to declaring it as `lastName: string | undefined` (the question mark is equivalent syntax).
 
 ### Anonymous functions
+
 Anonymous functions are a little bit different from function declarations. When a function appears in a place where TypeScript can determine how it's going to be called, the parameters of that function are automatically given types.
 
 ```typescript
 // No type annotations here, but TypeScript can spot the bug
 const names = ["Alice", "Bob", "Eve"];
- 
+
 // Contextual typing for function
 names.forEach(function (s) {
   console.log(s.toUppercase());
 });
- 
+
 // Contextual typing also applies to arrow functions
 names.forEach((s) => {
   console.log(s.toUppercase());
 });
 ```
 
-Typescript would flag an error `Property 'toUppercase' does not exist on type 'string'. Did you mean 'toUpperCase'?` in the above example. Even though the parameter `s` didn't have a type annotation, TypeScript used the types of the `forEach` function, along with the inferred type of the array, to determine the type `s` will have. This process is called contextual typing because the context that the function occurred within informs what type it should have.
+TypeScript would flag an error `Property 'toUppercase' does not exist on type 'string'. Did you mean 'toUpperCase'?` in the above example. Even though the parameter `s` didn't have a type annotation, TypeScript used the types of the `forEach` function, along with the inferred type of the array, to determine the type `s` will have. This process is called contextual typing because the context that the function occurred within informs what type it should have.
 
 We learned how to write types on a function, but it's very common in JavaScript to pass functions as values. For example, using `map`, `reduce`, or any type of callback, a function accepts another function as a parameter. Let's look at how to write the type of such a function.
 
@@ -227,14 +235,15 @@ function mapNumbers(nums: number[], fn: (x: number): number) {
 Note the syntax here to declare a function type. You must add the parameter names, even in the types. The parameter `fn` has the type `(x: number): number`. It takes one parameter `x` of type `number`, and it returns a `number` as a result.
 
 ## Unions
+
 A union type is a type formed from two or more other types, representing values that may be any one of those types. We refer to each of these types as the union's members.
 
 ```typescript
-let id: string | number
+let id: string | number;
 // This is valid
-id = 22
+id = 22;
 // This is also valid
-id = '22'
+id = "22";
 ```
 
 It's easy to provide a value matching a union type - simply provide a type matching any of the union's members. If you have a value of a union type, how do you work with it? TypeScript will only allow an operation if it is valid for every member of the union. For example, if you have the union `string | number`, you can`t use methods that are only available on `string`:
@@ -262,6 +271,7 @@ function printId(id: number | string) {
 ```
 
 ## Objects
+
 Apart from primitives, the most common sort of type you'll encounter is an object type. This refers to any JavaScript value with properties, which is almost all of them! To define an object type, we simply list its properties and their types.
 
 For example, here's a function that takes a point-like object:
@@ -299,13 +309,14 @@ function printName(obj: { first: string; last?: string }) {
     // OK
     console.log(obj.last.toUpperCase());
   }
- 
+
   // A safe alternative using modern JavaScript syntax:
   console.log(obj.last?.toUpperCase());
 }
 ```
 
 ## Type Aliases
+
 We've been using object types and union types by writing them directly in type annotations. This is convenient, but it's common to want to use the same type more than once and refer to it by a single name. A type alias is exactly that - a name for any type. The syntax for a type alias is:
 
 ```typescript
@@ -318,11 +329,12 @@ function printCoord(pt: Point) {
   console.log("The coordinate's x value is " + pt.x);
   console.log("The coordinate's y value is " + pt.y);
 }
- 
+
 printCoord({ x: 100, y: 100 });
 ```
 
 ## Null and Undefined
+
 JavaScript has two primitive values used to signal absent or uninitialized value: `null` and `undefined`. TypeScript has two corresponding types by the same names. How these types behave depends on whether you have the `strictNullChecks` option on. We'll learn more about how to configure this setting in a later section of this module.
 
 With `strictNullChecks` off, values that might be `null` or `undefined` can still be accessed normally, and the values `null` and `undefined` can be assigned to a property of any type. This is similar to how languages without null checks (e.g. C#, Java) behave. The lack of checking for these values tends to be a major source of bugs; it is always recommended to turn `strictNullChecks` on if it's practical to do so in their codebase.
@@ -349,6 +361,7 @@ function liveDangerously(x?: number | null) {
 ```
 
 ## Enums
+
 Enums are a feature added to JavaScript by TypeScript which allows for describing a value which could be one of a set of possible named constants. Unlike most TypeScript features, this is not a type-level addition to JavaScript but something added to the language and runtime. Because of this, it's a feature which you should know exists, but maybe hold off on using unless you are sure.
 
 ```typescript
@@ -364,10 +377,10 @@ enum Direction1 {
 
 // String enum with all string values defined
 enum Direction2 {
-  Up = 'Up',
-  Down = 'Down',
-  Left = 'Left',
-  Right = 'Right',
+  Up = "Up",
+  Down = "Down",
+  Left = "Left",
+  Right = "Right",
 }
 
 // Number enum
@@ -384,11 +397,13 @@ enum BooleanLikeHeterogeneousEnum {
 ```
 
 ## Conclusion
-You would mostly find yourself using primitive types, arrays, objects and functions in your everyday code. TypeScript powers all of these elements with static typing and type checking. You have now learned the syntax for type annotations and assertions. You have also learned about how Typescript infers types and applies contextual typing. You can get creative and use Tuples, Unions, Enums, and Any types but of course these require a lot more thought and consideration put in first. You can also create your own type aliases and reuse them wherever required across the codebase. With that, let's prepare ourselves to look at more complex and advanced types in the next lesson.
+
+You would mostly find yourself using primitive types, arrays, objects and functions in your everyday code. TypeScript powers all of these elements with static typing and type checking. You have now learned the syntax for type annotations and assertions. You have also learned about how TypeScript infers types and applies contextual typing. You can get creative and use Tuples, Unions, Enums, and Any types but of course these require a lot more thought and consideration put in first. You can also create your own type aliases and reuse them wherever required across the codebase. With that, let's prepare ourselves to look at more complex and advanced types in the next lesson.
 
 ---
 
 ## References
+
 - https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
 - https://www.youtube.com/watch?v=BCg4U1FzODs&ab_channel=TraversyMedia
 - https://dev.to/hiro9108/javascript-vs-typescript-why-we-should-learn-typescript-4d5o

@@ -1,10 +1,12 @@
 # Introduction to TypeScript
 
 Now that you have been working with JavaScript for some time, you must have heard of TypeScript which is described in short as JavaScript with syntax for Types. It is very popularly used in the tech industry these days for both frontend and backend development. Before we learn more about backend, we will familiarize ourselves with TypeScript and how it can be used in backend code through this module. The objectives of this lesson are:
+
 1. Understanding how and why TypeScript was created
 2. Analyzing the pros and cons of using TypeScript in our projects
 
 ## Story of TypeScript
+
 As per the [2021 Stackoverflow Developer Survey](https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies), JavaScript completed its ninth year in a row as the most commonly used programming language. However, it is not the [most loved programming language](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language) because TypeScript ranks 3rd in this list compared to JavaScript at the rank 15th. TypeScript is also the 2nd most wanted language followed by JavaScript.
 
 TypeScript is a young programming language with its story going back only to 2012. It was launched for public use in October 2012, as of version 0.8 of the language. It was a result of two years of development at Microsoft, with Anders Hejlsberg, the lead architect of C#, as well as the creator of Delphi and Turbo Pascal working on the project too. This team at Microsoft wanted to do something like [Dart](https://dart.dev/) but they took a different approach. Instead of reinventing the language with a completely new syntax, they just amended the JavaScript syntax. Not only that, but they also made this new syntax optional. This is how TypeScript was born.
@@ -21,7 +23,7 @@ const user = {
   lastName: "Davis",
   role: "Professor",
 }
- 
+
 console.log(user.name)
 ```
 
@@ -31,10 +33,12 @@ Actually, TypeScript won't even allow you to run this code: you'll get an error.
 Property 'name' does not exist on type '{ firstName: string; lastName: string; role: string; }'.
 ```
 
-We'll learn to understand such error messages and write type-safe code using TypeScript, in addition to understanding why TypeScript has become so popular. While following along in this module, you can play around with some of the code by using the [TypeScript playground](https://www.TypeScriptlang.org/play).
+We'll learn to understand such error messages and write type-safe code using TypeScript, in addition to understanding why TypeScript has become so popular. While following along in this module, you can play around with some of the code by using the [TypeScript playground](https://www.typescriptlang.org/play).
 
 ## Pros and Cons of TypeScript
+
 As mentioned previously, TypeScript is a superset of JavaScript. This means that:
+
 1. It offers additional features to JavaScript such as static typing.
 2. Using types is completely optional.
 3. It compiles down to regular JavaScript.
@@ -51,9 +55,10 @@ What TypeScript did was to provide a compiler that can process a program and thr
 What TypeScript expects are the Type Annotations. A Type Annotation is an indication of the data type of a value. For example, the variable `x` can be annotated with `: string`. This annotation provides the data type of variable `x` to the TypeScript compiler. When the TypeScript compiler sees this, it assumes that `x` will be a string during the lifetime of this program. So, if we assign an initial value of `1` which is a number, it is not going to be valid and it will complain about it in the compilation error messages. Once we fix all the issues, TypeScript will generate the output file `sameFileName.js` that is safe to run wherever we want. TypeScript keeps the original filename of the source file and only replaces the extension. The goal of TypeScript is to catch mistakes in a program before it goes to production and causes problems at the runtime. Its goal is not to provide tools to amend or modify the original source code (business logic) such that can it perform well at the runtime in all the situations.
 
 ### Dynamic vs Static Typing
+
 In dynamically typed languages, the types are associated with run-time values and not named explicitly in your code. For example, JavaScript, Python, Ruby, and PHP.
 
-JavaScript is a **dynamically typed** and **interpreted** programming language. In general, both of these mean that little preprocessing is done before running JavaScript code. When we say JavaScript is dynamically typed, it means that JavaScript variables have types, such as string, boolean, and number, but these are determined at the time that the code is run -- not beforehand. As an interpreted programming language, the source code is not preprocessed, and code is interpreted, or executed, from human-readable code to things that the machine understands at the time that it runs. You may have noticed that there is an error with types in your JavaScript code -- say you tried to add an array and a number together -- this error will not be caught until the time that the code is run. This is a consequence of being both dynamically typed and interpreted; we are allowed to add together two types that don't make sense (what does it mean to add a list to a number?) and the error only appears if we run the code. 
+JavaScript is a **dynamically typed** and **interpreted** programming language. In general, both of these mean that little preprocessing is done before running JavaScript code. When we say JavaScript is dynamically typed, it means that JavaScript variables have types, such as string, boolean, and number, but these are determined at the time that the code is run -- not beforehand. As an interpreted programming language, the source code is not preprocessed, and code is interpreted, or executed, from human-readable code to things that the machine understands at the time that it runs. You may have noticed that there is an error with types in your JavaScript code -- say you tried to add an array and a number together -- this error will not be caught until the time that the code is run. This is a consequence of being both dynamically typed and interpreted; we are allowed to add together two types that don't make sense (what does it mean to add a list to a number?) and the error only appears if we run the code.
 
 In statically typed languages like Java, C, C++, Rust, Go, etc., you explicitly assign types to variables, function parameters, return values, etc.
 
@@ -62,6 +67,7 @@ TypeScript is a **compiled** and **statically typed** language. In a statically 
 You can read more about some of the tradeoffs between static and dynamic types [in this article](https://instil.co/blog/static-vs-dynamic-types/).
 
 ### Advantages of TypeScript
+
 1. Makes your code more robust. All your variables can be defined with types.
 2. Helps you easily spot bugs. Research says that 15% of commonly occurring bugs can be caught at compile time itself by TypeScript.
 3. Improves predictability. If you've defined a variable to a string, it will stay a string.
@@ -69,6 +75,7 @@ You can read more about some of the tradeoffs between static and dynamic types [
 5. Growing popularity. As we discussed above, TypeScript is growing in popularity in the industry so it is a marketable skill to add to your resume.
 
 ### Disadvantages of TypeScript
+
 1. More code to write. Sometimes you need the work to be done fast, but TS would involve more code than plain JS for many cases which can add to development time.
 2. More to learn. If you've been coding with JS for a while, it would take time to learn TS, and sometimes this is what holds some companies back from refactoring their codebases because they cannot dedicate time for learning.
 3. Required compilation. TypeScript needs to be transpiled into JavaScript, in the end, to be understood by browsers and servers. Luckily most popular frameworks today have TS compilation easily configurable.
@@ -114,8 +121,8 @@ TypeScript is also very compatible on the backend, you can have `.ts` files in y
 
 ```js
 type User = {
-  name: string;
-  age: number;
+  name: string,
+  age: number,
 };
 
 function isAdult(user: User): boolean {
@@ -123,7 +130,7 @@ function isAdult(user: User): boolean {
 }
 
 const justine: User = {
-  name: 'Justine',
+  name: "Justine",
   age: 23,
 };
 
@@ -137,32 +144,37 @@ There are additional things about this example that you should know. Firstly, if
 So looking at these above code examples, here are some strong advantages of TypeScript in both frontend and backend.
 
 ### Reducing bugs
+
 Have you ever made any of these mistakes in JavaScript and had to spend a nontrivial amount of time fixing them?
 
-* Called a function with the wrong number of arguments: `twoArgFunction(x)`
-* Called a function with too many arguments: `oneArgFunction(x, y)`
-* Tried to get the index of a non-array type: `someString[5]`
-* Indexed an array with the wrong type, rather than a number: `someArray["foo"]`
-* Had a variable be `null` or `undefined` when you thought that it wasn't
-* `undefined is not a function`
+- Called a function with the wrong number of arguments: `twoArgFunction(x)`
+- Called a function with too many arguments: `oneArgFunction(x, y)`
+- Tried to get the index of a non-array type: `someString[5]`
+- Indexed an array with the wrong type, rather than a number: `someArray["foo"]`
+- Had a variable be `null` or `undefined` when you thought that it wasn't
+- `undefined is not a function`
 
-With TypeScript, these bugs (and many more) are easily caught at compile time with a useful error message. Static typing is often considered advantageous for scaling codebases. When working on a large product (or even a small one), it saves everyone time and development effort if as many mistakes can be caught *before* the code is run, not afterward. Compiled and typed languages certainly are not guaranteed to be bug-free, but in general, by the time you run the code, you will have fewer bugs than interpreted languages. In a post-mortem analysis by Airbnb from their attempt to migrate their whole codebase to TypeScript, they estimated that [38% of their bugs were preventable by TypeScript](https://youtu.be/P-J9Eg7hJwE?t=711).
+With TypeScript, these bugs (and many more) are easily caught at compile time with a useful error message. Static typing is often considered advantageous for scaling codebases. When working on a large product (or even a small one), it saves everyone time and development effort if as many mistakes can be caught _before_ the code is run, not afterward. Compiled and typed languages certainly are not guaranteed to be bug-free, but in general, by the time you run the code, you will have fewer bugs than interpreted languages. In a post-mortem analysis by Airbnb from their attempt to migrate their whole codebase to TypeScript, they estimated that [38% of their bugs were preventable by TypeScript](https://youtu.be/P-J9Eg7hJwE?t=711).
 
 ### Autocomplete
-In addition to the benefits of using types to help reduce the number of bugs, static types also allow for stronger auto-complete in editors, since, for example, the allowable function calls and variable names that can be typed in a certain place will be known even before the code will run. 
+
+In addition to the benefits of using types to help reduce the number of bugs, static types also allow for stronger auto-complete in editors, since, for example, the allowable function calls and variable names that can be typed in a certain place will be known even before the code will run.
 
 ### Refactoring
+
 Having types makes refactoring code much easier. For example, if you are renaming a function, editors can use statically known information about types to rename all instances of that function in a single click. This is not possible with JavaScript; in the absence of type information, the editor cannot know ahead of time whether two function calls named `myFunction()` are really the exact same function, or whether they are two different functions in different files that happen to have the same name. This is only one example, but in general, TypeScript allows you to refactor code with less risk of breaking things.
 
 ## Conclusion
+
 TypeScript is growing in popularity every day in the industry. It brings some significant benefits and improvements to the development process, but also comes with a few concerns that need to be considered before deciding to use the language. In any case, it makes JavaScript even more powerful through static typing and is a marketable skill to add to any developer's resume. It is used both on frontend and backend and helps developers write cleaner and less error-prone code as it detects issues much before runtime. We shared some syntax examples in this lesson, but now let's take a deeper dive into the different Type Annotations of TypeScript and their uses in the next lesson.
 
 ---
 
 ## References
-- https://www.cleverism.com/skills-and-tools/TypeScript
-- https://medium.com/jspoint/TypeScript-a-beginners-guide-6956fe8bcf9e
-- https://tsh.io/blog/why-use-TypeScript
-- https://nodejs.dev/learn/nodejs-with-TypeScript
-- https://dev.to/hiro9108/javascript-vs-TypeScript-why-we-should-learn-TypeScript-4d5o
+
+- https://www.cleverism.com/skills-and-tools/typescript
+- https://medium.com/jspoint/typescript-a-beginners-guide-6956fe8bcf9e
+- https://tsh.io/blog/why-use-typescript
+- https://nodejs.dev/learn/nodejs-with-typescript
+- https://dev.to/hiro9108/javascript-vs-typescript-why-we-should-learn-typescript-4d5o
 - https://www.youtube.com/watch?v=BCg4U1FzODs&ab_channel=TraversyMedia
