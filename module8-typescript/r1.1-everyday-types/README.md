@@ -60,14 +60,14 @@ We'll go through a few examples.
 
 ### Inferred array types
 
-TypeScript will infer the type of an array if it is declared with some value initially. For example, we have an array of numbers below; TypeScript is smart enough to figure out that `ids` has type `number[]`.
+TypeScript will infer the type of an array if it is declared with some value initially. For example, we have an array of numbers below; TypeScript is smart enough to figure out that `ids` has the type `number[]`.
 
 ```typescript
 const ids = [1, 2, 3];
 ids.push("somestring");
 ```
 
-This gives an error, which tells us that we can't push a string to the parameter (of the `push` function) that expects type `number`. TypeScript has inferred that this is an array of numbers.
+This gives an error, which tells us that we can't push a string to the parameter (of the `push` function) that expects the type `number`. TypeScript has inferred that this is an array of numbers.
 
 ```
 Argument of type 'string' is not assignable to parameter of type 'number'.
@@ -97,18 +97,18 @@ const ids: number[] = [];
 ids.push(5);
 ```
 
-The `number[]` indicates that this will be an array of numbers. Similarly you could have `string[]` or `boolean[]`.
+The `number[]` indicates that this will be an array of numbers. Similarly, you could have `string[]` or `boolean[]`.
 
 ## Any
 
-TypeScript also has a special type, `any`, that you can use whenever you don't want a particular value to cause typechecking errors. It is useful when you don't want to write out a long type just to convince TypeScript that a particular line of code is okay.
+TypeScript also has a special type, `any`, that you can use whenever you don't want a particular value to cause type-checking errors. It is useful when you don't want to write out a long type just to convince TypeScript that a particular line of code is okay.
 
 ```typescript
 let x: any = "Hello";
 let arr: any[] = [1, true, "Hello"];
 ```
 
-When a value is of type `any`, you can access any properties of it (which will in turn be of type `any`), call it like a function, assign it to (or from) a value of any type, or pretty much anything else that’s syntactically legal.
+When a value is of type `any`, you can access any properties of it (which will, in turn, be of type `any`), call it like a function, assign it to (or from) a value of any type, or pretty much anything else that’s syntactically legal.
 
 ```typescript
 let obj: any = { x: 0 };
@@ -122,9 +122,9 @@ obj = "hello";
 const n: number = obj;
 ```
 
-Beginners of TypeScript are often tempted to use `any` type, but it is highly discouraged. It is possible in almost all cases to write code without `any`. Do not use `any` as a crutch in order to skip past type errors: doing so is often a sign that something else is wrong with the code (and `any` is simply being used to ignore the fundamental issue).
+Beginners of TypeScript are often tempted to use `any` type, but it is highly discouraged. It is possible in almost all cases to write code without `any`. Do not use `any` as a crutch to skip past type errors: doing so is often a sign that something else is wrong with the code (and `any` is simply being used to ignore the fundamental issue).
 
-When the keyword `any` is used, TypeScript no longer performs typechecking, since it has no information about the type. This means that we no longer have the benefits of the type-checker.
+When the keyword `any` is used, TypeScript no longer performs type checking, since it has no information about the type. This means that we no longer have the benefits of the type-checker.
 
 Here is an example of typing something as `any`, demonstrating how we can start introducing errors in our code that were previously prevented:
 
@@ -134,7 +134,7 @@ const invalidAddition = a + 5; // Adding a list to a number?
 const functionDoesntExist = a.someInvalidFunction(); // This also compiles!
 ```
 
-Some valid usages of `any` might be: facilitating migration of code from JavaScript to TypeScript, leveraging third-party code without types, working with input of completely unknown structure.
+Some valid usages of `any` might be: facilitating code migration from JavaScript to TypeScript, leveraging third-party code without types, and working with input of completely unknown structure.
 
 ## Tuples
 
@@ -182,7 +182,7 @@ const add = (x: number, y: number): number => {
 };
 ```
 
-Note the addition of three number types: the two parameters `x`, `y`, and the return type `number`. You may omit the return type sometimes if TypeScript is able to infer it, but it's also good practice to keep it in so that readers of your functions, such as your team mates, can immediately know at a glance what type should be returned from the function.
+Note the addition of three number types: the two parameters `x`, `y`, and the return type `number`. You may omit the return type sometimes if TypeScript can infer it, but it's also good practice to keep it in so that readers of your functions, such as your teammates, can immediately know at a glance what type should be returned from the function.
 
 It should be noted that in TypeScript every parameter is required unless specified by adding a `?` after the parameter. In JavaScript, if a function has three declared parameters, you can choose not to provide them, and they will take the value of `undefined`. This is not the case in TypeScript.
 
@@ -335,7 +335,7 @@ printCoord({ x: 100, y: 100 });
 
 ## Null and Undefined
 
-JavaScript has two primitive values used to signal absent or uninitialized value: `null` and `undefined`. TypeScript has two corresponding types by the same names. How these types behave depends on whether you have the `strictNullChecks` option on. We'll learn more about how to configure this setting in a later section of this module.
+JavaScript has two primitive values used to signal absent or uninitialized values: `null` and `undefined`. TypeScript has two corresponding types by the same names. How these types behave depends on whether you have the `strictNullChecks` option on or off. We'll learn more about how to configure this setting in a later section of this module.
 
 With `strictNullChecks` off, values that might be `null` or `undefined` can still be accessed normally, and the values `null` and `undefined` can be assigned to a property of any type. This is similar to how languages without null checks (e.g. C#, Java) behave. The lack of checking for these values tends to be a major source of bugs; it is always recommended to turn `strictNullChecks` on if it's practical to do so in their codebase.
 
@@ -362,7 +362,7 @@ function liveDangerously(x?: number | null) {
 
 ## Enums
 
-Enums are a feature added to JavaScript by TypeScript which allows for describing a value which could be one of a set of possible named constants. Unlike most TypeScript features, this is not a type-level addition to JavaScript but something added to the language and runtime. Because of this, it's a feature which you should know exists, but maybe hold off on using unless you are sure.
+Enums are a feature added to JavaScript by TypeScript which allows for describing a value that could be one of a set of possible named constants. Unlike most TypeScript features, this is not a type-level addition to JavaScript but something added to the language and runtime. Because of this, it's a feature that you should know exists, but maybe hold off on using it unless you are sure.
 
 ```typescript
 // Up is initialized with 1
@@ -398,7 +398,7 @@ enum BooleanLikeHeterogeneousEnum {
 
 ## Conclusion
 
-You would mostly find yourself using primitive types, arrays, objects and functions in your everyday code. TypeScript powers all of these elements with static typing and type checking. You have now learned the syntax for type annotations and assertions. You have also learned about how TypeScript infers types and applies contextual typing. You can get creative and use Tuples, Unions, Enums, and Any types but of course these require a lot more thought and consideration put in first. You can also create your own type aliases and reuse them wherever required across the codebase. With that, let's prepare ourselves to look at more complex and advanced types in the next lesson.
+You would mostly find yourself using primitive types, arrays, objects, and functions in your everyday code. TypeScript powers all of these elements with static typing and type checking. You have now learned the syntax for type annotations and assertions. You have also learned about how TypeScript infers types and applies contextual typing. You can get creative and use Tuples, Unions, Enums, and Any types but of course, these require a lot more thought and consideration put in first. You can also create your own type aliases and reuse them wherever required across the codebase. With that, let's prepare ourselves to look at more complex and advanced types in the next lesson.
 
 ---
 

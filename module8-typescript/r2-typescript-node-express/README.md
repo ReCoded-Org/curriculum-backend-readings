@@ -1,6 +1,6 @@
 # TypeScript with Node and Express
 
-We took some time to understand the TypeScript syntax and how it makes our code better, so let us come back to backend and how TypeScript can be used in backend code. We have been learning to build backend servers using Node.js and Express.js where we've used JavaScript syntax thus far. So how can we use TypeScript code in an Express server and how do we ensure it is getting compiled correctly? That is what we will learn now. The objectives of this lesson are:
+We took some time to understand the TypeScript syntax and how it makes our code better, so let us come back to the backend and how TypeScript can be used in backend code. We have been learning to build backend servers using Node.js and Express.js where we've used JavaScript syntax thus far. So how can we use TypeScript code in an Express server and how do we ensure it is getting compiled correctly? That is what we will learn now. The objectives of this lesson are:
 
 1. Setting up TypeScript with Node and Express
 2. Viewing practical usage of TypeScript in backend codebases
@@ -51,7 +51,7 @@ cd src
 touch app.ts
 ```
 
-Next we install Express and a few dev dependencies for TypeScript.
+Next, we install Express and a few dev dependencies for TypeScript.
 
 ```bash
 npm i express
@@ -74,7 +74,7 @@ And now we are ready to build an Express application with TypeScript and incorpo
 
 ## Building Express application with TypeScript
 
-Let's start out by building a simple Express server, which has been the first step to all our projects so far. We add these lines to the `app.ts` file.
+Let's start out by building a simple Express server, which has been the first step in all our projects so far. We add these lines to the `app.ts` file.
 
 ```js
 import express from "express";
@@ -110,7 +110,7 @@ And then we can also have any functions with types that can be called in the han
 const add = (x: number, y: number): number => x + y;
 ```
 
-You can use Interfaces, Object types, Classes or any other Types from TypeScript.
+You can use Interfaces, Object types, Classes, or any other Types from TypeScript.
 
 You can anytime look at the compiled JS files in the dist folder and see what your TypeScript code gets compiled to.
 
@@ -118,7 +118,7 @@ And when you're ready to deploy the JS code to the server, you can run `npm star
 
 ## Conclusion
 
-TypeScript can make work on your backend code a little bit more easier by helping you easily spot type errors and avoid running into unexpected code execution at runtime. If you're working with a team, it also makes the codebase very readable and enforces guidelines of defining types on all variables and functions. We hope you'll try to use TypeScript in some of your Express projects and share your experience of working with static typing. We are now approaching the end of this module, so in the next lesson we'll be looking a bit beyond Express.js at other frameworks which already incorporate TypeScript.
+TypeScript can make work on your backend code a little bit easier by helping you easily spot type errors and avoid running into unexpected code execution at runtime. If you're working with a team, it also makes the codebase very readable and enforces guidelines for defining types on all variables and functions. We hope you'll try to use TypeScript in some of your Express projects and share your experience of working with static typing. We are now approaching the end of this module, so in the next lesson, we'll be looking a bit beyond Express.js at other frameworks which already incorporate TypeScript.
 
 ---
 
