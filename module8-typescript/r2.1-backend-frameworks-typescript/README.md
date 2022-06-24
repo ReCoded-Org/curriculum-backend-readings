@@ -82,7 +82,7 @@ TypeORM leverages TypeScript to write database integration code and is compatibl
 
 With TypeORM your models look like this:
 
-```typescript
+```ts
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()

@@ -92,7 +92,7 @@ Now if we run `npm run dev` we should see our Express server running in watch mo
 
 Now let's add in some meaningful types in our Express server code. We'll use the custom Express types - Application, Request, Response, and NextFunction.
 
-```typescript
+```ts
 import express, { Application, Request, Response, NextFunction } from "express";
 
 const app: Application = express();
@@ -106,7 +106,7 @@ app.listen(5000, () => console.log("Server running"));
 
 And then we can also have any functions with types that can be called in the handler functions for our endpoints.
 
-```typescript
+```ts
 const add = (x: number, y: number): number => x + y;
 ```
 

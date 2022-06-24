@@ -9,7 +9,7 @@ We have learned quite a bit about Types so far, but when it comes to large-scale
 
 An interface declaration is another way to name an object type. Interfaces can be used interchangeably with type aliases and simple object types.
 
-```typescript
+```ts
 interface Point {
   x: number;
   y: number;
@@ -27,7 +27,7 @@ Like when we used a type alias above, the example works just as if we had used a
 
 You can also define properties in an interface to be optional using `?` or non-editable by specifying `readonly`.
 
-```typescript
+```ts
 interface UserInterface {
   readonly id: number;
   name: string;
@@ -42,7 +42,7 @@ const user1: UserInterface = {
 
 Interfaces can be used with functions as well.
 
-```typescript
+```ts
 interface MathFunc {
   (x: number, y: number): number;
 }
@@ -55,7 +55,7 @@ const sub: MathFunc = (x: number, y: number): number => x - y;
 
 TypeScript offers full support for the class keyword introduced in ES2015. As with other JavaScript language features, TypeScript adds type annotations and other syntax features to allow you to express relationships between classes and other types. Just like any other OOP language, classes have members or fields and a constructor function is used to instantiate the objects of this class with initial field values. Classes can also have member functions.
 
-```typescript
+```ts
 // Class with constructor
 class Person {
   id: number;
@@ -77,7 +77,7 @@ alice.greet("Hello");
 
 You can use an `implements` clause to check that a class satisfies a particular interface.
 
-```typescript
+```ts
 interface PersonInterface {
   id: number;
   name: string;
@@ -107,7 +107,7 @@ mike.register();
 
 Classes may extend from a base class. A derived class has all the properties and methods of its base class, and also defines additional members.
 
-```typescript
+```ts
 class Employee extends Person {
   position: string; // additional member of this subclass
 
@@ -139,7 +139,7 @@ We've tried to cover the basics of Classes here. You can read a lot more in deta
 
 Generics allow us to create reusable and flexible components which can work over a variety of types rather than a single one. This allows users to consume these components and use their types.
 
-```typescript
+```ts
 // Without generics
 function getArray(items: any[]): any[] {
   return new Array().concat(items);
@@ -167,7 +167,7 @@ With the introduction of Classes in TypeScript and ES6, there now exist certain 
 
 A Decorator is a special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter. Decorators use the form `@expression`, where `expression` must be a function that will be called at runtime with information about the decorated declaration. For example, given the decorator `@sealed` we might write the `sealed` function as follows:
 
-```typescript
+```ts
 function sealed(target) {
   // do something with 'target' ...
 }

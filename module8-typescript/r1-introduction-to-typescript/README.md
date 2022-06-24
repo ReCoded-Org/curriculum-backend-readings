@@ -29,7 +29,7 @@ console.log(user.name)
 
 Actually, TypeScript won't even allow you to run this code: you'll get an error.
 
-```bash
+```
 Property 'name' does not exist on type '{ firstName: string; lastName: string; role: string; }'.
 ```
 
@@ -89,7 +89,7 @@ Generally speaking, it is best not to form any kind of unshakable opinions about
 
 We've learned quite a bit about TypeScript and why it makes JavaScript even better. Let's understand this in action with frontend and backend code. TypeScript is compatible with most modern frontend frameworks like React or Next.js. If you're familiar with JSX in React, to use TypeScript you would create a `.tsx` file instead. Let's look at an example of a `Header.tsx` file.
 
-```js
+```tsx
 export interface Props {
   title: string
   color?: string
@@ -109,7 +109,7 @@ Here we have created a Header component that takes in two props `title` and `col
 
 So now when we want to have a Header component on a page:
 
-```js
+```tsx
 <Header />
 <Header title='Hello World' />
 <Header title='Hello World' color='red' />
@@ -119,10 +119,10 @@ The first case will give us an error within our IDE stating that the prop title 
 
 TypeScript is also very compatible on the backend, you can have `.ts` files in your Node Express projects or use a backend framework like NestJS which has TypeScript incorporated. We will learn more about this framework in an upcoming lesson, let's take a look at another TypeScript example useful for backend.
 
-```js
+```ts
 type User = {
-  name: string,
-  age: number,
+  name: string;
+  age: number;
 };
 
 function isAdult(user: User): boolean {
