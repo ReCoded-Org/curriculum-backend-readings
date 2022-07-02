@@ -46,7 +46,7 @@ Creating a simple custom cache service will allow us to:
 
 First, we'll quickly bootstrap a simple Node.js application. We can do so by running `npm init` inside a new folder for our app, which creates a `package.json` file for us:
 
-```js
+```json
 {
   "name": "caching_redis_node.js",
   "version": "1.0.0",
@@ -62,7 +62,7 @@ First, we'll quickly bootstrap a simple Node.js application. We can do so by run
     "Cache",
     "Caching",
     "JavaScript",
-    "Backend",
+    "Backend"
   ],
   "author": "Alexander Nnakwue",
   "license": "MIT",

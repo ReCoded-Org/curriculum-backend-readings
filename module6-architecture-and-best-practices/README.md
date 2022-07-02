@@ -38,4 +38,4 @@ applications.
 
 - 4 [Microservices [R]](module6-architecture-and-best-practices/r4-microservices/README.md)
 
-- 5[Summar [R]](module6-architecture-and-best-practices/r5-summary/README.md)
+- 5 [Summary [R]](module6-architecture-and-best-practices/r5-summary/README.md)

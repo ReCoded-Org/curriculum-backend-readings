@@ -30,29 +30,29 @@ Design patterns usually can be used across different programming languages, alth
 1. **Factory**
    The factory pattern wraps a constructor for different types of objects and returns instances of the objects via a simple API. It makes it easy to create different objects by exposing a simple API that returns the specified object type.
 
-Simple JavaScript example of using factory pattern : [Creating Laptop and Tablet objects using a Gadget Factory](https://medium.com/@thebabscraig/javascript-design-patterns-part-1-the-factory-pattern-5f135e881192)
+   Simple JavaScript example of using factory pattern: [Creating Laptop and Tablet objects using a Gadget Factory](https://medium.com/@thebabscraig/javascript-design-patterns-part-1-the-factory-pattern-5f135e881192)
 
 2. **Builder**
    The builder pattern provides a flexible solution for creating objects. It separates the construction of a complex object from its representation and builds a complex object using simple objects by providing a step-by-step approach.
 
-Simple JavaScript example of using builder pattern : [Task Builder generating Task objects](https://zetcode.com/javascript/builderpattern/)
+   Simple JavaScript example of using builder pattern: [Task Builder generating Task objects](https://zetcode.com/javascript/builderpattern/)
 
 3. **Singleton**
    A singleton only allows for a single instantiation, but many instances of the same object. The Singleton restricts clients from creating multiple objects, after the first object is created, it will return instances of itself.
 
-Singletons are useful in situations where system-wide actions need to be coordinated from a single central place. An example is a database connection pool. The pool manages the creation, destruction, and lifetime of all database connections for the entire application ensuring that no connections are 'lost'.
+   Singletons are useful in situations where system-wide actions need to be coordinated from a single central place. An example is a database connection pool. The pool manages the creation, destruction, and lifetime of all database connections for the entire application ensuring that no connections are 'lost'.
 
-Simple JavaScript example of using a singleton pattern : [Printer Singleton for managing single printer access from multiple computers](https://www.digitalocean.com/community/conceptual_articles/singleton-design-pattern-in-javascript)
+   Simple JavaScript example of using a singleton pattern: [Printer Singleton for managing single printer access from multiple computers](https://www.digitalocean.com/community/conceptual_articles/singleton-design-pattern-in-javascript)
 
 4. **Prototype**
    The prototype pattern creates new objects, but rather than creating non-initialized objects it returns objects that are initialized with values it copied from a prototype. This is somewhat similar to the concept of inheritance in object-oriented programming. Javascript provides a [prototype syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) to implement this.
 
-Simple JavaScript example of using prototype pattern : [Creating Tesla model objects using prototypes](https://www.digitalocean.com/community/conceptual_articles/prototype-design-pattern-in-javascript)
+   Simple JavaScript example of using prototype pattern: [Creating Tesla model objects using prototypes](https://www.digitalocean.com/community/conceptual_articles/prototype-design-pattern-in-javascript)
 
 5. **Dependency Injection**
    Dependency injection (DI) is a programming pattern in which a dependency is passed using the parameters instead of instantiating it within the function or class. DI enables creating isolated individual components within application code and makes it easy to switch those dependencies in the future as the requirement changes. Passing parameters as a dependency also allows to easily unit test those components in isolation by injecting their mocked version.
 
-Simple JavaScript example of using DI pattern : [Dependency Injection in using third-party library functions](https://dev.to/paularah/dependency-injection-in-javascript-1bfk)
+   Simple JavaScript example of using DI pattern: [Dependency Injection in using third-party library functions](https://dev.to/paularah/dependency-injection-in-javascript-1bfk)
 
 6. **Object Pool**
    The object pool design pattern is used to improve performance. It does that by reducing runtime memory allocation and garbage collection. You can read more about utilizing this design pattern [here](https://egghead.io/blog/object-pool-design-pattern).
@@ -62,82 +62,82 @@ Simple JavaScript example of using DI pattern : [Dependency Injection in using t
 1. **Adapter**
    The adapter pattern introduces an intermediary piece of code that makes two parts of a system compatible with one another. It also injects an element of loose coupling by keeping the two pieces of code separate. It means that you can write your code however you want without the need to consider the other piece of code. Your adapter code will do the necessary translation and give you what you need in whatever format you want. When one side of the code changes, you only need to change the adapter for that particular part rather than both sides of the application.
 
-Simple JavaScript example of using an Adapter pattern : [Build a shopping cart solution without touching the original shopping cart code](https://www.dottedsquirrel.com/adapter-pattern-javascript/)
+   Simple JavaScript example of using an Adapter pattern: [Build a shopping cart solution without touching the original shopping cart code](https://www.dottedsquirrel.com/adapter-pattern-javascript/)
 
-2. **Bridge**
+1. **Bridge**
    The bridge pattern is another ideological abstraction that keeps the boundaries of your code clean and separated. While it has similarities with the adapter pattern, it is not quite the same. The bridge pattern can be seen as an extension of the adapter pattern — or commonly known as the double adapter pattern.
 
-This pattern allows two components, a client and a service, to work together with each component having its own interface. A bridge is a high-level architectural pattern and its main goal is to write better code through two levels of abstraction. It facilitates the very loose coupling of objects. An example of the Bridge pattern is an application (the client) and a database driver (the service). The application writes to a well-defined database API, for example, ODBC, but behind this API you will find that each driver's implementation is different for each database vendor (SQL Server, MySQL, Oracle, etc.).
+   This pattern allows two components, a client and a service, to work together with each component having its own interface. A bridge is a high-level architectural pattern and its main goal is to write better code through two levels of abstraction. It facilitates the very loose coupling of objects. An example of the Bridge pattern is an application (the client) and a database driver (the service). The application writes to a well-defined database API, for example, ODBC, but behind this API you will find that each driver's implementation is different for each database vendor (SQL Server, MySQL, Oracle, etc.).
 
-3. **Composite**
+1. **Composite**
    The composite pattern is used to structure objects in a tree-like hierarchy. Here, each node of the tree can be composed of either a child node(s) or a leaf (no children objects). This pattern allows the client to work with these components uniformly; that is, a single object can be treated exactly how a group of objects is treated.
 
-This pattern allows the formation of deeply nested structures. If a leaf object receives the request sent by the client, it will handle it. However, if the recipient is composed of children, the request is forwarded to the child components.
+   This pattern allows the formation of deeply nested structures. If a leaf object receives the request sent by the client, it will handle it. However, if the recipient is composed of children, the request is forwarded to the child components.
 
-Simple JavaScript example of using Composite pattern : [Employee objects structured in composite pattern](https://www.educative.io/collection/page/5429798910296064/5725579815944192/6597912462098432)
+   Simple JavaScript example of using Composite pattern: [Employee objects structured in composite pattern](https://www.educative.io/collection/page/5429798910296064/5725579815944192/6597912462098432)
 
-4. **Decorator**
+1. **Decorator**
    The decorator pattern focuses on adding properties, functionalities, and behavior to existing classes dynamically. The additional decoration functionalities aren't considered essential enough to be a part of the original class definition as they can cause clutter. Hence, the decorator pattern allows modifying the code without changing the original class.
 
-Simple JavaScript example of using Decorator pattern : [Add flavors and toppings to frozen yogurt object](https://www.educative.io/collection/page/5429798910296064/5725579815944192/5660180910964736)
+   Simple JavaScript example of using Decorator pattern: [Add flavors and toppings to frozen yogurt object](https://www.educative.io/collection/page/5429798910296064/5725579815944192/5660180910964736)
 
-5. **Facade**
+1. **Facade**
    In English, the word "facade" means a deceptive front or appearance. Following this definition, a facade structural pattern provides a simpler interface that hides the complex functionalities of a system. The facade pattern allows you to hide all the messy logic from the client and only display the clear and easy-to-use interface to them. This allows them to easily interact with an API in a less error-prone way and without directly accessing the inner workings.
 
-Simple JavaScript example of using Facade pattern : [Ordering food at a restaurant](https://www.educative.io/collection/page/5429798910296064/5725579815944192/6046230397321216)
+   Simple JavaScript example of using Facade pattern: [Ordering food at a restaurant](https://www.educative.io/collection/page/5429798910296064/5725579815944192/6046230397321216)
 
-6. **Flyweight**
+1. **Flyweight**
    It is a structural pattern that focuses on the sharing of data amongst related objects. It helps prevent repetitive code, hence, increasing efficiency when it comes to data sharing as well as conserving memory.
 
-It takes the common objects that are used a lot and stores them in an external object (flyweight) for sharing; you could say that it is used for caching purposes. So the same data does not need to have separate copies for each object; instead, it is shared amongst all.
+   It takes the common objects that are used a lot and stores them in an external object (flyweight) for sharing; you could say that it is used for caching purposes. So the same data does not need to have separate copies for each object; instead, it is shared amongst all.
 
-7. **Proxy**
+1. **Proxy**
    As the name implies, the proxy pattern is a structural pattern that creates a proxy object. It acts as a placeholder for another object, controlling access to it.
 
-Usually, an object has an interface with several properties/methods that a client can access. However, an object might not be able to deal with the clients' requests alone due to heavy load or constraints such as dependency on a remote source that might cause delays (e.g., network requests). In these situations, adding a proxy helps in dividing the load with the target object.
+   Usually, an object has an interface with several properties/methods that a client can access. However, an object might not be able to deal with the clients' requests alone due to heavy load or constraints such as dependency on a remote source that might cause delays (e.g., network requests). In these situations, adding a proxy helps in dividing the load with the target object.
 
 ### Behavioral Patterns
 
 1. **State**
    The state pattern provides state-specific logic to a limited set of objects in which each object represents a particular state.
 
-Say a customer places an online order for a TV. While this order is being processed it can be in one of many states: New, Approved, Packed, Pending, Hold, Shipping, Completed, or Canceled. If all goes well the sequence will be New, Approved, Packed, Shipped, and Completed. However, at any point, something unpredictable may happen, such as no inventory, breakage, or customer cancelation. If that happens the order needs to be handled appropriately.
+   Say a customer places an online order for a TV. While this order is being processed it can be in one of many states: New, Approved, Packed, Pending, Hold, Shipping, Completed, or Canceled. If all goes well the sequence will be New, Approved, Packed, Shipped, and Completed. However, at any point, something unpredictable may happen, such as no inventory, breakage, or customer cancelation. If that happens the order needs to be handled appropriately.
 
-Applying the State pattern to this scenario will provide you with 8 State objects, each with its own set of properties (state) and methods (i.e. the rules of acceptable state transitions). State machines are often implemented using the State pattern. These state machines simply have their State objects swapped out with another one when a state transition takes place.
+   Applying the State pattern to this scenario will provide you with 8 State objects, each with its own set of properties (state) and methods (i.e. the rules of acceptable state transitions). State machines are often implemented using the State pattern. These state machines simply have their State objects swapped out with another one when a state transition takes place.
 
 2. **Chain of Responsibility**
    The chain of responsibility pattern provides a chain of loosely coupled objects one of which can satisfy a request. This pattern is essentially a linear search for an object that can handle a particular request. This pattern is used by many in the world of Node.js without even realizing it.
 
-It consists of structuring your code in a way that allows you to decouple the sender of a request with the object that can fulfill it. In other words, having object A sending request R, you might have three different receiving objects R1, R2, and R3, how can A know which one it should send R to? Should A care about that?
+   It consists of structuring your code in a way that allows you to decouple the sender of a request with the object that can fulfill it. In other words, having object A sending request R, you might have three different receiving objects R1, R2, and R3, how can A know which one it should send R to? Should A care about that?
 
-The answer to the last question is: no, it shouldn't. So instead, if A shouldn't care about who's going to take care of the request, why don't we let R1, R2, and R3 decide by themselves?
+   The answer to the last question is: no, it shouldn't. So instead, if A shouldn't care about who's going to take care of the request, why don't we let R1, R2, and R3 decide by themselves?
 
-Here is where the chain of responsibility comes into play, we're creating a chain of receiving objects, which will try to fulfill the request, and if they can't, they'll just pass it along. Does it sound familiar yet? The most obvious case of this pattern in our ecosystem is the middleware for ExpressJS. With that pattern, you're essentially setting up a chain of functions (middleware) that evaluate the request object and decide to act on it or ignore it.
+   Here is where the chain of responsibility comes into play, we're creating a chain of receiving objects, which will try to fulfill the request, and if they can't, they'll just pass it along. Does it sound familiar yet? The most obvious case of this pattern in our ecosystem is the middleware for ExpressJS. With that pattern, you're essentially setting up a chain of functions (middleware) that evaluate the request object and decide to act on it or ignore it.
 
 3. **Command**
    The command pattern encapsulates actions as objects. Command objects allow for loosely coupled systems by separating the objects that issue a request from the objects that actually process the request. These requests are called events and the code that processes the requests are called event handlers.
 
-Simple JavaScript example of using Command pattern : [Managing a group of animals](https://jsmanifest.com/command-design-pattern-in-javascript/)
+   Simple JavaScript example of using Command pattern: [Managing a group of animals](https://jsmanifest.com/command-design-pattern-in-javascript/)
 
 4. **Iterator**
    The iterator pattern allows clients to effectively loop over a collection of objects. This is different from iterative syntax like for loops.
 
-Simple JavaScript example of using Iterator pattern : [Sequentially executing asynchronous tasks](https://dev.to/alemagio/node-sequential-iterator-pattern-48lk)
+   Simple JavaScript example of using Iterator pattern: [Sequentially executing asynchronous tasks](https://dev.to/alemagio/node-sequential-iterator-pattern-48lk)
 
 5. **Observer**
    The observer pattern offers a subscription model in which objects subscribe to an event and get notified when the event occurs. This pattern is the cornerstone of event-driven programming, including JavaScript. It allows you to respond to particular input by being reactive to it, instead of proactively checking if the input is provided. In other words, you can specify what kind of input you're waiting for and passively wait until that input is provided to execute your code. It's a set-and-forget kind of deal.
 
-Do you remember the `app.listen` function we use when setting up our Express servers? This is a classic example of the observer pattern. The server object is being observed and our callback functions are the observers.
+   Do you remember the `app.listen` function we use when setting up our Express servers? This is a classic example of the observer pattern. The server object is being observed and our callback functions are the observers.
 
 6. **Mediator**
    The mediator pattern provides central authority over a group of objects by encapsulating how these objects interact. This model is useful for scenarios where there is a need to manage complex conditions in which every object is aware of any state change in any other object in the group. With the mediator pattern, communication between objects is encapsulated with a mediator object. Objects no longer communicate directly with each other, but instead, communicate through the mediator.
 
-Simple JavaScript example of using Mediator pattern : [Chatroom application using mediator pattern](https://jargon.js.org/_glossary/MEDIATOR_PATTERN.md)
+   Simple JavaScript example of using Mediator pattern: [Chatroom application using mediator pattern](https://jargon.js.org/_glossary/MEDIATOR_PATTERN.md)
 
 7. **Strategy**
    The strategy pattern encapsulates alternative algorithms or strategies for a particular task. It allows a method to be swapped out at runtime by any other method (strategy) without the client realizing it. Essentially, it is a group of interchangeable algorithms.
 
-Simple JavaScript example of using Strategy pattern : [Strategy Manager(https://dev.to/carlillo/design-patterns---strategy-pattern-in-javascript-2hg3)
+   Simple JavaScript example of using Strategy pattern: [Strategy Manager](https://dev.to/carlillo/design-patterns---strategy-pattern-in-javascript-2hg3)
 
 ## Conclusion
 
