@@ -31,11 +31,11 @@ applications.
 - 3 [Websockets [R]](../module6-architecture-and-best-practices/r3-websockets/README.md)
 - 3.1 [Websocket Chat Room App [L]](../module6-architecture-and-best-practices/r3.1-websocket-chat-room/README.md)
 
-- 3.2 [Cron Jobs [R]](../module6-architecture-and-best-practices/r3.2-cron-jobs/README.md)
-- 3.3 [Logging [R]](../module6-architecture-and-best-practices/r3.3-logging/README.md)
+- 4 [Cron Jobs [R]](../module6-architecture-and-best-practices/r4-cron-jobs/README.md)
+- 5 [Logging [R]](../module6-architecture-and-best-practices/r5-logging/README.md)
 
-- 3.4 [Blog cron jobs and logging [L]](../module6-architecture-and-best-practices/r3.4-blog-cron-logging/README.md)
+- 5.1 [Blog cron jobs and logging [L]](../module6-architecture-and-best-practices/r5.1-blog-cron-logging/README.md)
 
-- 4 [Microservices [R]](module6-architecture-and-best-practices/r4-microservices/README.md)
+- 6 [Microservices [R]](../module6-architecture-and-best-practices/r6-microservices/README.md)
 
-- 5 [Summary [R]](module6-architecture-and-best-practices/r5-summary/README.md)
+- 7 [Summary [R]](../module6-architecture-and-best-practices/r7-summary/README.md)
