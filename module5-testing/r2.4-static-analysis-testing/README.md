@@ -6,7 +6,7 @@ What are some ways to ensure clean and correct code even before we run our unit 
 
 ## What is static analysis testing?
 
-Static analysis is a method of debugging by examining source code before a program is run. It’s done by analyzing a set of code against a set (or multiple sets) of coding rules. In simpler words, static analysis identifies defects before you run a program (between coding and unit testing) while dynamic analysis identifies defects after you run a program (during unit testing).
+Static analysis is a method of debugging by examining source code before a program is run. It's done by analyzing a set of code against a set (or multiple sets) of coding rules. In simpler words, static analysis identifies defects before you run a program (between coding and unit testing) while dynamic analysis identifies defects after you run a program (during unit testing).
 
 So far everything we learned was related to dynamic analysis. Static analysis is the process of verifying that your code meets certain expectations without actually running it. Unlike unit and integration testing, static analysis can be performed on raw source code without the need for a web server or build process. Static analyzers typically parse your code and turn it into what is known as an abstract syntax tree. This tree is then traversed and the pieces are checked based on the rules dictated by the static analyzer. Most static analyzers also include a way for developers to write their own custom rules, but that varies from tool to tool. Static analysis is most commonly used to:
 - Ensure consistent style and formatting
