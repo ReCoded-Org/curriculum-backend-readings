@@ -15,31 +15,23 @@ applications.
 ## Outline
 
 - 1 [Introduction to Architecture [R]](../module6-architecture-and-best-practices/r1-introduction-to-architecture/README.md)
-    
 - 1.1 [Software Design Patterns [R]](../module6-architecture-and-best-practices/r1.1-design-patterns/README.md)
-    
 - 1.2 [Node.js Best Practices [R]](../module6-architecture-and-best-practices/r1.2-nodejs-best-practices/README.md)
-  
 - 1.3 [Express.js Best Practices [R]](../module6-architecture-and-best-practices/r1.3-expressjs-best-practices/README.md)
-  
 - 1.4 [Practice Design Patterns [L]](../module6-architecture-and-best-practices/r1.4-practice-design-patterns/README.md)
 
 - 2 [Introduction to Redis [R]](../module6-architecture-and-best-practices/r2-introduction-to-redis/README.md)
 
 - 2.1 [Caching with Redis [R]](../module6-architecture-and-best-practices/r2.1-caching-with-redis/README.md)
-    
 - 2.2 [Job Queues with Redis [R]](../module6-architecture-and-best-practices/r2.2-job-queues-with-redis/README.md)
 
 - 2.3 [Session Management with Redis [R]](../module6-architecture-and-best-practices/r2.3-session-management-redis/README.md)
-  
 - 2.4 [Practice Caching and Job Queues [L]](../module6-architecture-and-best-practices/r2.4-practice-caching-job-queues/README.md)
- 
+
 - 3 [Websockets [R]](../module6-architecture-and-best-practices/r3-websockets/README.md)
-   
 - 3.1 [Websocket Chat Room App [L]](../module6-architecture-and-best-practices/r3.1-websocket-chat-room/README.md)
 
 - 3.2 [Cron Jobs [R]](../module6-architecture-and-best-practices/r3.2-cron-jobs/README.md)
-   
 - 3.3 [Logging [R]](../module6-architecture-and-best-practices/r3.3-logging/README.md)
 
 - 3.4 [Blog cron jobs and logging [L]](../module6-architecture-and-best-practices/r3.4-blog-cron-logging/README.md)
