@@ -1,10 +1,13 @@
 # Testing Philosophy
+
 Let's discuss some aspects of testing philosophy. The objectives of this lesson are:
+
 1. Understanding the philosophy and mindset of testing
 2. Familiarizing ourselves with the concepts of TDD and BDD
 3. Learning the properties of a good test
 
 ## Mindset of Testing
+
 In real life, you may perhaps work at companies that do almost no testing (this is not good, but it is the reality). This is especially true in smaller companies. You may work at a company that chooses only to test certain components or write certain types of tests. Finally, as mentioned previously, at some companies, especially bigger ones, you
 may be required to write tests so that every line of code is covered by a test.
 
@@ -14,7 +17,7 @@ the testing process and the quality of tests. However, how is the mindset of tes
 
 Many companies do have a quality assurance or QA team that is responsible for testing a product or application manually as it is getting developed. And then there are developers who are responsible specifically for writing automated tests. These professionals are expected to have a strong analytical mind with critical thinking skills. They are also expected to have empathy for the end users and test the application from their perspective in different scenarios. Wait a minute, isn't all this also expected from developers building the application? Yes, but more often than not there is a difference between a developer and a tester. Developers want to make the application work but testers want to make the application break. No, that does not make testers just a bunch of terrible people, although the programming meme world is full of developers complaining against them. By consistently and curiously looking for faults or failures in the application, testers help to ensure the application can be made as free of errors as possible, which at the end of the day ensures the users are able to use the application efficiently.
 
-<img src="../assets/developer-tester.jpeg">
+![](../assets/developer-tester.jpeg)
 
 More recently with the arrival of many different testing frameworks, the distinction between development and QA has been removed, as companies started to see the value of developers who can also write good tests. Developers are now expected to look at all scenarios and test cases of the functionality they're building and write tests to validate the correctness of their code. This brings us to the concept of the test-driven development which is gaining more popularity.
 
@@ -41,6 +44,7 @@ generally healthy for the robustness of a codebase. If TDD was not present,
 depending on the company, developers may be less strict about writing tests.
 
 ### Is TDD used in the real world?
+
 Many companies do adopt TDD, although in practice, this is still a minority of
 companies. TDD is far from a perfect philosophy: it does not guarantee good test
 coverage and it may even encourage developers to write sloppier tests so that
@@ -78,57 +82,62 @@ _When_ they click the submit button
 _Then_ proper validation messages should be shown
 
 ## Properties of a good test
+
 As mentioned previously, simply writing a test is not the same as writing a good
 test. In this section, we'll examine some properties of what makes a good test.
 
 ### Size: Focused tests
+
 A well-written test should not test too many things at once. In general, test
 cases should be well-isolated and have a [single responsibility](https://en.wikipedia.org/wiki/Single-responsibility_principle) or intention.
 
 Consider the previous example of the `absolute()` function. Suppose the test
 instead looked like this:
+
 ```js
-describe('absolute', () => {
-    it('should correctly handle inputs', () => {
-        const result1 = absolute(1);
-        expect(result0).toBe(1);
-        const result1 = absolute(-1);
-        expect(result1).toBe(1);
-        const result2 = absolute(0);
-        expect(result2).toBe(0);
-    });
+describe("absolute", () => {
+  it("should correctly handle inputs", () => {
+    const result1 = absolute(1);
+    expect(result0).toBe(1);
+    const result1 = absolute(-1);
+    expect(result1).toBe(1);
+    const result2 = absolute(0);
+    expect(result2).toBe(0);
+  });
 });
 ```
 
 Now compare this to the original. Which one do you find more readable and
 organized? While this is a simple example, separating the cases for clarity
 becomes especially important with more complex functions.
+
 ```js
-describe('absolute', () => {
-    it('should return positive number if input is positive', () => {
-        const result = absolute(1);
-        expect(result).toBe(1);
-    });
-    it('should return positive number if input is negative', () => {
-        const result = absolute(-1);
-        expect(result).toBe(1);
-    });
-    it('should return zero if input is zero', () => {
-        const result = absolute(0);
-        expect(result).toBe(0);
-    });
+describe("absolute", () => {
+  it("should return positive number if input is positive", () => {
+    const result = absolute(1);
+    expect(result).toBe(1);
+  });
+  it("should return positive number if input is negative", () => {
+    const result = absolute(-1);
+    expect(result).toBe(1);
+  });
+  it("should return zero if input is zero", () => {
+    const result = absolute(0);
+    expect(result).toBe(0);
+  });
 });
 ```
 
 ### Redundancy: Avoid overlapping test cases
+
 As a related topic, you usually want to avoid test cases that overlap too much
 with existing test cases. For example, consider the following test case for the
 `absolute` function. Is it useful, or is it redundant, overlapping with one of the test cases above?
 
 ```js
-it('should return positive number if input is large and negative', () => {
-    const result = absolute(-100);
-    expect(result).toBe(100);
+it("should return positive number if input is large and negative", () => {
+  const result = absolute(-100);
+  expect(result).toBe(100);
 });
 ```
 
@@ -145,6 +154,7 @@ scenarios that define the behavior: positive, negative, and zero. Whether the
 negative number is large or not makes no difference.
 
 ### Thoroughness
+
 In this module, it was mentioned several times that good test coverage means
 that, if the code is behaving incorrectly, even in one line or in one
 if-condition, some test will fail.
@@ -154,8 +164,10 @@ arguments are passed to your function, it behaves differently. A good suite of
 tests will make sure to cover all the different possible cases.
 
 ### Organization: Arrange-Act-Assert
+
 Tests generally follow approximately the same pattern, and this has been
 crystallized in a commonly adopted idea called ["Arrange Act Assert."](https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/)
+
 1. **Arrange**: Many tests require some type of intial setup before the tests can be executed. Does the test require any inputs or special settings? Does it need to prep a database? Does it need to log into a web app? Handle all of these operations at the start of the test in the Arrange step.
 2. **Act**: In the Act step, the actual behavior being tested should be invoked, such as a function call, a REST API call, an interaction with a web page, a component render, etc.
 3. **Assert**: Finally, to ensure correctness, Assert the expected outcomes after the Act step sends a result or response. This was seen earlier using the `expect` function. The terms expect and assert, in this context, are synonymous. Assertions are what ultimately determine if the test passes or fails.
@@ -163,14 +175,16 @@ crystallized in a commonly adopted idea called ["Arrange Act Assert."](https://a
 _Given-When-Then_ is essentially the same formula as _Arrange-Act-Assert_.
 
 ## Additional Readings
+
 1. You can read more about the testing mindset on [this forum](https://club.ministryoftesting.com/t/what-does-testing-mindset-mean-to-you-whats-your-tester-mindset/26422).
 2. You can read more about the advantages and disadvantages of TDD [here](https://www.geeksforgeeks.org/advantages-and-disadvantages-of-test-driven-development-tdd/).
 3. This [StackOverflow question](https://stackoverflow.com/questions/61400/what-makes-a-good-unit-test) gives some interesting insights into what are considered good properties of a unit test.
 
-Google has a good resource called *Testing on the Toilet*. On the back of the
+Google has a good resource called _Testing on the Toilet_. On the back of the
 door in every toilet stall at Google, you can find a one-page flyer that
 describes some aspect of testing (that's how important testing is!). These are
 publicized. Some good ones for junior developers are included below:
+
 - [Keep tests focused](https://testing.googleblog.com/2018/06/testing-on-toilet-keep-tests-focused.html)
 - [DAMP](https://www.googblogs.com/testing-on-the-toilet-tests-too-dry-make-them-damp/). Don't overuse functions in test code, focus on readability.
 - [Just say no to end-to-end tests](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html). Avoid overusing tests that connect too many parts of your system.
