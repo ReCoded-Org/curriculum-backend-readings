@@ -1,4 +1,4 @@
-# Websockets
+# WebSockets
 
 We've looked into many architectural concepts such as design patterns, best practices for performance and reliability, and usage of Redis for features like caching, job queues, and session stores, but all are still in the realm of REST APIs. Let us now look a bit beyond REST and explore other architectural choices in backend applications, starting with an interesting concept called WebSockets. The objectives of this lesson are:
 
