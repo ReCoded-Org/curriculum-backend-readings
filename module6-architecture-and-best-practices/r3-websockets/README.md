@@ -23,7 +23,7 @@ HTTP and WebSocket both are communication protocols used in client-server commun
 
 So HTTP is a stateless protocol that runs on top of TCP which is a connection-oriented protocol it guarantees the delivery of data packet transfer using the three-way handshaking methods and re-transmits the lost packets.
 
-<img src="../assets/http-geeks-for-geeks.png">
+![](../assets/http-geeks-for-geeks.png)
 
 **WebSocket**: WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of client-server communication. However, unlike HTTP, it starts with `ws://` or `wss://`.
 
@@ -31,7 +31,7 @@ It is a stateful protocol, which means the connection between client and server 
 
 Let's take an example of client-server communication, the client is a web browser and we have a server, whenever we initiate the connection between client and server, the client-server makes the handshaking and decides to create a new connection and this connection will be kept alive until terminated by any of them. When the connection is established and alive the communication takes place using the same connection channel until it is terminated. In a way, you can say that the client and server are both actively listening to each other while the WebSocket connection is open.
 
-<img src="../assets/websocket-geeks-for-geeks.png">
+![](../assets/websocket-geeks-for-geeks.png)
 
 ## How is WebSocket different than HTTP polling, HTTP streaming, and server-sent events?
 
@@ -94,12 +94,12 @@ After this reading, we'll get some hands-on practice with WebSockets by building
 
 The name might sound quite similar to WebSockets, however, they are not necessarily related. As a backend developer, you may often find yourself integrating with third-party APIs and services. Your API can integrate with another API by making requests. But sometimes you'll find the use of webhooks instead. Let's take a closer look at this and how it is beneficial for our backend applications.
 
-<img src="../assets/stripe-webhooks.png">
+![](../assets/stripe-webhooks.png)
 
 Webhooks enable services like Stripe, GitHub, or Google to push data to you, instead of you having to pull data from them.
 When some event occurs (e.g. someone buys something from your store), the service sends you an HTTP request with data about that event. You don't have to run a script to poll the API for new events; they'll tell you when they happen, as soon as they happen.
 
-<img src="../assets/stripe-webhooks-2.png">
+![](../assets/stripe-webhooks-2.png)
 
 GitHub for example can send your API a request each time someone opens a new issue in your repo. They'll tell you when a new branch is created, or even when a repo is starred. GitHub calls these as events.
 

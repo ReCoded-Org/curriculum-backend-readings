@@ -45,7 +45,7 @@ Theis architecture pattern significantly impacts the relationship between the ap
 
 Some APIs are also exposed to mobile, desktop, and web apps. The apps don't, however, have direct access to the backend services. Instead, communication is mediated by an intermediary known as an API Gateway. The API Gateway is responsible for tasks such as load balancing, caching, access control, API metering, and monitoring.
 
-<img src="../assets/microservices-example.png">
+![](../assets/microservices-example.png)
 
 The two main characteristics of microservices are:
 
@@ -126,7 +126,7 @@ Best practices are the Do's and then there are commonly agreed anti-patterns whi
 
 Here is a visual example of a microservices architecture for an e-commerce application.
 
-<img src="../assets/microservices-example-2.png">
+![](../assets/microservices-example-2.png)
 
 What would this look like in practice using Node.js? Firstly, it is important to understand why Node.js is beneficial for microservices architecture. Microsoft, PayPal, and Uber are leading companies actively using Node.js application development for their projects.
 

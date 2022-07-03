@@ -64,7 +64,8 @@ Microservices allow for small dedicated teams working on specific services of th
 It all starts with a set of architecture diagrams. Although there are many different types and layers of architecture diagrams, usually a representation of all the different high-level logical components of the system is the most frequently referred to and used diagram.
 
 Take a look at this backend architecture diagram demonstrating the different logical components of the Netflix backend:
-<img src="../assets/netflix-architecture.jpeg" />
+
+![](../assets/netflix-architecture.jpeg)
 
 We will try to utilize architecture diagrams during our capstone projects, of course with the caveat that our architectures will not be very complex since we will only be developing MVP-level projects. It is very difficult to cover architecture diagrams in the scope of this curriculum, but we believe it is best understood in practice with senior engineers on the job. When you start working as a backend developer, a senior technical member on your team will definitely walk you through an architecture diagram to get you up to speed with the system architecture you will be working on. This is the best learning experience for system architecture.
 

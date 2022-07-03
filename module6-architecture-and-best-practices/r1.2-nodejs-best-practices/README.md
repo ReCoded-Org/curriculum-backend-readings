@@ -78,7 +78,7 @@ The concept of separation of concerns is just a reiteration of the different lay
 
 It is good practice to write dedicated error and response handler functions or classes that can be reused throughout the codebase. This also ensures following a consistent error messaging and response structure approach for our APIs and is a continuation of writing modular code managed and modified from a single place. The handling of the request-response flow following this approach can be visualized as below:
 
-<img src="../assets/3re-architecture.png"/>
+![](../assets/3re-architecture.png)
 
 ### 4. Simple deployability
 
@@ -94,7 +94,7 @@ This is a reiteration of everything we learned in the Authentication and Securit
 - Consider mandating API keys even for public API endpoints
 - Consider setting up throttling and rate-limiting on your APIs
 
-<img src="../assets/api-security-structure.png"/>
+![](../assets/api-security-structure.png)
 
 And finally here are some other good practices which we will learn about in detail in upcoming lessons:
 

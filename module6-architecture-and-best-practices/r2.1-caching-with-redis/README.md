@@ -374,11 +374,11 @@ To understand the implementation details of other imported files, refer to the [
 
 We can use the Network tab on our browser console to monitor the time taken for a request the first time when there's no data in the cache and then a second time when data has been cached.
 
-<img src="../assets/api-call-time.png"/>
+![](../assets/api-call-time.png)
 
 As you can see, when we request the banks' data for the first time, since it hasn't been cached yet our API talks to the Paystack API to fetch all banks. So, the request takes about 890ms. But it also saves the fetched data in cache for subsequent requests.
 
-<img src="../assets/cache-read-time.png"/>
+![](../assets/cache-read-time.png)
 
 In the second request, this time our API knows that the data exists in the cache so it reads it directly from there. As a result, the response time is reduced to about 270 ms.
 

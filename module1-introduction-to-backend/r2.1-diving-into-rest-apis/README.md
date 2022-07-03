@@ -1,13 +1,17 @@
 # Diving into REST APIs
+
 HTTP messages are how data is exchanged between a server and a client. There are two types of messages: requests sent by the client to trigger an action on the server, and responses, the answer from the server. The learning objectives of this lesson are:
+
 1. Understanding HTTP request types
 2. Understanding HTTP request and response structure
 3. Understanding HTTP response status codes
 
 ## HTTP Requests
+
 In the previous lesson, we briefly talked about GET, POST, PUT and DELETE request methods.
 
 HTTP defines a set of request methods to indicate the desired action to be performed for a given resource. This set includes:
+
 - **GET**: Requests a representation of the specified resource. Requests using GET should only retrieve data.
 - **HEAD**: Asks for a response identical to that of a GET request, but without the response body.
 - **POST**: Used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
@@ -23,47 +27,54 @@ While developing APIs, GET and POST are the most commonly and frequently used me
 ## Structure of an HTTP Request
 
 HTTP requests, and responses, share similar structure and are composed of:
+
 1. A start-line describing the requests to be implemented, or its status of whether successful or a failure. This start-line is always a single line.
 2. An optional set of HTTP headers specifying the request, or describing the body included in the message.
 3. A blank line indicating all meta-information for the request has been sent.
 4. An optional body containing data associated with the request (like content of an HTML form), or the document associated with a response. The presence of the body and its size is specified by the start-line and HTTP headers.
 
 ### Start line
+
 HTTP requests are messages sent by the client to initiate an action on the server. Their start-line contain three elements:
+
 1. An **HTTP method**, a verb (like GET, PUT or POST) or a noun (like HEAD or OPTIONS), that describes the action to be performed. For example, GET indicates that a resource should be fetched or POST means that data is pushed to the server.
 2. The **HTTP version**, which defines the structure of the remaining message, acting as an indicator of the expected version to use for the response.
 3. The **request target**, usually a URL, or the absolute path of the protocol, port, and domain are usually characterized by the request context. The format of this request target varies between different HTTP methods. It can be
-    - An absolute path, ultimately followed by a '?' and query string. This is the most common form, known as the origin form, and is used with GET, POST, HEAD, and OPTIONS methods.
-    ```
-    POST / HTTP/1.1 GET /background.png HTTP/1.0 HEAD /test.html?query=alibaba HTTP/1.1 OPTIONS /anypage.html HTTP/1.0
-    ```
-    - A complete URL, known as the absolute form, is mostly used with GET when connected to a proxy. 
-    ```
-    GET https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages HTTP/1.1
-    ```
-    - The authority component of a URL, consisting of the domain name and optionally the port (prefixed by a ':'), is called the authority form. It is only used with CONNECT when setting up an HTTP tunnel.
-    ```
-    CONNECT developer.mozilla.org:80 HTTP/1.1
-    ```
-    - The asterisk form, a simple asterisk ('*') is used with OPTIONS, representing the server as a whole.
-    ```
-    OPTIONS * HTTP/1.1
-    ```
+   - An absolute path, ultimately followed by a '?' and query string. This is the most common form, known as the origin form, and is used with GET, POST, HEAD, and OPTIONS methods.
+   ```
+   POST / HTTP/1.1 GET /background.png HTTP/1.0 HEAD /test.html?query=alibaba HTTP/1.1 OPTIONS /anypage.html HTTP/1.0
+   ```
+   - A complete URL, known as the absolute form, is mostly used with GET when connected to a proxy.
+   ```
+   GET https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages HTTP/1.1
+   ```
+   - The authority component of a URL, consisting of the domain name and optionally the port (prefixed by a ':'), is called the authority form. It is only used with CONNECT when setting up an HTTP tunnel.
+   ```
+   CONNECT developer.mozilla.org:80 HTTP/1.1
+   ```
+   - The asterisk form, a simple asterisk ('\*') is used with OPTIONS, representing the server as a whole.
+   ```
+   OPTIONS * HTTP/1.1
+   ```
 
 ### Headers
+
 HTTP headers from a request follow the same basic structure of an HTTP header: a case-insensitive string followed by a colon (':') and a value whose structure depends upon the header. The whole header, including the value, consist of one single line, which can be quite long.
 
 Many different headers can appear in requests. They can be divided in several groups:
+
 - General headers, like "Via", apply to the message as a whole.
 - Request headers, like "User-Agent" or "Accept", modify the request by specifying it further (like Accept-Language), by giving context (like Referer), or by conditionally restricting it (like If-None).
 - Representation headers like "Content-Type" that describe the original format of the message data and any encoding applied (only present if the message has a body).
 
-<img src="https://drive.google.com/uc?export=view&id=1kM2zFsDEUS6ZfHWsfMqN8LCvjM_23Fs0">
+![](https://drive.google.com/uc?export=view&id=1kM2zFsDEUS6ZfHWsfMqN8LCvjM_23Fs0)
 
 ### Body
+
 The final part of the request is its body. Not all requests have one: requests fetching resources, like GET, HEAD, DELETE, or OPTIONS, usually don't need one. Some requests send data to the server in order to update it: as often the case with POST requests (containing HTML form data).
 
 Bodies can be broadly divided into two categories:
+
 - Single-resource bodies, consisting of one single file, defined by the two headers: Content-Type and Content-Length.
 - Multiple-resource bodies, consisting of a multipart body, each containing a different bit of information. This is typically associated with HTML Forms.
 
@@ -72,29 +83,37 @@ Bodies can be broadly divided into two categories:
 The structure is similar to HTTP requests.
 
 ### Status line
+
 The start line of an HTTP response, called the status line, contains the following information:
+
 1. The protocol version, usually HTTP/1.1.
 2. A status code, indicating success or failure of the request. Common status codes are 200, 404, or 302
 3. A status text. A brief, purely informational, textual description of the status code to help a human understand the HTTP message.
 
 ### Headers
+
 HTTP headers for responses follow the same structure as HTTP request headers.
 
 Many different headers can appear in responses. These can be divided into several groups:
+
 - General headers, like "Via", apply to the whole message.
 - Response headers, like "Vary" and "Accept-Ranges", give additional information about the server which doesn't fit in the status line.
 - Representation headers like "Content-Type" that describe the original format of the message data and any encoding applied (only present if the message has a body).
 
 ### Body
+
 The last part of a response is the body. Not all responses have one: responses with a status code that sufficiently answers the request without the need for corresponding payload (like 201 Created or 204 No Content) usually don't.
 
 Bodies can be broadly divided into three categories:
+
 - Single-resource bodies, consisting of a single file of known length, defined by the two headers: Content-Type and Content-Length.
 - Single-resource bodies, consisting of a single file of unknown length, encoded by chunks with Transfer-Encoding set to chunked.
 - Multiple-resource bodies, consisting of a multipart body, each containing a different section of information. These are relatively rare.
 
 ## HTTP response status codes
+
 HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:
+
 - Informational responses (100–199)
 - Successful responses (200–299)
 - Redirects (300–399)
@@ -104,6 +123,7 @@ HTTP response status codes indicate whether a specific HTTP request has been suc
 You can read more about each status code [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
 
 The most commonly used status codes are:
+
 - **Status Code 200 OK**: This is the standard "OK" status code for a successful HTTP request. The response that is returned is dependent on the request. For example, for a GET request, the response will be included in the message body. For a PUT/POST request, the response will include the resource that contains the result of the action.
 - **Status Code 201 Created**: This is the status code that confirms that the request was successful and, as a result, a new resource was created. Typically, this is the status code that is sent after a POST/PUT request.
 - **Status Code 204 No Content**: This status code confirms that the server has fulfilled the request but does not need to return information. Examples of this status code include delete requests or if a request was sent via a form and the response should not cause the form to be refreshed or for a new page to load.
@@ -119,7 +139,9 @@ The most commonly used status codes are:
 Now that we have learned so much about HTTP requests and responses, let's perform some requests and analyze the responses in our next assignment.
 
 ---
+
 ## References
+
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
